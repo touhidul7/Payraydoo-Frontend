@@ -3,10 +3,10 @@ import React from "react";
 export default function Header() {
   const Menus = [
     { title: "Home", link: "/" },
-    { title: "Product", link: "product" },
-    { title: "Blog", link: "blog" },
-    { title: "About Us", link: "about" },
-    { title: "Contact Us", link: "contact" },
+    { title: "Product", link: "/product" },
+    { title: "Blog", link: "/blog" },
+    { title: "About Us", link: "/about" },
+    { title: "Contact Us", link: "/contact" },
   ];
   return (
     <div>
