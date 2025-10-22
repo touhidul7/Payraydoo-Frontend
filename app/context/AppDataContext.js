@@ -1,5 +1,6 @@
 'use client';
 import React, { createContext, useContext, useState } from 'react';
+import Header from '../Components/Header';
 
 const AppDataContext = createContext();
 
@@ -16,6 +17,7 @@ export const AppDataProvider = ({ children }) => {
     return (
         <AppDataContext.Provider value={{ testdata }}>{/* Add Context Data Here */}
             <>
+                <Header/>
                 {children}{/* Layout Section */}
             </>
         </AppDataContext.Provider>
