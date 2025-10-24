@@ -23,7 +23,7 @@ export default function Home() {
     </div>
 
 
-    <div className="w-7xl h-52 flex justify-center">
+    <div className="w-7xl flex justify-center border-animation">
       <TiltShineCard/>
     </div>
 
