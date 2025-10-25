@@ -20,13 +20,13 @@ export default function Header() {
       height={100}/>
             </div>
 
-            <div className="md:flex md:items-center md:gap-12">
+            <div className="md:flex md:items-center md:gap-12 font-mont font-semibold">
               <nav aria-label="Global" className="hidden md:block">
                 <ul className="flex items-center gap-12 text-md">
                   {Menus.map((menu, index) => (
                     <li key={index}>
                       <a
-                        className="text-white transition-all duration-300 delay-75 hover:text-gray-300/75"
+                        className="text-white  nav-text"
                         href={menu.link}
                       >
                         {" "}{menu.title}{" "}
