@@ -5,6 +5,7 @@ import ButtonAnimated from "./Components/ButtonAnimated";
 import Counter from "./Components/Counter";
 import TiltShineCard from "./Components/TiltShineCard";
 import small_logo from "../public/logo/small_logo.png"
+import ScrollRevealSection from "./Components/ScrollRevealSection";
 
 export default function Home() {
 
@@ -67,7 +68,7 @@ team focuses on decisions, not data entry.</p>
         </div>
 
       </div>
-
+    <ScrollRevealSection/>
     </div>
   );
 }
