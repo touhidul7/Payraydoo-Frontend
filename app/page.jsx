@@ -5,12 +5,15 @@ import ButtonAnimated from "./Components/ButtonAnimated";
 import Counter from "./Components/Counter";
 import TiltShineCard from "./Components/TiltShineCard";
 import small_logo from "../public/logo/small_logo.png"
+import FeatureSelector from "./Components/InvoiceFeatures";
+import InvoiceFeatures from "./Components/InvoiceFeatures";
+import InvoiceFeaturesLeft from "./Components/InvoiceFeaturesLeft";
 
 export default function Home() {
 
   return (
     <div className="p-4 home-page pt-16">
-     {/* hero section start */}
+      {/* hero section start */}
 
       <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 py-10 px-4 font-mont">
         {/* heading and slogan section */}
@@ -30,13 +33,13 @@ export default function Home() {
       {/* dashboard image start */}
       <div>
         <div className=" flex justify-center relative h-screen mt-20 mb-20">
-      <TiltShineCard/>
+          <TiltShineCard />
         </div>
         <div className="flex justify-center items-center mt-10 relative">
-          <Image src={small_dash} alt="small dashboard" width={250} height={250} className="rounded-2xl absolute bottom-45 left-70"/>
+          <Image src={small_dash} alt="small dashboard" width={250} height={250} className="rounded-2xl absolute bottom-45 left-70" />
         </div>
       </div>
-      
+
       {/* hero section end */}
       {/* Second section starts here */}
       <div className="mx-auto max-w-[98%] bg-white rounded-3xl relative py-10">
@@ -45,25 +48,53 @@ export default function Home() {
         {/* Logo */}
         <div className="relative">
           <div className=" border-animation absolute -top-25 left-165 p-4">
-          <Image src={small_logo} alt="small logo" width={75} height={75} />
-        </div>
+            <Image src={small_logo} alt="small logo" width={75} height={75} />
+          </div>
         </div>
 
         {/* UPEPER CONTENT */}
         <div className="mx-auto max-w-7xl mt-14 p-14 font-mont text-center  ">
-            <h2 className="gradient-text font-semibold text-5xl py-3 ">Why Oschestrates Your Finance Operations?</h2>
-            <p className="text-black text-2xl font-medium mt-5">No more tab-hopping in manual finance work. Just flow</p>
-            <p className="text-gray-600 font-medium text-2xl mt-4">Payraydoo captures invoices, routes approvals, reconciles payments, and tracks collections so your
-team focuses on decisions, not data entry.</p>
-            <div className="mt-10 ">
-              <ButtonAnimated content="See how much you'll save"/>
-            </div>
+          <h2 className="gradient-text font-semibold text-5xl py-3 ">Why Oschestrates Your Finance Operations?</h2>
+          <p className="text-black text-2xl font-medium mt-5">No more tab-hopping in manual finance work. Just flow</p>
+          <p className="text-gray-600 font-medium text-2xl mt-4">Payraydoo captures invoices, routes approvals, reconciles payments, and tracks collections so your
+            team focuses on decisions, not data entry.</p>
+          <div className="mt-10 ">
+            <ButtonAnimated content="See how much you'll save" />
+          </div>
         </div>
         {/* UPEPER CONTENT END  */}
 
         {/* lower part  */}
-        <div className="bg-gray-200 rounded-3xl py-20 max-w-full">
+        <div className="bg-gray-100 rounded-3xl max-w-full font-mont">
+          {/* INVOICE FEATURES */}
+          <div className="py-22 px-22 ">
+            <h2 className="gradient-text font-semibold text-5xl">Accounts Recievable</h2>
+            <h2 className="text-black text-7xl mt-5 font-medium"> Receivables on time, every time</h2>
+            <InvoiceFeatures />
+          </div>
+          <div className="mt-20 mb-20  px-22 ">
+            <h2 className="gradient-text font-semibold text-5xl py-2">Accounts Payable</h2>
+            <h2 className="text-black text-7xl mt-5 font-medium"> Invoices in. Payments out</h2>
+            <InvoiceFeaturesLeft />
+          </div>
+          {/* finance stack section */}
+          <div className="bg-[#363766] rounded-xl pt-42 py-20 px-14 mx-auto max-w-[98%] ">
+            <div>
+              <h2 className=" text-white text-7xl text-center font-semibold">The missing link in your</h2>
+              <h2 className="finance text-7xl text-center font-semibold mt-5">finance stack</h2>
+            </div>
 
+            <div className="flex justify-center items-center mt-16 ">
+              <div className="w-[800px] h-auto bg-white clip-card rounded-xl custom-white-card relative">
+                <div className="z-10">
+                  <div className=" border-animation absolute -top-20 left-[50%] p-4 z-10 transform -translate-x-1/2">
+                    <Image src={small_logo} alt="small logo" width={75} height={75} />
+                  </div>
+                </div>
+                <h2 className="text-black mt-20 p-10">Payraydoo bridges recievables and payables automating  the flow of money in and out</h2>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

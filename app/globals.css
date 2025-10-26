@@ -67,6 +67,27 @@ body {
   animation: border 4s linear infinite;
   width: fit-content;
 }
+.custom-white-card {
+ 
+
+  background: linear-gradient(white) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff
+    ) border-box;
+  border: 3px solid transparent;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.225rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  
+}
 
 /* custom card */
 .custom-card {
@@ -124,11 +145,20 @@ background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(169, 77, 255, 
 /* gradient text */
 
 .gradient-text{
-  background: #9842E9;
-background: linear-gradient(90deg, rgba(152, 66, 233, 1) 0%, rgba(163, 99, 255, 1) 51%, rgba(0, 247, 255, 1) 100%);
+background: #9842E9;
+background: linear-gradient(90deg,rgba(152, 66, 233, 1) 0%, rgba(52, 124, 247, 1) 26%, rgba(0, 247, 255, 1) 49%, rgba(0, 247, 255, 1) 74%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.finance{
+background: #9842E9;
+background: linear-gradient(90deg,rgba(152, 66, 233, 1) 38%, rgba(120, 174, 255, 1) 45%, rgba(0, 247, 255, 1) 55%, rgba(0, 255, 242, 1) 63%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 
 /* nav hover */
@@ -139,4 +169,202 @@ background: linear-gradient(90deg, rgb(190, 123, 253) 0%, rgb(136, 87, 205) 51%,
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
   animation-delay: .5s;
+}
+
+
+
+
+/* Invoice Features */
+.container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        
+          padding: 40px 20px;
+         
+        }
+
+        .content-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 80px;
+          max-width: 1400px;
+        }
+
+        .image-box {
+          width: 510px;
+          height: 510px;
+          border-radius: 32px;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+          flex-shrink: 0;
+        }
+
+        .scroll-container {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        .scroll-section {
+          width: 100%;
+          height: 100%;
+          scroll-snap-align: start;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+
+        .gradient-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(168, 85, 247, 0.85) 0%, rgba(124, 58, 237, 0.85) 100%);
+          z-index: 1;
+          transition: opacity 0.3s ease;
+        }
+
+        .image-bg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .scroll-hint {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: white;
+          font-size: 14px;
+          z-index: 2;
+          opacity: 0.8;
+          animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateX(-50%) translateY(0);
+          }
+          50% {
+            transform: translateX(-50%) translateY(-10px);
+          }
+        }
+
+        .features-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 28px 0;
+          border-bottom: 1px solid #e5e5e5;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+
+        .feature-item:first-child {
+          padding-top: 0;
+        }
+
+        .feature-item:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+
+        .feature-indicator {
+          width: 5px;
+          height: 60px;
+          background: #d1d5db;
+        
+          flex-shrink: 0;
+          transition: all 0.3s ease;
+        }
+
+        .feature-indicator.active {
+          background: linear-gradient(180deg,rgba(0, 247, 255, 1) 0%, rgba(0, 250, 242, 1) 25%, rgba(52, 124, 247, 1) 59%, rgba(152, 66, 233, 1) 87%);
+          
+        }
+
+        .feature-text {
+          font-size: 30px;
+          font-weight: 500;
+          color: #080808;
+          letter-spacing: -0.02em;
+          line-height: 1.2;
+          transition: all 0.3s ease;
+        }
+
+        .feature-text.active {
+          color: #1f2937;
+        }
+
+        @media (max-width: 1200px) {
+          .content-wrapper {
+            gap: 60px;
+          }
+
+          .image-box {
+            width: 400px;
+            height: 400px;
+          }
+
+          .feature-text {
+            font-size: 36px;
+          }
+        }
+
+        @media (max-width: 968px) {
+          .content-wrapper {
+            flex-direction: column;
+            gap: 60px;
+          }
+
+          .image-box {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .image-box {
+            height: 300px;
+          }
+
+          .feature-text {
+            font-size: 28px;
+          }
+
+          .feature-indicator {
+            height: 50px;
+          }
+
+          .feature-indicator.active {
+            height: 55px;
+          }
+
+          .feature-item {
+            padding: 22px 0;
+          }
+        }
+
+/* finance stack section */
+.clip-card{
+/* clip-path: polygon(8% 0, 94% 0, 97% 5%, 100% 100%, 0 100%, 5% 7%); */
+border-radius: 30px;
+
 }
