@@ -67,9 +67,10 @@ body {
   animation: border 4s linear infinite;
   width: fit-content;
 }
-.custom-white-card {
- 
 
+/* custom white card */
+
+.custom-white-card {
   background: linear-gradient(white) padding-box,
     conic-gradient(
       from var(--border-angle),
@@ -89,6 +90,44 @@ body {
   
 }
 
+.custom-bar {
+  background: linear-gradient(white) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff
+    ) border-box;
+  border: 2px solid transparent;
+  padding: 1px;
+  color: white;
+  font-size: 1.225rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  
+}
+
+/* custom gradient card */
+.custom-gradient-card {
+  background: linear-gradient(90deg,rgba(152, 66, 233, 1) 0%, rgba(199, 120, 255, 1) 32%, rgba(0, 247, 255, 1) 69%, rgba(0, 255, 242, 1) 97%) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff
+    ) border-box;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.125rem;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+}
 /* custom card */
 .custom-card {
   background: linear-gradient(45deg, #363766, #363766 50%, #363766) padding-box,
