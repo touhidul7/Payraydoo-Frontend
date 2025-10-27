@@ -8,6 +8,7 @@ import small_logo from "../public/logo/small_logo.png"
 import FeatureSelector from "./Components/InvoiceFeatures";
 import InvoiceFeatures from "./Components/InvoiceFeatures";
 import InvoiceFeaturesLeft from "./Components/InvoiceFeaturesLeft";
+import setting from "../public/images/noun-erp-7857504.png"
 
 export default function Home() {
 
@@ -77,23 +78,59 @@ export default function Home() {
             <h2 className="text-black text-7xl mt-5 font-medium"> Invoices in. Payments out</h2>
             <InvoiceFeaturesLeft />
           </div>
+
+
           {/* finance stack section */}
           <div className="bg-[#363766] rounded-xl pt-42 py-20 px-14 mx-auto max-w-[98%] ">
             <div>
               <h2 className=" text-white text-7xl text-center font-semibold">The missing link in your</h2>
               <h2 className="finance text-7xl text-center font-semibold mt-5">finance stack</h2>
             </div>
-
-            <div className="flex justify-center items-center mt-16 ">
-              <div className="w-[800px] h-auto bg-white clip-card rounded-xl custom-white-card relative">
+            {/* First Card */}
+            <div className="flex justify-center items-center mt-16  ">
+              <div className="w-[750px] h-auto bg-white clip-card rounded-xl custom-white-card relative">
                 <div className="z-10">
-                  <div className=" border-animation absolute -top-20 left-[50%] p-4 z-10 transform -translate-x-1/2">
+                  <div className=" border-animation absolute -top-15 left-[50%] p-4 z-10 transform -translate-x-1/2">
                     <Image src={small_logo} alt="small logo" width={75} height={75} />
                   </div>
                 </div>
-                <h2 className="text-black mt-20 p-10">Payraydoo bridges recievables and payables automating  the flow of money in and out</h2>
+                <h2 className="text-gray-700 mt-10 p-2 px-5 py-8 font-medium font-mont text-3xl text-center">Payraydoo bridges recievables and payables automating  the flow of money in and out</h2>
               </div>
             </div>
+            {/* 2nd card */}
+            <div className="w-6xl mx-auto custom-white-card  mt-20 font-mont p-10 rounded-xl flex justify-between items-center gap-10 bg-white  text-center">
+              <div className="">
+                <h2 className="text-black text-2xl mb-12"> Accounts Receivable</h2>
+                <div className="grid grid-cols-4 gap-10 text-gray-700 font-medium">
+                  <div>
+                    <p>Cash Application agent</p>
+                  </div>
+                  <div><p>Collection agent</p></div>
+                  <div><p>Dispute agent</p></div>
+                  <div><p>Closing agent</p></div>
+                </div>
+              </div>
+              <div className=" h-36 custom-bar bg-white w-0.5 ">
+              </div>
+              <div>
+                <h2 className="text-black text-2xl mb-12"> Accounts Receivable</h2>
+
+                <div className="grid grid-cols-3 gap-10 text-gray-700 font-medium items-center">
+                  <div>
+                    <p>Invoice Capturing agent</p>
+                  </div>
+                  <div><p>Varification & Reconciliation agent</p></div>
+                  <div><p>Scheduling agent</p></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Third Card with gradient */}
+            <div className="max-w-5xl mx-auto flex flex-col items-center custom-gradient-card  rounded-xl mt-20 p-10">
+              <Image src={setting} alt="setting" width={150} height={150} />
+              <h2 className="text-white text-3xl font-mont font-medium mt-10 text-center">Your ERP/ Accounting Software</h2>
+            </div>
+
           </div>
         </div>
 
