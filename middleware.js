@@ -35,11 +35,10 @@ export function middleware(request) {
     return NextResponse.next();
 }
 
-/* 
+
 
 export const config = {
    
     matcher: ['/admin/:path*', '/user/:path*']
 };
 
-*/
