@@ -149,6 +149,10 @@ body {
   cursor: pointer;
   animation: border 4s linear infinite;
 }
+
+.gradiant-bg{
+  background: linear-gradient(90deg,rgba(152, 66, 233, 1) 0%, rgba(199, 120, 255, 1) 32%, rgba(0, 247, 255, 1) 69%, rgba(0, 255, 242, 1) 97%) padding-box, border-box;
+}
 /* custom card */
 .custom-card {
   background: linear-gradient(45deg, #363766, #363766 50%, #363766) padding-box,

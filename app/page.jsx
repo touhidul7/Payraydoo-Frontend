@@ -246,7 +246,24 @@ export default function Home() {
               Capabilities & integrations
             </h2>
           </div>
-          <div className="text-center mt-20"><ButtonAnimated dark={false} content={"ERP & Accounting"}/></div>
+          {/* <div className="text-center mt-20">
+            <ButtonAnimated dark={false} content={"ERP & Accounting"} />
+          </div> */}
+          <div className="text-center mt-20">
+            <div className="gradiant-bg w-[800px] mx-auto p-5 rounded-xl flex justify-center items-center">
+              <iframe
+              className="w-full "
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/7edR32QVp_A?si=QyFzAJT9i0ezgOI9"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
