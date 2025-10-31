@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F3F4F6;
   --foreground: #171717;
 }
 
@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #0a0a0a; */
     --foreground: #ededed;
   }
 }
@@ -46,7 +46,7 @@ body {
   }
 }
 
-.custom-button {
+.custom-button-dark {
   padding: 12px 50px;
   max-width: 422px;
   background: linear-gradient(45deg, #af65ff, #af65ff 50%, #af65ff) padding-box,
@@ -61,6 +61,27 @@ body {
   border: 3px solid transparent;
   border-radius: 30px;
   color: white;
+  font-size: 1.225rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: fit-content;
+}
+.custom-button-light {
+  padding: 12px 50px;
+  max-width: 422px;
+  background: linear-gradient(45deg, #ffffff, #ffffff 50%, #ffffff) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff
+    ) border-box;
+  border: 3px solid transparent;
+  border-radius: 30px;
+  color: rgb(0, 0, 0);
   font-size: 1.225rem;
   font-weight: 600;
   cursor: pointer;
@@ -185,7 +206,7 @@ background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(169, 77, 255, 
 
 .gradient-text{
 background: #9842E9;
-background: linear-gradient(90deg,rgba(152, 66, 233, 1) 0%, rgba(52, 124, 247, 1) 26%, rgba(0, 247, 255, 1) 49%, rgba(0, 247, 255, 1) 74%);
+background: linear-gradient(90deg,rgba(152, 66, 233, 1) 0%, rgba(52, 124, 247, 1) 26%, rgba(0, 247, 255, 1) 49%, rgb(2, 219, 226) 74%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
