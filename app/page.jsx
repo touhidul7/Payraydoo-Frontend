@@ -249,7 +249,7 @@ export default function Home() {
           {/* <div className="text-center mt-20">
             <ButtonAnimated dark={false} content={"ERP & Accounting"} />
           </div> */}
-          <div className="text-center mt-20">
+          {/* <div className="text-center mt-20">
             <div className="gradiant-bg w-[800px] mx-auto p-5 rounded-xl flex justify-center items-center">
               <iframe
               className="w-full "
@@ -263,7 +263,7 @@ export default function Home() {
                 allowfullscreen
               ></iframe>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
