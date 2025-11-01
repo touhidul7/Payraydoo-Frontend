@@ -20,11 +20,11 @@ export default function ButtonAnimated({
   };
 
   return dark ? (
-    <button onClick={handleClick} className="custom-button-dark">
+    <button onClick={handleClick} className="custom-button-dark text-2xl font-semibold">
       {content}
     </button>
   ) : (
-    <button onClick={handleClick} className="custom-button-light">
+    <button onClick={handleClick} className="custom-button-light text-2xl font-semibold">
       <span className="gradient-text">{content}</span>
     </button>
   );

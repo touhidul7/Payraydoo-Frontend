@@ -231,7 +231,19 @@ body {
   background: linear-gradient(
     90deg,
     rgba(152, 66, 233, 1) 0%,
-    rgba(52, 124, 247, 1) 26%,
+    
+    rgba(0, 247, 255, 1) 20%,
+    rgb(2, 219, 226) 74%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-header {
+  background: #9842e9;
+  background: linear-gradient(
+    90deg,
+    rgba(152, 66, 233, 1) 0%,
+    rgba(52, 124, 247, 1) 25%,
     rgba(0, 247, 255, 1) 49%,
     rgb(2, 219, 226) 74%
   );
@@ -468,4 +480,9 @@ body {
 .clip-card {
   /* clip-path: polygon(8% 0, 94% 0, 97% 5%, 100% 100%, 0 100%, 5% 7%); */
   border-radius: 30px;
+}
+
+.finance-stack-body{
+  background: #363766;
+background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(22, 22, 41, 1) 100%);
 }

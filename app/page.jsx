@@ -10,6 +10,23 @@ import InvoiceFeatures from "./Components/InvoiceFeatures";
 import InvoiceFeaturesLeft from "./Components/InvoiceFeaturesLeft";
 import setting from "../public/images/noun-erp-7857504.png";
 import dashboard2 from "../public/images/dasboard-img.png";
+import microsoft from "../public/logo/microsoft.png"
+import oracle from "../public/logo/Oracle_NetSuite_2021.png"
+import sap from "../public/logo/SAP-Emblem.png"
+import workday from "../public/logo/Workday_Logo.png"
+import sage from "../public/logo/Sage-logo_svg.svg.png"
+import banco from "../public/logo/Banco_Santander_Logotipo.svg.png"
+import barclays from "../public/logo/Barclays-Logo.png"
+import hsbc from "../public/logo/HSBC-Logo.png"
+import jp_morgan from "../public/logo/JP-Morgan-Chase-Logo.png"
+import llyods from "../public/logo/Lloyds-Bank-Logo-2013.png"
+import new_wise from "../public/logo/New_Wise_(formerly_TransferWise)_logo.svg.png"
+import plaid from "../public/logo/Plaid_logo.svg.png"
+import revolut from "../public/logo/Revolut.png"
+import TestimonialSlider from "./Components/TestimonialSlider";
+
+
+
 
 export default function Home() {
   return (
@@ -65,7 +82,7 @@ export default function Home() {
 
         {/* UPEPER CONTENT */}
         <div className="mx-auto max-w-7xl mt-14 p-14 font-mont text-center  ">
-          <h2 className="gradient-text font-semibold text-5xl py-3 ">
+          <h2 className="gradient-header font-semibold text-5xl py-3 ">
             Why Oschestrates Your Finance Operations?
           </h2>
           <p className="text-black text-2xl font-medium mt-5">
@@ -83,7 +100,7 @@ export default function Home() {
         {/* UPEPER CONTENT END  */}
 
         {/* lower part  */}
-        <div className="bg-gray-100 rounded-3xl max-w-full font-mont relative ">
+        <div className="bg-gray-50 rounded-3xl max-w-full font-mont relative ">
           {/* INVOICE FEATURES */}
           <div className="py-22 px-22 ">
             <h2 className="gradient-text font-semibold text-5xl">
@@ -107,7 +124,7 @@ export default function Home() {
           </div>
 
           {/* finance stack section */}
-          <div className="bg-[#363766] rounded-xl pt-42 py-20 pb-52 px-14 mx-auto max-w-[98%]">
+          <div className=" finance-stack-body rounded-xl pt-42 py-20 pb-52 px-14 mx-auto max-w-[98%]">
             <div>
               <h2 className=" text-white text-7xl text-center font-semibold">
                 The missing link in your
@@ -192,79 +209,126 @@ export default function Home() {
               <h2 className=" text-white text-7xl text-center font-semibold">
                 Smarter workflows.
               </h2>
-              <h2 className="finance text-7xl text-center font-semibold mt-5">
+              <h2 className="finance text-7xl text-center font-semibold mt-5 py-2">
                 Tangible results.
               </h2>
             </div>
-            <div className="grid grid-cols-3 gap-10 mt-20 max-w-5xl mx-auto align-items-center">
+            <div className="grid grid-cols-3 gap-14 mt-20 mb-20 max-w-6xl mx-auto items-center justify-center font-semibold">
               <div className="cards">
-                <h3 className="text-[#00FFF2] text-2xl">
+                <h3 className="text-[#00FFF2] text-3xl">
                   Measurable by Design
                 </h3>
-                <p className="text-lg">Track time, errors and cache impact</p>
+                <p className="text-2xl">Track time, errors and cache impact</p>
               </div>
               <div className="cards">
-                <h3 className="text-[#00FFF2] text-2xl">
-                  Measurable by Design
+                <h3 className="text-[#00FFF2] text-3xl">
+                  Complete control
                 </h3>
-                <p className="text-lg">Track time, errors and cache impact</p>
+                <p className="text-2xl">You set the rules, we
+                  enforce them.</p>
               </div>
               <div className="cards">
-                <h3 className="text-[#00FFF2] text-2xl">
-                  Measurable by Design
+                <h3 className="text-[#00FFF2] text-3xl">
+                  Global-ready
                 </h3>
-                <p className="text-lg">Track time, errors and cache impact</p>
+                <p className="text-2xl">Multi-entity. Multi
+                  currency. Audit proof.</p>
               </div>
               <div className="cards">
-                <h3 className="text-[#00FFF2] text-2xl">
-                  Measurable by Design
+                <h3 className="text-[#00FFF2] text-3xl">
+                  Seamless integrations
                 </h3>
-                <p className="text-lg">Track time, errors and cache impact</p>
+                <p className="text-2xl">Connect to your ERP
+                  in minutes.</p>
               </div>
               <div className="cards">
-                <h3 className="text-[#00FFF2] text-2xl">
-                  Measurable by Design
+                <h3 className="text-[#00FFF2] text-3xl">
+                  ERP-native
                 </h3>
-                <p className="text-lg">Track time, errors and cache impact</p>
+                <p className="text-2xl">Works with how you
+                  already work.</p>
               </div>
             </div>
           </div>
+
+          {/* finance stack section end here */}
+
+
           <div className="text-center mb-[200px] relative">
             <Image
               src={dashboard2}
               alt="small dashboard"
-              width={500}
-              height={250}
+              width={800}
+              height={550}
               className="rounded-2xl mx-auto w-[800px] h-auto absolute top-0 left-0 right-0 -mt-48"
             />
           </div>
-          <div className="text-center mt-20">
-            <h2 className=" text-black text-7xl text-center font-semibold">
-              The Payraydoo Promise:
-            </h2>
-            <h2 className="finance text-7xl text-center font-semibold mt-5 ">
-              Capabilities & integrations
-            </h2>
-          </div>
-          {/* <div className="text-center mt-20">
-            <ButtonAnimated dark={false} content={"ERP & Accounting"} />
-          </div> */}
-          {/* <div className="text-center mt-20">
-            <div className="gradiant-bg w-[800px] mx-auto p-5 rounded-xl flex justify-center items-center">
-              <iframe
-              className="w-full "
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/7edR32QVp_A?si=QyFzAJT9i0ezgOI9"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+          {/* Payraydoo promise start here */}
+          <section>
+            <div className="text-center mt-20">
+              <h2 className=" text-black text-7xl text-center font-semibold">
+                The Payraydoo Promise:
+              </h2>
+              <h2 className="finance text-7xl text-center font-semibold mt-5 text-shadow-lg py-2">
+                Capabilities & integrations
+              </h2>
             </div>
-          </div> */}
-          <br /><br /><br />
+            <div className="text-center mt-20 ">
+              <ButtonAnimated dark={false} content={"ERP & Accounting"} className="text-lg" />
+            </div>
+
+            {/* company logo */}
+
+            <div>
+              <div className="grid grid-cols-5 gap-10 mt-20 mb-20 max-w-6xl mx-auto items-center justify-center">
+                <Image src={microsoft} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={oracle} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={sap} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={workday} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={sage} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+              </div>
+            </div>
+            <div className="text-center mt-10 mb-20 ">
+              <ButtonAnimated content="Banking, Treasury & Payment" dark={false} />
+            </div>
+            <div>
+              <div className="grid grid-cols-4 gap-10 mt-20 mb-20 max-w-6xl mx-auto items-center justify-center">
+                <Image src={jp_morgan} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={barclays} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={banco} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={hsbc} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={llyods} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={plaid} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={new_wise} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+                <Image src={revolut} alt="microsoft logo" width={150} height={75} className="mx-auto" />
+              </div>
+            </div>
+
+            <div className="text-center mt-10 mb-20 ">
+              <ButtonAnimated content="Explore more integrations" />
+            </div>
+
+            <div className="px-4 sm:px-6 lg:px-8 mb-40 bg-white">
+              <TestimonialSlider />
+            </div>
+          </section>
+
+          <div className="finance-stack-body rounded-xl pt-20 py-20 pb-52 px-14 mx-auto max-w-[98%] font-mont">
+
+            <div className="flex flex-col justify-center items-center gap-8">
+              <h2 className="text-center text-6xl font-semibold px-[250px]">
+                Ready to save thousands on <span className="gradient-text">invoice processing?</span>
+              </h2>
+              <p className="text-center text-2xl font-medium">
+                Run a quick analysis and get your personalized ROI.
+              </p>
+              <ButtonAnimated content="Get your Savings Report" />
+            </div>
+            <div>
+              
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
