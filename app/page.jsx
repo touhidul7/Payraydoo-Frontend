@@ -24,13 +24,15 @@ import new_wise from "../public/logo/New_Wise_(formerly_TransferWise)_logo.svg.p
 import plaid from "../public/logo/Plaid_logo.svg.png"
 import revolut from "../public/logo/Revolut.png"
 import TestimonialSlider from "./Components/TestimonialSlider";
+import second_dash from "../public/images/4.png"
+import s_small_dash from "../public/images/3.png"
 
 
 
 
 export default function Home() {
   return (
-    <div className="p-4 home-page pt-16">
+    <div className="p-4 home-page pt-16 pb-20">
       {/* hero section start */}
 
       <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 py-10 px-4 font-mont">
@@ -313,7 +315,7 @@ export default function Home() {
             </div>
           </section>
 
-          <div className="finance-stack-body rounded-xl pt-20 py-20 pb-52 px-14 mx-auto max-w-[98%] font-mont">
+          <div className="finance-stack-body rounded-xl pt-20 px-14 mx-auto max-w-[98%] font-mont">
 
             <div className="flex flex-col justify-center items-center gap-8">
               <h2 className="text-center text-6xl font-semibold px-[250px]">
@@ -324,8 +326,12 @@ export default function Home() {
               </p>
               <ButtonAnimated content="Get your Savings Report" />
             </div>
-            <div>
-              
+            {/* dashboard images */}
+            <div className="relative">
+              <Image src={second_dash} alt="small dashboard" width={1000} height={750} className="rounded-t-2xl mx-auto mt-40" />
+              <div className="absolute top-40 -left-8">
+                <Image src={s_small_dash} alt="small dashboard" width={300} height={200} className="rounded-2xl" />
+              </div>
             </div>
 
           </div>
