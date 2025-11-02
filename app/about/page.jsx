@@ -3,6 +3,7 @@ import React from 'react'
 import TeamImage from "../../public/images/6824518ab7d703e91d6f2f32_May 14 2025 Screenshot from Resize Images.png"
 import Image from 'next/image'
 import CardProfile from '../../public/images/674491fc4bd881ec6b17f89a_Arjun.png'
+import videoHolder from '../../public/images/video-holder.png'
 import { Linkedin } from 'lucide-react'
 
 export default function page() {
@@ -18,8 +19,8 @@ export default function page() {
         </h2>
       </div>
       {/* team image */}
-      <div>
-        <Image src={TeamImage} alt="Our Team" width={1350} height={800} className="rounded-2xl mx-auto mt-16" />
+      <div className='max-w-[90%] mx-auto'>
+        <Image src={TeamImage} alt="Our Team" width={1350} height={800} className="rounded-2xl mx-auto mt-16 w-full h-auto" />
       </div>
 
       {/* team cards */}
@@ -167,7 +168,8 @@ export default function page() {
           <h2 className='gradient-header text-4xl font-semibold '>Message From</h2>
           <h2 className='text-7xl font-semibold text-gray-900'>The Founder</h2>
           <div className='custom-youtube-card p-20 rounded-3xl mt-10'>
-            <iframe width="800" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            {/* <iframe width="800" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
+            <Image height={450} width={800} src={videoHolder} alt='video-placeholder'/>
           </div>
 
         </div>
