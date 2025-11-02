@@ -1,8 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import { usePathname } from "next/navigation";
 import logoimg from "../../public/logo/logo-open-fileArtboard-5.png";
 
 export default function Header() {
+  const pathname = usePathname();
+  
   const Menus = [
     { title: "Home", link: "/" },
     { title: "Product", link: "/product" },
@@ -10,6 +13,7 @@ export default function Header() {
     { title: "About Us", link: "/about" },
     { title: "Contact Us", link: "/contact" },
   ];
+  
   return (
     <div>
       <header className="bg-[#363767]">
@@ -26,10 +30,14 @@ export default function Header() {
                   {Menus.map((menu, index) => (
                     <li key={index}>
                       <a
-                        className="text-white  nav-text"
+                        className={`${
+                          pathname === menu.link
+                            ? "text-teal-400 "
+                            : "text-white hover:text-teal-400"
+                        } transition-colors duration-200`}
                         href={menu.link}
                       >
-                        {" "}{menu.title}{" "}
+                        {menu.title}
                       </a>
                     </li>
                   ))}
