@@ -65,48 +65,48 @@ function BlogHeroSlider() {
     <div className='w-full'>
       {/* slider box */}
       <div
-        className="flex transition-transform duration-700 ease-in-out w-full"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {SliderData.map((slide, index) => (
-          <div
-            key={slide.id}
-            className="flex items-center justify-center space-x-16 mx-auto w-full shrink-0"
-          >
-            {/* slider image */}
-            <div className="animo-border w-full">
-              <Image
-                className="rounded-3xl w-[600px] h-[440px] aspect-video"
-                width={600}
-                height={500}
-                src={slide.img}
-                alt={`slide-${index}`}
-              />
-            </div>
-
-            {/* slider content */}
-            <div className="w-[35%] font-mont">
-              <h3 className="text-white text-7xl font-semibold  mb-6">
-                {slide.title}
-              </h3>
-              <p className="text-white text-2xl font-normal mb-6">
-                {expanded
-                  ? slide.text
-                  : `${slide.text.substring(0, 53)} ... `}
-                {!expanded && (
-                  <button
-                    onClick={handleHeroText}
-                    className="underline cursor-pointer"
-                  >
-                    Read More
-                  </button>
-                )}
-              </p>
-              <ButtonAnimated content={'Request a Demo For Free'} />
-            </div>
-          </div>
-        ))}
+  className="flex transition-transform duration-700 ease-in-out w-full"
+  style={{ transform: `translateX(-${current * 100}%)` }}
+>
+  {SliderData.map((slide, index) => (
+    <div
+      key={slide.id}
+      className="flex flex-col lg:flex-row items-center justify-center lg:space-x-16 space-y-8 lg:space-y-0 mx-auto w-full shrink-0 px-4 lg:px-0"
+    >
+      {/* slider image */}
+      <div className="animo-border w-full lg:w-auto">
+        <Image
+          className="rounded-3xl w-full lg:w-[600px] h-auto lg:h-[440px] aspect-video object-cover"
+          width={600}
+          height={500}
+          src={slide.img}
+          alt={`slide-${index}`}
+        />
       </div>
+
+      {/* slider content */}
+      <div className="w-full lg:w-[35%] font-mont text-center lg:text-left px-4 lg:px-0">
+        <h3 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-4 lg:mb-6">
+          {slide.title}
+        </h3>
+        <p className="text-white text-base sm:text-lg md:text-lg lg:text-xl font-medium mb-4 lg:mb-6">
+          {expanded
+            ? slide.text
+            : `${slide.text.substring(0, 53)} ... `}
+          {!expanded && (
+            <button
+              onClick={handleHeroText}
+              className="underline cursor-pointer"
+            >
+              Read More
+            </button>
+          )}
+        </p>
+        <ButtonAnimated content={'Request a Demo For Free'} />
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* slider mover */}
       <div className="slider-mover flex gap-2.5 justify-center mt-8">

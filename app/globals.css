@@ -585,3 +585,40 @@ body {
   background: #363766;
 background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(22, 22, 41, 1) 100%);
 }
+
+
+/* contact page */
+
+.contact-gradient-bg {
+  background: #363766;
+background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(132, 56, 193, 1) 100%);
+}
+
+
+.contact-button {
+  padding: 8px 20px 6px;
+  max-width: 422px;
+  background: linear-gradient(45deg, #af65ff, #af65ff 50%, #af65ff) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        #af65ff,
+        #fefcff,
+        #09daf9,
+        #603aff,
+        #af65ff
+      )
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: full;
+}
+
+.contact-form-bg{
+  background: #42417A;
+background: linear-gradient(180deg, rgba(66, 65, 122, 1) 0%, rgba(23, 27, 52, 1) 100%);
+}
