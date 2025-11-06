@@ -259,7 +259,7 @@ body {
         #af65ff
       )
       border-box;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 1.5rem;
   animation: border 4s linear infinite;
   width: fit-content;
@@ -287,11 +287,11 @@ body {
         #af65ff
       )
       border-box;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 30px;
   color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 500;
   cursor: pointer;
   animation: border 4s linear infinite;
   width: fit-content;

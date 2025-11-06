@@ -74,9 +74,9 @@ function BlogHeroSlider() {
             className="flex items-center justify-center space-x-16 mx-auto w-full shrink-0"
           >
             {/* slider image */}
-            <div className="animo-border w-[65%]">
+            <div className="animo-border w-full">
               <Image
-                className="rounded-3xl w-[600px] h-[400px] aspect-video"
+                className="rounded-3xl w-[600px] h-[440px] aspect-video"
                 width={600}
                 height={500}
                 src={slide.img}
@@ -85,11 +85,11 @@ function BlogHeroSlider() {
             </div>
 
             {/* slider content */}
-            <div className="w-[35%]">
-              <h3 className="text-white text-7xl font-bold leading-[1.1] mb-6">
+            <div className="w-[35%] font-mont">
+              <h3 className="text-white text-7xl font-semibold  mb-6">
                 {slide.title}
               </h3>
-              <p className="text-white text-2xl font-medium mb-6">
+              <p className="text-white text-2xl font-normal mb-6">
                 {expanded
                   ? slide.text
                   : `${slide.text.substring(0, 53)} ... `}

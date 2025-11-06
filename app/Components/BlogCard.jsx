@@ -1,18 +1,19 @@
 import React from 'react'
 import Image from 'next/image';
+import blogImage from "../../public/images/invoice-bill-paid-payment-financial-account-concept.png"
 
 const BlogCard = () => {
   return (
-    <div>
+    <div className='font-mont'>
         {/* single blog */}
-        <div className="max-w-72 bg-white rounded-xl shadow-md overflow-hidden animo-border">
+        <div className="w-full bg-white rounded-xl shadow-md overflow-hidden animo-border group">
             {/* Image */}
-            <Image
-            src={"https://images.pexels.com/photos/7658355/pexels-photo-7658355.jpeg"}
+            <Image  
+            src={blogImage}
             width={300}
-            height={250}
+            height={300}
             alt="Finance workflow"
-            className="w-full h-48"
+            className="w-full h-62"
             />
 
             {/* Content */}
@@ -22,7 +23,7 @@ const BlogCard = () => {
                 </p>
 
                 <div className="flex justify-between items-center">
-                    <button className="animo-blog-button-dark">
+                    <button className="animo-blog-button-dark opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                         Read More ...
                     </button>
                     <span className="text-gray-500 text-[10px] font-bold">
