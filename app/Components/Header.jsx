@@ -1,21 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import logoimg from "../../public/logo/logo-open-fileArtboard-5.png";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
+  const [isMobileProductOpen, setIsMobileProductOpen] = useState(false);
+  const productMenuRef = useRef(null);
   
   const Menus = [
     { title: "Home", link: "/" },
-    { title: "Product", link: "/product" },
+    { 
+      title: "Product", 
+      link: "/product",
+      submenus: [
+        { title: "Product AP", link: "/product/AP" },
+        { title: "Product AR", link: "/product/AR" }
+      ]
+    },
     { title: "Blog", link: "/blog" },
     { title: "About Us", link: "/about" },
     { title: "Contact Us", link: "/contact" },
   ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (productMenuRef.current && !productMenuRef.current.contains(event.target)) {
+        setIsProductMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   
   return (
     <div>
@@ -39,17 +60,61 @@ export default function Header() {
               <nav aria-label="Global">
                 <ul className="flex items-center gap-8 lg:gap-12 text-md">
                   {Menus.map((menu, index) => (
-                    <li key={index}>
-                      <a
-                        className={`${
-                          pathname === menu.link
-                            ? "text-teal-400"
-                            : "text-white hover:text-teal-400"
-                        } transition-colors duration-200`}
-                        href={menu.link}
-                      >
-                        {menu.title}
-                      </a>
+                    <li key={index} className="relative" ref={menu.submenus ? productMenuRef : null}>
+                      {menu.submenus ? (
+                        <div>
+                          <button
+                            className={`flex items-center gap-1 ${
+                              pathname === menu.link || pathname.startsWith('/product/')
+                                ? "text-teal-400"
+                                : "text-white hover:text-teal-400"
+                            } transition-colors duration-200`}
+                            onClick={() => setIsProductMenuOpen(!isProductMenuOpen)}
+                            onMouseEnter={() => setIsProductMenuOpen(true)}
+                          >
+                            {menu.title}
+                            <svg 
+                              className={`w-4 h-4 transition-transform duration-200 ${isProductMenuOpen ? 'rotate-180' : ''}`} 
+                              fill="none" 
+                              viewBox="0 0 24 24" 
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          
+                          {/* Dropdown Menu */}
+                          {isProductMenuOpen && (
+                            <div 
+                              className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50"
+                              onMouseLeave={() => setIsProductMenuOpen(false)}
+                            >
+                              {menu.submenus.map((submenu, subIndex) => (
+                                <a
+                                  key={subIndex}
+                                  href={submenu.link}
+                                  className={`block px-4 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 ${
+                                    pathname === submenu.link ? 'bg-teal-50 text-teal-600' : ''
+                                  }`}
+                                >
+                                  {submenu.title}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <a
+                          className={`${
+                            pathname === menu.link
+                              ? "text-teal-400"
+                              : "text-white hover:text-teal-400"
+                          } transition-colors duration-200`}
+                          href={menu.link}
+                        >
+                          {menu.title}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -84,17 +149,63 @@ export default function Header() {
               <ul className="flex flex-col space-y-3 text-md font-mont font-semibold pt-4">
                 {Menus.map((menu, index) => (
                   <li key={index}>
-                    <a
-                      className={`block py-3 px-4 rounded-lg transition-colors duration-200 ${
-                        pathname === menu.link
-                          ? "text-teal-400 bg-gray-800"
-                          : "text-white hover:text-teal-400 hover:bg-gray-800"
-                      }`}
-                      href={menu.link}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {menu.title}
-                    </a>
+                    {menu.submenus ? (
+                      <div>
+                        <button
+                          className={`flex items-center justify-between w-full py-3 px-4 rounded-lg transition-colors duration-200 ${
+                            pathname === menu.link || pathname.startsWith('/product/')
+                              ? "text-teal-400 bg-gray-800"
+                              : "text-white hover:text-teal-400 hover:bg-gray-800"
+                          }`}
+                          onClick={() => setIsMobileProductOpen(!isMobileProductOpen)}
+                        >
+                          {menu.title}
+                          <svg 
+                            className={`w-4 h-4 transition-transform duration-200 ${isMobileProductOpen ? 'rotate-180' : ''}`} 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        
+                        {/* Mobile Submenu */}
+                        {isMobileProductOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {menu.submenus.map((submenu, subIndex) => (
+                              <a
+                                key={subIndex}
+                                href={submenu.link}
+                                className={`block py-2 px-4 rounded-lg transition-colors duration-200 ${
+                                  pathname === submenu.link
+                                    ? "text-teal-400 bg-gray-800"
+                                    : "text-gray-300 hover:text-teal-400 hover:bg-gray-800"
+                                }`}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  setIsMobileProductOpen(false);
+                                }}
+                              >
+                                {submenu.title}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        className={`block py-3 px-4 rounded-lg transition-colors duration-200 ${
+                          pathname === menu.link
+                            ? "text-teal-400 bg-gray-800"
+                            : "text-white hover:text-teal-400 hover:bg-gray-800"
+                        }`}
+                        href={menu.link}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {menu.title}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

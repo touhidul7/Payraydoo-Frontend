@@ -73,7 +73,7 @@ body {
   width: fit-content;
 }
 .custom-button-light {
-  padding: 12px 50px;
+  padding: 10px 65px;
   max-width: 422px;
   background: linear-gradient(45deg, #ffffff, #ffffff 50%, #ffffff) padding-box,
     conic-gradient(
@@ -88,8 +88,8 @@ body {
   border: 3px solid transparent;
   border-radius: 30px;
   color: rgb(0, 0, 0);
-  font-size: 1.225rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 500;
   cursor: pointer;
   animation: border 4s linear infinite;
   width: fit-content;
@@ -621,4 +621,35 @@ background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(132, 56, 193, 
 .contact-form-bg{
   background: #42417A;
 background: linear-gradient(180deg, rgba(66, 65, 122, 1) 0%, rgba(23, 27, 52, 1) 100%);
+}
+
+/* product page */
+
+.product-hero-bg{
+  background: #A64DFF;
+background: radial-gradient(circle, rgba(166, 77, 255, 1) 60%, rgba(63, 188, 255, 1) 100%);
+}
+
+
+.card-list-button {
+  padding: 5px;
+  max-width: 422px;
+  background: linear-gradient(45deg, white, white 50%, white) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        #af65ff,
+        #fefcff,
+        #09daf9,
+        #603aff,
+        #af65ff
+      )
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: black;
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: fit-content;
 }
