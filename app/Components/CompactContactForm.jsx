@@ -24,7 +24,7 @@ export default function CompactContactForm() {
   };
 
   return (
-    <div className="max-w-lg w-full mx-auto p-6 font-mont flex flex-col items-center">
+    <div className="max-w-2xl w-full mx-auto p-3 font-mont flex flex-col items-center">
       <div className="bg-black rounded-xl shadow-md p-12">
         
         
@@ -103,7 +103,7 @@ export default function CompactContactForm() {
 
           <button
             type="submit"
-            className="w-full  py-4 px-6 rounded-lg font-bold text-lg contact-button   duration-200 mt-4"
+            className="w-full  py-4 px-6 rounded-lg font-bold text-md md:text-lg contact-button   duration-200 mt-4"
           >
             Get a Demo For Free
           </button>

@@ -6,6 +6,13 @@ import leftShape from '../../../public/logo/Shape 3.png'
 import firstStats from '../../../public/logo/stats 1.png';
 import bigDash from '../../../public/images/4.png';
 import smallDash from '../../../public/images/3.png';
+import FstCard from '../../../public/images/card 1.png'
+import SndCard from '../../../public/images/card 2.png'
+import TrdCard from '../../../public/images/card 3.png'
+import FthCard from '../../../public/images/card 4.png'
+import FfthCard from '../../../public/images/card 5.png'
+import SxthCard from '../../../public/images/card 6.png'
+
 
 export default function AP() {
   return (
@@ -65,8 +72,128 @@ export default function AP() {
           </h3>
         </div>
         {/* details card section */}
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10">
-          
+        <div className="flex flex-col justify-center items-center gap-20 pb-20">
+
+          {/* 1st card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">1</p>
+                <h2 className="text-black text-3xl font-semibold">Invoice & Line Item Capture</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Reduce manual data entry and human error with AI based
+                OCR and machine learning technology that instantly
+                captures and codes your invoice
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={FstCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
+          {/* 2nd card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">2</p>
+                <h2 className="text-black text-3xl font-semibold">Automatic Data Validation</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Automatically validate invoices against corresponding
+                purchase orders, receipts, and invoice numbers using 2-way
+                and 3-way matching for enhanced accuracy.
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={SndCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
+          {/* 3rd card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">3</p>
+                <h2 className="text-black text-3xl font-semibold">Streamlined Approvals</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Accelerate invoice approvals with streamlined workflows,
+                routing invoices to the right user based on custom built
+                rules - no matter how complex they are
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={TrdCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
+          {/* 4th card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">4</p>
+                <h2 className="text-black text-3xl font-semibold">Accrual Automation</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Simplify month-end closing for AP Teams by generating
+                accurate accrual entries to save time, reduce manual errors
+                and gain cashflow visibility
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={FthCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
+          {/* 5th card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">5</p>
+                <h2 className="text-black text-3xl font-semibold">Manage Multiple Entities</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Effortlessly add & manage affiliated entities along with their
+                invoices, and assign granular user roles for enhanced control
+                and visibility
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={FfthCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
+          {/* 6th card */}
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
+            <div className=" w-[60%]">
+              <div className="flex justify- items-center gap-5">
+                <p className="card-list-button">6</p>
+                <h2 className="text-black text-3xl font-semibold">Informed Decision Making</h2>
+              </div>
+              <p className="text-gray-900 text-lg mt-5">
+                Access real-time reports to identify trends, optimize processes,
+                and make data-driven decisions that improve your financial
+                performance
+              </p>
+            </div>
+            {/* 2part */}
+            <div className=" w-[40%] mx-auto">
+              <div>
+                <Image src={SxthCard} alt="card image" width={400} height={200} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
