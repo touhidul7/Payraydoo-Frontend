@@ -107,26 +107,20 @@ export default function TiltShineCard({
       }}
     >
       {/* Card surface */}
-      <div
-        className={`w-[1000px] h-[650px] rounded-2xl overflow-hidden relative`}
-        style={{
-         /*  boxShadow: `0 20px 40px rgba(15,23,42,0.12), var(--shadow-x) var(--shadow-y) 30px rgba(2,6,23,0.06)` */
-        }}
-      >
-        {/* Content slot */}
-        <div className="absolute inset-0 w-fit">
-          <Image
-            src={
-              dashboard
-            }
-            width={1200}
-            height={600}
-            alt="image"
-            className="w-full h-full"
-          />{" "}
-        </div>
-
-      </div>
+      <div className="w-full max-w-[90vw] sm:max-w-[95vw] md:max-w-[800px] lg:max-w-[1000px] mx-auto">
+  <div className="relative w-full h-0 pb-[65%] rounded-xl sm:rounded-2xl overflow-hidden">
+    {/* Content slot */}
+    <div className="absolute inset-0 w-full h-full">
+      <Image
+        src={dashboard}
+        width={1200}
+        height={600}
+        alt="dashboard image"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
     </div>
   );
 }
