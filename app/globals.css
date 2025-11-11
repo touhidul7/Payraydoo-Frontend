@@ -73,7 +73,7 @@ body {
   width: fit-content;
 }
 .custom-button-light {
-  padding: 12px 50px;
+  padding: 10px 65px;
   max-width: 422px;
   background: linear-gradient(45deg, #ffffff, #ffffff 50%, #ffffff) padding-box,
     conic-gradient(
@@ -88,8 +88,8 @@ body {
   border: 3px solid transparent;
   border-radius: 30px;
   color: rgb(0, 0, 0);
-  font-size: 1.225rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 500;
   cursor: pointer;
   animation: border 4s linear infinite;
   width: fit-content;
@@ -259,7 +259,7 @@ body {
         #af65ff
       )
       border-box;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 1.5rem;
   animation: border 4s linear infinite;
   width: fit-content;
@@ -287,11 +287,11 @@ body {
         #af65ff
       )
       border-box;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 30px;
   color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 500;
   cursor: pointer;
   animation: border 4s linear infinite;
   width: fit-content;
@@ -584,4 +584,72 @@ body {
 .finance-stack-body{
   background: #363766;
 background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(22, 22, 41, 1) 100%);
+}
+
+
+/* contact page */
+
+.contact-gradient-bg {
+  background: #363766;
+background: linear-gradient(180deg, rgba(54, 55, 102, 1) 0%, rgba(132, 56, 193, 1) 100%);
+}
+
+
+.contact-button {
+  padding: 8px 20px 6px;
+  max-width: 422px;
+  background: linear-gradient(45deg, #af65ff, #af65ff 50%, #af65ff) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        #af65ff,
+        #fefcff,
+        #09daf9,
+        #603aff,
+        #af65ff
+      )
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: full;
+}
+
+.contact-form-bg{
+  background: #42417A;
+background: linear-gradient(180deg, rgba(66, 65, 122, 1) 0%, rgba(23, 27, 52, 1) 100%);
+}
+
+/* product page */
+
+.product-hero-bg{
+  background: #A64DFF;
+background: radial-gradient(circle, rgba(166, 77, 255, 1) 60%, rgba(63, 188, 255, 1) 100%);
+}
+
+
+.card-list-button {
+  padding: 8px 15px 8px;
+  max-width: 422px;
+  background: linear-gradient(45deg, white, white 50%, white) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        #af65ff,
+        #fefcff,
+        #09daf9,
+        #603aff,
+        #af65ff
+      )
+      border-box;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  color: black;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: fit-content;
 }
