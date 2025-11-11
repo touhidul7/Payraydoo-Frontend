@@ -598,6 +598,25 @@ body {
   animation: border 4s linear infinite;
   width: fit-content;
 }
+.dark-card-list-button {
+  padding: 8px 15px 8px;
+  max-width: 422px;
+  background: linear-gradient(45deg, rgba(64, 65, 119, 1) 0%, rgba(24, 27, 52, 1) 100%) padding-box,
+    conic-gradient(from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff) border-box;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: fit-content;
+}
 
 
 /* dark info section */
@@ -645,4 +664,30 @@ body {
   cursor: pointer;
   animation: border 4s linear infinite;
   width: auto;
+}
+
+.Ap-footer {
+  background: #904AFF;
+background: linear-gradient(134deg, rgba(144, 74, 255, 1) 0%, rgba(109, 224, 255, 1) 54%, rgba(38, 12, 255, 1) 100%);
+}
+
+
+.ap-button-dark {
+  padding: 12px 50px;
+  max-width: 422px;
+  background: linear-gradient(180deg, rgba(64, 65, 119, 1) 0%, rgba(24, 27, 52, 1) 100%) padding-box,
+    conic-gradient(from var(--border-angle),
+      #af65ff,
+      #fefcff,
+      #09daf9,
+      #603aff,
+      #af65ff) border-box;
+  border: 3px solid transparent;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: border 4s linear infinite;
+  width: fit-content;
 }

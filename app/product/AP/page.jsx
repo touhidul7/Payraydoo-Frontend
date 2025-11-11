@@ -81,7 +81,7 @@ export default function AP() {
           <div className="max-w-6xl mx-auto bg-white rounded-2xl p-10 flex md:flex-row flex-col justify-center items-center gap-8 ">
             <div className=" w-[60%]">
               <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">1</p>
+                <p className="card-list-button">1.</p>
                 <h2 className="text-black text-3xl font-semibold">Invoice & Line Item Capture</h2>
               </div>
               <p className="text-gray-900 text-lg mt-5">
@@ -198,27 +198,173 @@ export default function AP() {
             </div>
           </div>
         </div>
-        
+
       </div>
       <div className="home-page">
         {/* dark info section */}
-          <div className="dark-info-section max-w-[98%] mx-auto my-10 rounded-3xl p-14">
-            {/* shape and heading */}
-            <div className="flex items-center">
-              <div>
-                <Image src={dShapeLarge} alt="large shape" width={200} height={400} />
-                <Image src={dShapSmall} alt="small shape" width={100} height={200} className="ml-[-50px] mt-[-150px]" />
-              </div>
-              <div className="text-center mt-[-100px]">
-                <h2 className="text-5xl font-semibold text-white px-42">
-                  Ready to transform your AP invoice processing?
-                </h2>
-                
-              </div>
-
+        <div className="dark-info-section max-w-[98%] mx-auto my-10 rounded-3xl pb-96">
+          {/* shape and heading */}
+          <div className="flex items-center">
+            <div className="flex justify-center items-start">
+              <Image src={dShapeLarge} alt="large shape" width={200} height={400} className="mt-[-60px]" />
+              <Image src={dShapSmall} alt="small shape" width={150} height={200} className="mt-5" />
+            </div>
+            <div className="text-center pt-12">
+              <h2 className="text-5xl font-semibold text-white px-42">
+                Our <span className="gradient-header">Product Capabilities</span>
+              </h2>
             </div>
           </div>
+
+          {/* dark card section */}
+          <div className="max-w-6xl mx-auto flex flex-col  justify-center items-center gap-20 py-20">
+            {/* cards container */}
+            {/* card 1 */}
+            <div className="flex md:flex-row flex-col justify-center items-center">
+              <div className="w-[50%]">
+                <h2>
+                  con
+                </h2>
+
+
+              </div>
+              {/* card contents */}
+              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
+                <div className="flex justify-center items-center gap-3">
+                  <button className="dark-card-list-button">1.</button>
+                  <h2 className="text-3xl font-semibold">Smarter & Measurable Results</h2>
+                </div>
+                <p>
+                  Experience 95% accuracy, 90% time saved, and up to 60% cost
+                  reduction — all powered by Payraydoo. Our intelligent automation
+                  turns everyday workflows into effortless wins. It's not just faster;
+                  it's smarter.
+                </p>
+              </div>
+            </div>
+            {/* card 2 */}
+            <div className="flex md:flex-row flex-col justify-center items-center">
+              <div className="w-[50%]">
+                <h2>
+                  con
+                </h2>
+
+
+              </div>
+              {/* card contents */}
+              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
+                <div className="flex justify-center items-center gap-3">
+                  <button className="dark-card-list-button">2.</button>
+                  <h2 className="text-3xl font-semibold">Seamless Integrations</h2>
+                </div>
+                <p>
+                  Payraydoo connects with your everyday tools — Outlook, Gmail,
+                  Google Drive, Dropbox, OneDrive, and more — so you can automate
+                  tasks, sync files, and manage accounts without switching tabs.
+
+                  Everything works together. Just like it should.
+
+                </p>
+              </div>
+            </div>
+            {/* card 3 */}
+            <div className="flex md:flex-row flex-col justify-center items-center">
+              <div className="w-[50%]">
+                <h2>
+                  con
+                </h2>
+
+
+              </div>
+              {/* card contents */}
+              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
+                <div className="flex justify-center items-center gap-3">
+                  <button className="dark-card-list-button">3.</button>
+                  <h2 className="text-3xl font-semibold">Complete control. 0 guesswork</h2>
+                </div>
+                <p>
+                  Gain end-to-end visibility on AP invoice delays with AI-powered
+                  insights and customizable reports. Payraydoo helps you identify
+                  bottlenecks, accelerate approvals, and make smarter decisions—
+                  faster.
+                </p>
+              </div>
+            </div>
+            {/* card 4 */}
+            <div className="flex md:flex-row flex-col justify-center items-center">
+              <div className="w-[50%]">
+                <h2>
+                  con
+                </h2>
+
+
+              </div>
+              {/* card contents */}
+              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
+                <div className="flex justify-center items-center gap-3">
+                  <button className="dark-card-list-button">4.</button>
+                  <h2 className="text-3xl font-semibold">Fits into your ERP universe</h2>
+                </div>
+                <p>
+                  Whether it’s SAP, Oracle, Sage, or others—Payraydoo integrates
+                  effortlessly with your existing ERP systems. No disruptions. Just
+                  smoother workflows, unified data, and faster processing from
+                  day one.
+                </p>
+              </div>
+            </div>
+            {/* card 5 */}
+            <div className="flex md:flex-row flex-col justify-center items-center">
+              <div className="w-[50%]">
+                <h2>
+                  con
+                </h2>
+
+
+              </div>
+              {/* card contents */}
+              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
+                <div className="flex justify-center items-center gap-3">
+                  <button className="dark-card-list-button">5.</button>
+                  <h2 className="text-3xl font-semibold">Built for global teams.
+                    Backed by real support.</h2>
+                </div>
+                <p>
+                  From UK to USA to India, Payraydoo supports diverse invoice
+                  formats across borders. And behind the tech? A dedicated support
+                  team that truly understands AP challenges—ready to help, every
+                  step of the way.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div className="Ap-footer w-7xl mx-auto rounded-3xl mt-[-430px] ">
+          {/* headings */}
+          <div className="text-center text-white px-2 flex flex-col justify-center items-center pt-12">
+            <h2 className="text-4xl font-semibold mb-2">
+              Ready To Spend Less On Invoice Processing?
+            </h2>
+            <h3 className="text-lg font-normal">
+              Reduce errors, free up your team for strategic work, and gain valuable insights.
+            </h3>
+            <button className="ap-button-dark mt-8">
+              Find Out How
+            </button>
+          </div>
+          <div>
+            <div className="flex flex-col gap-12 mb-[-320px] ml-[80px]">
+              <Image src={firstStats} className="shadow-md w-[300px] h-[170px] z-10 rounded"/>
+              <Image src={smallDash} className="z-10 rounded-xl shadow-md w-[250px] h-[220px]"/>
+            </div>
+            <Image src={bigDash} className="z-0 w-[850px] h-[400px] ml-[280px] rounded-t-2xl"/>
+          </div>
+        </div>
       </div>
+
     </div>
   );
 }
