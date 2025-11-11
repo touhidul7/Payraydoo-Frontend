@@ -38,7 +38,7 @@ export default function ERPCarousel() {
               {logos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex-shrink-0"
+                  className="shrink-0"
                   style={{ width: 'calc(40% - 12px)' }}
                 >
                   <div

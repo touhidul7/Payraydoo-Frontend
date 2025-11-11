@@ -6,12 +6,15 @@ import leftShape from '../../../public/logo/Shape 3.png'
 import firstStats from '../../../public/logo/stats 1.png';
 import bigDash from '../../../public/images/4.png';
 import smallDash from '../../../public/images/3.png';
-import FstCard from '../../../public/images/card 1.png'
-import SndCard from '../../../public/images/card 2.png'
-import TrdCard from '../../../public/images/card 3.png'
-import FthCard from '../../../public/images/card 4.png'
-import FfthCard from '../../../public/images/card 5.png'
-import SxthCard from '../../../public/images/card 6.png'
+import FstCard from '../../../public/images/card 1.png';
+import SndCard from '../../../public/images/card 2.png';
+import TrdCard from '../../../public/images/card 3.png';
+import FthCard from '../../../public/images/card 4.png';
+import FfthCard from '../../../public/images/card 5.png';
+import SxthCard from '../../../public/images/card 6.png';
+import dShapeLarge from '../../../public/images/Shape 21.png';
+import dShapSmall from '../../../public/images/Shape 22.png';
+
 
 
 export default function AP() {
@@ -195,8 +198,26 @@ export default function AP() {
             </div>
           </div>
         </div>
-
         
+      </div>
+      <div className="home-page">
+        {/* dark info section */}
+          <div className="dark-info-section max-w-[98%] mx-auto my-10 rounded-3xl p-14">
+            {/* shape and heading */}
+            <div className="flex items-center">
+              <div>
+                <Image src={dShapeLarge} alt="large shape" width={200} height={400} />
+                <Image src={dShapSmall} alt="small shape" width={100} height={200} className="ml-[-50px] mt-[-150px]" />
+              </div>
+              <div className="text-center mt-[-100px]">
+                <h2 className="text-5xl font-semibold text-white px-42">
+                  Ready to transform your AP invoice processing?
+                </h2>
+                
+              </div>
+
+            </div>
+          </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 'use client';
 import React, { createContext, useContext, useState } from 'react';
 import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const AppDataContext = createContext();
 
@@ -19,6 +20,7 @@ export const AppDataProvider = ({ children }) => {
             <>
                 <Header/>
                 {children}{/* Layout Section */}
+                <Footer/>
             </>
         </AppDataContext.Provider>
     );
