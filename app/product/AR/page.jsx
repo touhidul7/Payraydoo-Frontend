@@ -6,8 +6,11 @@ import firstStats from '../../../public/logo/stats 1.png';
 import bigDash from '../../../public/images/4.png';
 import smallDash from '../../../public/images/3.png';
 import mobileFront from '../../../public/images/ar mobile front.png';
+import laptopImage from '../../../public/images/LaptopImage.png';
+import HappyWoman from '../../../public/images/happy-woman-with-card.png';
 
 import logo from "../../../public/logo/logo-open-fileArtboard-5.png";
+import { ChartColumnBig, HardDriveDownload, Settings, } from "lucide-react";
 
 
 
@@ -135,7 +138,7 @@ export default function AR() {
         </div>
 
         {/* dark section */}
-        <div className="dark-info-section p-12 rounded-3xl mb-16 mt-32">
+        <div className="dark-info-section p-12 rounded-3xl mb-16 mt-32 py-32">
           <div>
             <h2 className="text-4xl font-semibold px-72 text-center mt-12"><span className="gradient-header">Accounts Receivable</span> Automation SaaS
               Product Features Content</h2>
@@ -143,7 +146,7 @@ export default function AR() {
 
           <div className="p-3 flex flex-col md:flex-row gap-12 justify-center mt-16">
             {/* first column */}
-            <div className="w-[25%]">
+            <div className="w-[25%] pt-20">
               <div className="flex flex-col gap-3 items-start p-8">
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">Slash DSO by 50%</h2>
                 <p className="text-sm">Automate invoicing, reconciliation,
@@ -166,7 +169,11 @@ export default function AR() {
             </div>
 
             {/* second column */}
-            <div className="w-[50%]">2</div>
+            <div className="w-[50%] flex flex-col md:flex-row lg:flex-row xl:flex-row gap-5 justify-center">
+              <Image src={firstStats} className="w-[430px] h-[200px]" />
+              <Image src={smallDash} className="w-[230px] h-[200px] mt-32" />
+
+            </div>
 
             {/* third column */}
             <div className="w-[25%]">
@@ -182,13 +189,94 @@ export default function AR() {
                   for secure, reliable operations in UK and
                   USA markets.</p>
               </div>
+              <div className="flex items-center gap-1">
+                <Image src={shapeSmall} className="w-16 h-12 mt-24" />
+                <Image src={shapeSmall} />
+              </div>
             </div>
 
           </div>
 
         </div>
+        {/* laptop image */}
+        <div className="mt-[-430px] flex justify-center">
+          <Image src={laptopImage} />
+        </div>
+      </div>
+      {/* how payraydoo works section */}
 
+      <div className="max-w-7xl mx-auto bg-white py-32">
 
+        <div className="flex flex-col md:flex-row lg:flex-row justify-center items-center gap-6">
+          <div className="w-[60%] p-12 flex flex-col gap-6">
+            <h4 className="gradient-text text-2xl font-semibold mb-8">How Payraydoo Works</h4>
+            <h2 className="text-black text-6xl font-semibold ">Smarter Workflows.
+              Tangible Results.</h2>
+            <p className="text-black text-lg pr-32">
+              From invoice capture to reconciliation,
+              Payraydoo transforms complex AP & AR processes
+              into automated, accurate, and scalable
+              flows — with zero guesswork.
+            </p>
+          </div>
+          <div className="w-[40%]">
+            <Image src={HappyWoman} />
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-start items-start gap-6">
+          <h2 className="text-black text-lg font-medium">
+            Core Capabilities:
+          </h2>
+          <div className="flex gap-2 w-full text-black justify-center items-center">
+            <div className=" pr-2 ">
+              <div className="flex items-center gap-3">
+                <HardDriveDownload className="text-amber-600 w-6 h-6" />
+                <h3 className="text-purple-500 text-lg font-medium">Capture & Validate</h3>
+              </div>
+              <p className="text-sm mt-4">
+                AI-powered OCR extracts data from any
+                invoice source and performs 2- or 3-way
+                matching to eliminate manual errors.
+              </p>
+            </div>
+            <div className=" hidden lg:block h-24 sm:h-16 ar-custom-bar bg-white w-0.5 m-12">
+
+            </div>
+            <div className=" ">
+              <div className=" pr-2 ">
+                <div className="flex items-center gap-3">
+                  <Settings className="text-gray-600 w-6 h-6" />
+                  <h3 className="text-purple-500 text-lg font-medium">Automate and Act</h3>
+                </div>
+                <p className="text-sm mt-4">
+                  Accelerate workflows — from approvals
+                  to collections — with smart routing, dunning
+                  schedules, and dispute resolution.
+                </p>
+              </div>
+            </div>
+            <div className="hidden lg:block h-16 sm:h-16 ar-custom-bar bg-white w-0.5 m-12">
+
+            </div>
+            <div className=" ">
+              <div className=" w-full ">
+                <div className="flex items-center gap-3">
+                  <ChartColumnBig className="text-amber-600 w-6 h-6" />
+                  <h3 className="text-purple-500 text-lg font-medium">Sync & Track</h3>
+                </div>
+                <p className="text-sm mt-4">
+                  Get real-time visibility with dynamic
+                  dashboards and seamless ERP integrations
+                  like SAP, QuickBooks, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
       </div>
     </div>
   )
