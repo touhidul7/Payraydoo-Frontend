@@ -62,20 +62,20 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="bg-gray-900 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="bg-gray-900 px-4 py-8 sm:px-6 lg:px-8 md:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Social Icons */}
           <div className="flex justify-center gap-4 mb-6">
-            <a href="#" className="bg-teal-500 hover:bg-teal-600 p-3 rounded-full transition-colors duration-200">
+            <a href="#" className="bg-purple-500 hover:bg-purple-600 p-3 rounded-full transition-colors duration-200">
               <Facebook className="w-5 h-5 text-white" />
             </a>
-            <a href="#" className="bg-teal-500 hover:bg-teal-600 p-3 rounded-full transition-colors duration-200">
+            <a href="#" className="bg-purple-500 hover:bg-purple-600 p-3 rounded-full transition-colors duration-200">
               <Linkedin className="w-5 h-5 text-white" />
             </a>
-            <a href="#" className="bg-teal-500 hover:bg-teal-600 p-3 rounded-full transition-colors duration-200">
+            <a href="#" className="bg-purple-500 hover:bg-purple-600 p-3 rounded-full transition-colors duration-200">
               <Instagram className="w-5 h-5 text-white" />
             </a>
-            <a href="#" className="bg-teal-500 hover:bg-teal-600 p-3 rounded-full transition-colors duration-200">
+            <a href="#" className="bg-purple-500 hover:bg-purple-600 p-3 rounded-full transition-colors duration-200">
               <Twitter className="w-5 h-5 text-white" />
             </a>
           </div>
@@ -83,11 +83,11 @@ export default function Footer() {
           {/* Navigation Links */}
           <nav className="mb-6">
             <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white font-semibold text-sm sm:text-base">
-              <li><a href="#" className="hover:text-teal-400 transition-colors">HOME</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">SOLUTIONS</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">ABOUT</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">PRICING</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">PARTNERS</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">HOME</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">SOLUTIONS</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">ABOUT</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">PRICING</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">PARTNERS</a></li>
             </ul>
           </nav>
 
@@ -107,10 +107,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-teal-600 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 px-4 py-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white font-semibold text-xs sm:text-sm mb-1">
-            SECURE PAYMENTS, TRUSTED GLOBALLY 🔒 PROCESSING WORLDWIDE
+            SECURE PAYMENTS | TRUSTED GLOBALLY | PROCESSING WORLDWIDE
           </p>
           <p className="text-white/80 text-xs">
             ©PAYRAYDOO | ALL RIGHTS RESERVED
