@@ -357,10 +357,10 @@ export default function AP() {
           </div>
           <div>
             <div className="flex flex-col gap-12 mb-[-320px] ml-[80px]">
-              <Image src={firstStats} className="shadow-md w-[300px] h-[170px] z-10 rounded"/>
-              <Image src={smallDash} className="z-10 rounded-xl shadow-md w-[250px] h-[220px]"/>
+              <Image src={firstStats} alt="Stats image" className="shadow-md w-[300px] h-[170px] z-10 rounded"/>
+              <Image src={smallDash} alt="Small dashboard" className="z-10 rounded-xl shadow-md w-[250px] h-[220px]"/>
             </div>
-            <Image src={bigDash} className="z-0 w-[850px] h-[400px] ml-[280px] rounded-t-2xl"/>
+            <Image src={bigDash} alt="big dashboard" className="z-0 w-[850px] h-[400px] ml-[280px] rounded-t-2xl"/>
           </div>
         </div>
       </div>
