@@ -93,7 +93,7 @@ export default function AR() {
             </div>
             {/* grid 3 */}
             <div className="w-auto row-span-3 col-start-2 row-start-1 bg-[#a64dff] rounded-3xl text-black flex justify-center items-end ">
-              <Image src={mobileFront} className="w-auto" />
+              <Image src={mobileFront} alt="mobile front" className="w-auto" />
             </div>
             {/* grid 4 */}
             <div className="row-span-2 col-start-2 row-start-4 bg-white rounded-3xl text-black p-8 py-12">
@@ -168,8 +168,8 @@ export default function AR() {
 
             {/* second column */}
             <div className="w-[50%] flex flex-col md:flex-row lg:flex-row xl:flex-row gap-5 justify-center">
-              <Image src={firstStats} className="w-[430px] h-[200px]" />
-              <Image src={smallDash} className="w-[230px] h-[200px] mt-32" />
+              <Image src={firstStats} alt="First Stats" className="w-[430px] h-[200px]" />
+              <Image src={smallDash} alt="Small Dash" className="w-[230px] h-[200px] mt-32" />
 
             </div>
 
@@ -188,8 +188,8 @@ export default function AR() {
                   USA markets.</p>
               </div>
               <div className="flex items-center gap-1">
-                <Image src={shapeSmall} className="w-16 h-12 mt-24" />
-                <Image src={shapeSmall} />
+                <Image src={shapeSmall} alt="Shape" className="w-16 h-12 mt-24" />
+                <Image src={shapeSmall} alt="Shape" />
               </div>
             </div>
 
@@ -198,7 +198,7 @@ export default function AR() {
         </div>
         {/* laptop image */}
         <div className="mt-[-430px] flex justify-center">
-          <Image src={laptopImage} />
+          <Image src={laptopImage} alt="Laptop Image" />
         </div>
       </div>
       {/* how payraydoo works section */}
@@ -218,7 +218,7 @@ export default function AR() {
             </p>
           </div>
           <div className="w-[40%]">
-            <Image src={HappyWoman} />
+            <Image src={HappyWoman} alt="HappyWoman" />
           </div>
         </div>
 
@@ -291,12 +291,12 @@ export default function AR() {
           </div>
           <div className="flex  justify-center mt-12">
             <div className="flex ">
-              <Image src={firstStats} className="shadow-md w-[320px] h-[150px] z-10 rounded mr-[-70px] mt-12"/>
+              <Image src={firstStats} alt="First Stage" className="shadow-md w-[320px] h-[150px] z-10 rounded mr-[-70px] mt-12"/>
              <div className="mr-[-100px] mt-30 z-50">
-               <Image src={smallDash} className="z-10 rounded-xl shadow-md w-[220px] h-[200px]"/>
+               <Image src={smallDash} alt="Small Dash" className="z-10 rounded-xl shadow-md w-[220px] h-[200px]"/>
              </div>
             </div>
-            <Image src={bigDash} className="z-0 w-[850px] h-[400px] rounded-t-2xl"/>
+            <Image src={bigDash} alt="Big Dash" className="z-0 w-[850px] h-[400px] rounded-t-2xl"/>
           </div>
         </div>
 
