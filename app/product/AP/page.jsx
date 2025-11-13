@@ -356,7 +356,7 @@ export default function AP() {
             </button>
           </div>
           <div>
-            <div className="flex flex-col gap-12 mb-[-320px] ml-[80px]">
+            <div className="flex flex-col gap-12 -mb-80 ml-20">
               <Image src={firstStats} alt="Stats image" className="shadow-md w-[300px] h-[170px] z-10 rounded"/>
               <Image src={smallDash} alt="Small dashboard" className="z-10 rounded-xl shadow-md w-[250px] h-[220px]"/>
             </div>
