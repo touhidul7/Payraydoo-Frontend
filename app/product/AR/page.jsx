@@ -12,8 +12,6 @@ import HappyWoman from '../../../public/images/happy-woman-with-card.png';
 import logo from "../../../public/logo/logo-open-fileArtboard-5.png";
 import { ChartColumnBig, HardDriveDownload, Settings, } from "lucide-react";
 
-
-
 export default function AR() {
   return (
     <div className='font-mont bg-white'>
@@ -278,6 +276,30 @@ export default function AR() {
 
         
       </div>
+
+      {/* gradient section */}
+      <div className="Ap-footer w-full mb-12">
+          {/* headings */}
+          <div className="text-center text-white px-2 flex flex-col justify-center items-center pt-12">
+            <h2 className="text-4xl font-semibold mb-2">
+              Ready To Spend Less On Invoice Processing?
+            </h2>
+            
+            <button className="ap-button-dark mt-8">
+              Find Out How
+            </button>
+          </div>
+          <div className="flex  justify-center mt-12">
+            <div className="flex ">
+              <Image src={firstStats} className="shadow-md w-[320px] h-[150px] z-10 rounded mr-[-70px] mt-12"/>
+             <div className="mr-[-100px] mt-30 z-50">
+               <Image src={smallDash} className="z-10 rounded-xl shadow-md w-[220px] h-[200px]"/>
+             </div>
+            </div>
+            <Image src={bigDash} className="z-0 w-[850px] h-[400px] rounded-t-2xl"/>
+          </div>
+        </div>
+
     </div>
   )
 }
