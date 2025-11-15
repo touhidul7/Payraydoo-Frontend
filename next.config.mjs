@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-    output: "export",
+    // output: "export",
     images: {
         domains: ['*'],
         unoptimized: true,
@@ -11,3 +10,12 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+
+
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {};
+
+// export default nextConfig;
+// /** @type {import('next').NextConfig} */

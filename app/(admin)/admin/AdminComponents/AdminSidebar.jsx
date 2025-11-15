@@ -1,0 +1,269 @@
+"use client";
+
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+import {
+  GridIcon,
+  CalenderIcon,
+  UserCircleIcon,
+  ListIcon,
+  TableIcon,
+  PageIcon,
+  PieChartIcon,
+  BoxCubeIcon,
+  PlugInIcon,
+  ChevronDownIcon,
+  HorizontaLDots,
+} from "../../../Icons/index";
+
+import { useAdminData } from "../adminContext/AdminContext";
+import { LogOut } from "lucide-react";
+
+const iconSize = 20;
+
+const NavItems = [
+  {
+    icon: GridIcon,
+    name: "Dashboard",
+    subItems: [{ name: "Ecommerce", path: "/" }],
+  },
+  {
+    icon: CalenderIcon,
+    name: "Calendar",
+    path: "/calendar",
+  },
+  {
+    icon: UserCircleIcon,
+    name: "User Profile",
+    path: "/profile",
+  },
+  {
+    icon: ListIcon,
+    name: "Forms",
+    subItems: [{ name: "Form Elements", path: "/form-elements" }],
+  },
+  {
+    icon: TableIcon,
+    name: "Tables",
+    subItems: [{ name: "Basic Tables", path: "/basic-tables" }],
+  },
+  {
+    icon: PageIcon,
+    name: "Pages",
+    subItems: [
+      { name: "Blank Page", path: "/blank" },
+      { name: "404 Error", path: "/error-404" },
+    ],
+  },
+];
+
+const OtherNavItems = [
+  {
+    icon: PieChartIcon,
+    name: "Charts",
+    subItems: [
+      { name: "Line Chart", path: "/line-chart" },
+      { name: "Bar Chart", path: "/bar-chart" },
+    ],
+  },
+  {
+    icon: BoxCubeIcon,
+    name: "UI Elements",
+    subItems: [
+      { name: "Alerts", path: "/alerts" },
+      { name: "Avatar", path: "/avatars" },
+      { name: "Badge", path: "/badge" },
+      { name: "Buttons", path: "/buttons" },
+      { name: "Images", path: "/images" },
+      { name: "Videos", path: "/videos" },
+    ],
+  },
+];
+
+const AdminSidebar = () => {
+  const { isExpanded, isMobileOpen, isHovered, setIsHovered, handleLogout } =
+    useAdminData();
+  const pathname = usePathname();
+
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [submenuHeight, setSubmenuHeight] = useState({});
+  const submenuRefs = useRef({});
+
+  const isActive = useCallback((path) => path === pathname, [pathname]);
+
+  const handleToggle = (index, type) => {
+    setOpenSubmenu((prev) =>
+      prev && prev.index === index && prev.type === type
+        ? null
+        : { index, type }
+    );
+  };
+
+  const RenderMenu = (items, type) => (
+    <ul className="flex flex-col gap-4">
+      {items.map((item, index) => (
+        <li key={item.name}>
+          {item.subItems ? (
+            <button
+              onClick={() => handleToggle(index, type)}
+              className={`menu-item`}
+            >
+              <Image
+                src={item.icon}
+                alt={item.name}
+                width={iconSize}
+                height={iconSize}
+              />
+
+              {(isExpanded || isHovered || isMobileOpen) && (
+                <span className="menu-item-text">{item.name}</span>
+              )}
+
+              {(isExpanded || isHovered || isMobileOpen) && (
+                <Image
+                  src={ChevronDownIcon}
+                  alt="toggle"
+                  width={16}
+                  height={16}
+                  className={`ml-auto transition-transform ${
+                    openSubmenu?.index === index && openSubmenu?.type === type
+                      ? "rotate-180"
+                      : ""
+                  }`}
+                />
+              )}
+            </button>
+          ) : (
+            item.path && (
+              <Link
+                href={item.path}
+                className={`menu-item ${
+                  isActive(item.path)
+                    ? "menu-item-active"
+                    : "menu-item-inactive"
+                }`}
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  width={iconSize}
+                  height={iconSize}
+                />
+                {(isExpanded || isHovered || isMobileOpen) && (
+                  <span className="menu-item-text">{item.name}</span>
+                )}
+              </Link>
+            )
+          )}
+
+          {item.subItems && (isExpanded || isHovered || isMobileOpen) && (
+            <div
+              ref={(el) => {
+                submenuRefs.current[`${type}-${index}`] = el;
+              }}
+              className="overflow-hidden transition-all duration-300"
+              style={{
+                height:
+                  openSubmenu?.index === index && openSubmenu?.type === type
+                    ? submenuHeight[`${type}-${index}`]
+                    : 0,
+              }}
+            >
+              <ul className="mt-2 space-y-1 ml-9">
+                {item.subItems.map((sub) => (
+                  <li key={sub.name}>
+                    <Link
+                      href={sub.path}
+                      className={`menu-dropdown-item ${
+                        isActive(sub.path)
+                          ? "menu-dropdown-item-active"
+                          : "menu-dropdown-item-inactive"
+                      }`}
+                    >
+                      {sub.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
+      ))}
+      <li>
+        <button onClick={handleLogout} className={`menu-item `}>
+          <LogOut />
+          Logout
+        </button>
+      </li>
+    </ul>
+  );
+
+  useEffect(() => {
+    if (openSubmenu) {
+      const key = `${openSubmenu.type}-${openSubmenu.index}`;
+      const el = submenuRefs.current[key];
+      if (el) {
+        setSubmenuHeight((prev) => ({
+          ...prev,
+          [key]: el.scrollHeight,
+        }));
+      }
+    }
+  }, [openSubmenu]);
+
+  return (
+    <aside
+      className={`fixed mt-16 bg-white text-gray-900 h-screen transition-all z-50 border-r 
+        ${
+          isExpanded || isMobileOpen
+            ? "w-[290px]"
+            : isHovered
+            ? "w-[290px]"
+            : "w-[90px]"
+        }
+        ${
+          isMobileOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0`}
+      onMouseEnter={() => !isExpanded && setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="py-8 flex justify-center">
+        <Link href="/">
+          <Image
+            src="/images/logo/logo-icon.svg"
+            width={32}
+            height={32}
+            alt="Logo"
+          />
+        </Link>
+      </div>
+
+      <nav className="mb-6">
+        <h2 className="mb-4 text-xs text-gray-400 uppercase">
+          {isExpanded || isHovered || isMobileOpen ? (
+            "Menu"
+          ) : (
+            <Image src={HorizontaLDots} alt="..." width={20} height={20} />
+          )}
+        </h2>
+        {RenderMenu(NavItems, "main")}
+      </nav>
+
+      <nav>
+        <h2 className="mb-4 text-xs text-gray-400 uppercase">
+          {isExpanded || isHovered || isMobileOpen ? (
+            "Others"
+          ) : (
+            <Image src={HorizontaLDots} alt="..." width={20} height={20} />
+          )}
+        </h2>
+        {RenderMenu(OtherNavItems, "others")}
+      </nav>
+    </aside>
+  );
+};
+
+export default AdminSidebar;

@@ -127,4 +127,4 @@ function BlogHeroSlider() {
 }
 
 
-export default BlogHeroSlider
+export default BlogHeroSlider;
