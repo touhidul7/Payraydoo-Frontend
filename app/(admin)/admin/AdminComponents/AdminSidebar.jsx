@@ -11,10 +11,8 @@ import {
   UserCircleIcon,
   ListIcon,
   TableIcon,
-  PageIcon,
   PieChartIcon,
   BoxCubeIcon,
-  PlugInIcon,
   ChevronDownIcon,
   HorizontaLDots,
 } from "../../../Icons/index";
@@ -28,60 +26,60 @@ const NavItems = [
   {
     icon: GridIcon,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/" }],
+    path: "/",
+  },
+  {
+    icon: GridIcon,
+    name: "Home",
+    path: "/home",
   },
   {
     icon: CalenderIcon,
-    name: "Calendar",
-    path: "/calendar",
+    name: "Product",
+    subItems :[
+      {name: "Product AP",path: "/product-ap"},
+      {name: "Product AR",path: "/product-ar"},
+    ],
   },
   {
     icon: UserCircleIcon,
-    name: "User Profile",
-    path: "/profile",
+    name: "Blog",
+    path: "/blog",
   },
   {
     icon: ListIcon,
-    name: "Forms",
-    subItems: [{ name: "Form Elements", path: "/form-elements" }],
+    name: "About Us",
+    path: "/about-us",
   },
   {
     icon: TableIcon,
-    name: "Tables",
-    subItems: [{ name: "Basic Tables", path: "/basic-tables" }],
-  },
-  {
-    icon: PageIcon,
-    name: "Pages",
-    subItems: [
-      { name: "Blank Page", path: "/blank" },
-      { name: "404 Error", path: "/error-404" },
-    ],
+    name: "Contact Us",
+    path: "/contact-us",
   },
 ];
 
-const OtherNavItems = [
-  {
-    icon: PieChartIcon,
-    name: "Charts",
-    subItems: [
-      { name: "Line Chart", path: "/line-chart" },
-      { name: "Bar Chart", path: "/bar-chart" },
-    ],
-  },
-  {
-    icon: BoxCubeIcon,
-    name: "UI Elements",
-    subItems: [
-      { name: "Alerts", path: "/alerts" },
-      { name: "Avatar", path: "/avatars" },
-      { name: "Badge", path: "/badge" },
-      { name: "Buttons", path: "/buttons" },
-      { name: "Images", path: "/images" },
-      { name: "Videos", path: "/videos" },
-    ],
-  },
-];
+// const OtherNavItems = [
+//   {
+//     icon: PieChartIcon,
+//     name: "Charts",
+//     subItems: [
+//       { name: "Line Chart", path: "/line-chart" },
+//       { name: "Bar Chart", path: "/bar-chart" },
+//     ],
+//   },
+//   {
+//     icon: BoxCubeIcon,
+//     name: "UI Elements",
+//     subItems: [
+//       { name: "Alerts", path: "/alerts" },
+//       { name: "Avatar", path: "/avatars" },
+//       { name: "Badge", path: "/badge" },
+//       { name: "Buttons", path: "/buttons" },
+//       { name: "Images", path: "/images" },
+//       { name: "Videos", path: "/videos" },
+//     ],
+//   },
+// ];
 
 const AdminSidebar = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered, handleLogout } =
@@ -230,7 +228,7 @@ const AdminSidebar = () => {
       onMouseEnter={() => !isExpanded && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="py-8 flex justify-center">
+      {/* <div className="py-8 flex justify-center">
         <Link href="/">
           <Image
             src="/images/logo/logo-icon.svg"
@@ -239,20 +237,20 @@ const AdminSidebar = () => {
             alt="Logo"
           />
         </Link>
-      </div>
+      </div> */}
 
       <nav className="mb-6">
-        <h2 className="mb-4 text-xs text-gray-400 uppercase">
+        {/* <h2 className="mb-4 text-xs text-gray-400 uppercase">
           {isExpanded || isHovered || isMobileOpen ? (
             "Menu"
           ) : (
             <Image src={HorizontaLDots} alt="..." width={20} height={20} />
           )}
-        </h2>
+        </h2> */}
         {RenderMenu(NavItems, "main")}
       </nav>
 
-      <nav>
+      {/* <nav>
         <h2 className="mb-4 text-xs text-gray-400 uppercase">
           {isExpanded || isHovered || isMobileOpen ? (
             "Others"
@@ -261,7 +259,7 @@ const AdminSidebar = () => {
           )}
         </h2>
         {RenderMenu(OtherNavItems, "others")}
-      </nav>
+      </nav> */}
     </aside>
   );
 };

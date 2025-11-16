@@ -1,5 +1,6 @@
 import React from "react";
-
+import logo from "../../../../public/logo/payraydoo-logo.png"
+import Image from "next/image";
 export default function AdminHeader() {
   return (
     <div>
@@ -9,14 +10,7 @@ export default function AdminHeader() {
             href="https://flowbite.com/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-7"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
-              Flowbite
-            </span>
+            <Image width={500} height={200} className="h-7 w-auto" src={logo} alt="Payradoo"/>
           </a>
           <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <button
