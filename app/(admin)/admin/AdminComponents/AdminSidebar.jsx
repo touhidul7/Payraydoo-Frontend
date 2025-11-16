@@ -18,43 +18,43 @@ import {
 } from "../../../Icons/index";
 
 import { useAdminData } from "../adminContext/AdminContext";
-import { LogOut } from "lucide-react";
+import { BookImage, House, LayoutDashboard, LogOut, PhoneCall, ShoppingCart, UsersRound } from "lucide-react";
 
 const iconSize = 20;
 
 const NavItems = [
   {
-    icon: GridIcon,
+    icon: <LayoutDashboard size={iconSize} />,
     name: "Dashboard",
-    path: "/",
+    path: "/admin",
   },
   {
-    icon: GridIcon,
+    icon: <House size={iconSize}/>,
     name: "Home",
-    path: "/home",
+    path: "/admin/home",
   },
   {
-    icon: CalenderIcon,
+    icon: <ShoppingCart size={iconSize}/>,
     name: "Product",
     subItems :[
-      {name: "Product AP",path: "/product-ap"},
-      {name: "Product AR",path: "/product-ar"},
+      {name: "Product AP",path: "/admin/product-ap"},
+      {name: "Product AR",path: "/admin/product-ar"},
     ],
   },
   {
-    icon: UserCircleIcon,
+    icon: <BookImage size={iconSize}/>,
     name: "Blog",
-    path: "/blog",
+    path: "/admin/blog",
   },
   {
-    icon: ListIcon,
+    icon: <UsersRound size={iconSize}/>,
     name: "About Us",
-    path: "/about-us",
+    path: "/admin/about",
   },
   {
-    icon: TableIcon,
+    icon: <PhoneCall size={iconSize}/>,
     name: "Contact Us",
-    path: "/contact-us",
+    path: "/admin/contact-us",
   },
 ];
 
@@ -109,13 +109,8 @@ const AdminSidebar = () => {
               onClick={() => handleToggle(index, type)}
               className={`menu-item`}
             >
-              <Image
-                src={item.icon}
-                alt={item.name}
-                width={iconSize}
-                height={iconSize}
-              />
-
+             
+              {item.icon}
               {(isExpanded || isHovered || isMobileOpen) && (
                 <span className="menu-item-text">{item.name}</span>
               )}
@@ -144,12 +139,7 @@ const AdminSidebar = () => {
                     : "menu-item-inactive"
                 }`}
               >
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={iconSize}
-                  height={iconSize}
-                />
+                {item.icon}
                 {(isExpanded || isHovered || isMobileOpen) && (
                   <span className="menu-item-text">{item.name}</span>
                 )}
