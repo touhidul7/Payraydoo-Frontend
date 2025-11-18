@@ -714,3 +714,26 @@ background: linear-gradient(134deg, rgba(144, 74, 255, 1) 0%, rgba(109, 224, 255
   cursor: pointer;
   animation: border 4s linear infinite;
 }
+
+
+
+
+
+
+/*  */
+
+/* Ensure the main container doesn't interfere with scrolling */
+.smoother-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.smoother-content {
+  will-change: transform;
+}
+
+/* html,
+body {
+  height: 100%;
+  overflow: hidden;
+} */

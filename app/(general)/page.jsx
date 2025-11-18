@@ -7,24 +7,25 @@ import TiltShineCard from "../Components/TiltShineCard";
 import small_logo from "../../public/logo/small_logo.png";
 import InvoiceFeatures from "../Components/InvoiceFeatures";
 import InvoiceFeaturesLeft from "../Components/InvoiceFeaturesLeft";
-import setting from "../../public/images/noun-erp-7857504.png";
 import dashboard2 from "../../public/images/dasboard-img.png";
-import microsoft from "../../public/logo/microsoft.png"
-import oracle from "../../public/logo/Oracle_NetSuite_2021.png"
-import sap from "../../public/logo/SAP-Emblem.png"
-import workday from "../../public/logo/Workday_Logo.png"
-import sage from "../../public/logo/Sage-logo_svg.svg.png"
-import banco from "../../public/logo/Banco_Santander_Logotipo.svg.png"
-import barclays from "../../public/logo/Barclays-Logo.png"
-import hsbc from "../../public/logo/HSBC-Logo.png"
-import jp_morgan from "../../public/logo/JP-Morgan-Chase-Logo.png"
-import llyods from "../../public/logo/Lloyds-Bank-Logo-2013.png"
-import new_wise from "../../public/logo/New_Wise_(formerly_TransferWise)_logo.svg.png"
-import plaid from "../../public/logo/Plaid_logo.svg.png"
-import revolut from "../../public/logo/Revolut.png"
+import microsoft from "../../public/logo/microsoft.png";
+import oracle from "../../public/logo/Oracle_NetSuite_2021.png";
+import sap from "../../public/logo/SAP-Emblem.png";
+import workday from "../../public/logo/Workday_Logo.png";
+import sage from "../../public/logo/Sage-logo_svg.svg.png";
+import banco from "../../public/logo/Banco_Santander_Logotipo.svg.png";
+import barclays from "../../public/logo/Barclays-Logo.png";
+import hsbc from "../../public/logo/HSBC-Logo.png";
+import jp_morgan from "../../public/logo/JP-Morgan-Chase-Logo.png";
+import llyods from "../../public/logo/Lloyds-Bank-Logo-2013.png";
+import new_wise from "../../public/logo/New_Wise_(formerly_TransferWise)_logo.svg.png";
+import plaid from "../../public/logo/Plaid_logo.svg.png";
+import revolut from "../../public/logo/Revolut.png";
 import TestimonialSlider from "../Components/TestimonialSlider";
-import second_dash from "../../public/images/4.png"
-import s_small_dash from "../../public/images/3.png"
+import second_dash from "../../public/images/4.png";
+import s_small_dash from "../../public/images/3.png";
+import CardAnimationSection from "../Components/CardAnimationSection";
+import AnimatedSection from "../Components/AnimatedSection";
 
 export default function Home() {
   return (
@@ -55,30 +56,20 @@ export default function Home() {
       </div>
 
       {/* dashboard image start */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-4">
+      <div className=" mx-auto px-3 sm:px-4 mt-16 flex justify-center items-center">
         {/* Tilt Shine Card Section */}
-        <div className="flex justify-center relative min-h-[250px] xs:min-h-[300px] sm:min-h-[400px] lg:h-[80vh] xl:h-[90vh] mt-8 sm:mt-20 mb-8 sm:mb-20">
+        <div className="w-fit h-fit relative">
           <TiltShineCard />
+          <Image
+            src={small_dash}
+            alt="small dashboard"
+            width={280}
+            height={280}
+            className="rounded-xl sm:rounded-2xl absolute bottom-0"
+            priority
+          />
         </div>
-
         {/* Dashboard image container */}
-        <div className="flex justify-center items-end relative -mt-10 sm:-mt-20 lg:-mt-28 xl:-mt-36">
-          <div className="relative w-full max-w-6xl flex justify-center">
-            {/* Small dashboard - scales smoothly with screen */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-[5%] lg:left-[10%] sm:translate-x-0">
-              <div className="w-[65vw] xs:w-[60vw] sm:w-[35vw] md:w-[30vw] lg:w-[250px] xl:w-[280px]">
-                <Image
-                  src={small_dash}
-                  alt="small dashboard"
-                  width={280}
-                  height={280}
-                  className="rounded-xl sm:rounded-2xl w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* hero section end */}
@@ -90,12 +81,12 @@ export default function Home() {
         {/* Logo */}
         <div className="relative">
           <div className="border-animation absolute -top-10 sm:-top-20 left-0 right-0 mx-auto p-2 sm:p-4">
-            <Image 
-              src={small_logo} 
-              alt="small logo" 
-              width={50} 
-              height={50} 
-              className="w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 lg:w-[75px] lg:h-[75px]" 
+            <Image
+              src={small_logo}
+              alt="small logo"
+              width={50}
+              height={50}
+              className="w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 lg:w-[75px] lg:h-[75px]"
             />
           </div>
         </div>
@@ -152,72 +143,10 @@ export default function Home() {
                 finance stack
               </h2>
             </div>
-
-            {/* First Card */}
-            <div className="flex justify-center items-center mt-8 sm:mt-12 px-2">
-              <div className="w-full max-w-[90%] sm:max-w-[750px] h-auto bg-white clip-card rounded-xl custom-white-card relative">
-                <div className="z-10">
-                  <div className="border-animation absolute -top-6 sm:-top-12 left-[50%] p-2 sm:p-3 z-10 transform -translate-x-1/2">
-                    <Image
-                      src={small_logo}
-                      alt="small logo"
-                      width={75}
-                      height={75}
-                      className="w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 lg:w-[75px] lg:h-[75px]"
-                    />
-                  </div>
-                </div>
-                <h2 className="text-gray-700 mt-6 sm:mt-8 p-4 sm:p-5 lg:px-6 lg:py-8 font-medium font-mont text-base sm:text-xl lg:text-2xl text-center">
-                  Payraydoo bridges receivables and payables automating the flow
-                  of money in and out
-                </h2>
-              </div>
-            </div>
-
-            {/* 2nd card - Responsive grid */}
-            <div className="w-full max-w-6xl mx-auto custom-white-card mt-8 sm:mt-16 font-mont p-4 sm:p-6 lg:p-8 rounded-xl bg-white">
-              <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-8 text-center">
-                <div className="w-full lg:w-auto">
-                  <h2 className="text-black text-lg sm:text-xl lg:text-2xl mb-4 sm:mb-8">
-                    Accounts Receivable
-                  </h2>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 text-gray-700 font-medium text-xs sm:text-sm lg:text-base">
-                    <div><p>Cash Application agent</p></div>
-                    <div><p>Collection agent</p></div>
-                    <div><p>Dispute agent</p></div>
-                    <div><p>Closing agent</p></div>
-                  </div>
-                </div>
-
-                <div className="hidden lg:block h-24 sm:h-32 custom-bar bg-white w-0.5"></div>
-                <div className="block lg:hidden w-full h-0.5 custom-bar bg-white my-4"></div>
-
-                <div className="w-full lg:w-auto">
-                  <h2 className="text-black text-lg sm:text-xl lg:text-2xl mb-4 sm:mb-8">
-                    Accounts Payable
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-gray-700 font-medium text-xs sm:text-sm lg:text-base items-center">
-                    <div><p>Invoice Capturing agent</p></div>
-                    <div><p>Verification & Reconciliation agent</p></div>
-                    <div><p>Scheduling agent</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Third Card with gradient */}
-            <div className="max-w-5xl mx-auto flex flex-col items-center custom-gradient-card rounded-xl mt-8 sm:mt-16 p-4 sm:p-6 lg:p-8">
-              <Image 
-                src={setting} 
-                alt="setting" 
-                width={120} 
-                height={120} 
-                className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[120px] lg:h-[120px]" 
-              />
-              <h2 className="text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl font-mont font-medium mt-4 sm:mt-6 text-center px-2">
-                Your ERP/ Accounting Software
-              </h2>
-            </div>
+            {/* Animated card section--------------------------------------------- */}
+            {/* <CardAnimationSection/> */}
+            <AnimatedSection />
+            {/* Animated card section end here-------------------------------------- */}
 
             <div className="text-center mt-8 sm:mt-16">
               <ButtonAnimated content={"Connect Your Finance Stack"} />
@@ -237,31 +166,41 @@ export default function Home() {
                 <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
                   Measurable by Design
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg">Track time, errors and cache impact</p>
+                <p className="text-sm sm:text-base lg:text-lg">
+                  Track time, errors and cache impact
+                </p>
               </div>
               <div className="cards text-center sm:text-left">
                 <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
                   Complete control
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg">You set the rules, we enforce them.</p>
+                <p className="text-sm sm:text-base lg:text-lg">
+                  You set the rules, we enforce them.
+                </p>
               </div>
               <div className="cards text-center sm:text-left">
                 <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
                   Global-ready
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg">Multi-entity. Multi currency. Audit proof.</p>
+                <p className="text-sm sm:text-base lg:text-lg">
+                  Multi-entity. Multi currency. Audit proof.
+                </p>
               </div>
               <div className="cards text-center sm:text-left">
                 <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
                   Seamless integrations
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg">Connect to your ERP in minutes.</p>
+                <p className="text-sm sm:text-base lg:text-lg">
+                  Connect to your ERP in minutes.
+                </p>
               </div>
               <div className="cards text-center sm:text-left">
                 <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
                   ERP-native
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg">Works with how you already work.</p>
+                <p className="text-sm sm:text-base lg:text-lg">
+                  Works with how you already work.
+                </p>
               </div>
             </div>
           </div>
@@ -289,34 +228,119 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-8 sm:mt-16">
-              <ButtonAnimated dark={false} content={"ERP & Accounting"} className="text-sm sm:text-base" />
+              <ButtonAnimated
+                dark={false}
+                content={"ERP & Accounting"}
+                className="text-sm sm:text-base"
+              />
             </div>
 
             {/* company logo */}
             <div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
-                <Image src={microsoft} alt="microsoft logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={oracle} alt="oracle logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={sap} alt="sap logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={workday} alt="workday logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={sage} alt="sage logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto col-span-2 sm:col-span-1" />
+                <Image
+                  src={microsoft}
+                  alt="microsoft logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={oracle}
+                  alt="oracle logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={sap}
+                  alt="sap logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={workday}
+                  alt="workday logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={sage}
+                  alt="sage logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto col-span-2 sm:col-span-1"
+                />
               </div>
             </div>
 
             <div className="text-center mt-8 mb-8 sm:mb-16">
-              <ButtonAnimated content="Banking, Treasury & Payment" dark={false} />
+              <ButtonAnimated
+                content="Banking, Treasury & Payment"
+                dark={false}
+              />
             </div>
 
             <div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
-                <Image src={jp_morgan} alt="jp morgan logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={barclays} alt="barclays logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={banco} alt="banco logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={hsbc} alt="hsbc logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={llyods} alt="lloyds logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={plaid} alt="plaid logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={new_wise} alt="wise logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
-                <Image src={revolut} alt="revolut logo" width={120} height={60} className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto" />
+                <Image
+                  src={jp_morgan}
+                  alt="jp morgan logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={barclays}
+                  alt="barclays logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={banco}
+                  alt="banco logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={hsbc}
+                  alt="hsbc logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={llyods}
+                  alt="lloyds logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={plaid}
+                  alt="plaid logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={new_wise}
+                  alt="wise logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
+                <Image
+                  src={revolut}
+                  alt="revolut logo"
+                  width={120}
+                  height={60}
+                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                />
               </div>
             </div>
 
@@ -332,7 +356,8 @@ export default function Home() {
           <div className="finance-stack-body rounded-xl pt-8 sm:pt-16 px-4 sm:px-6 lg:px-12 mx-auto max-w-[95%] sm:max-w-[98%] font-mont">
             <div className="flex flex-col justify-center items-center gap-3 sm:gap-6 px-3">
               <h2 className="text-center text-xl sm:text-3xl lg:text-5xl font-semibold px-0 sm:px-6 lg:px-40 xl:px-60">
-                Ready to save thousands on <span className="gradient-text">invoice processing?</span>
+                Ready to save thousands on{" "}
+                <span className="gradient-text">invoice processing?</span>
               </h2>
               <p className="text-center text-sm sm:text-lg lg:text-xl font-medium">
                 Run a quick analysis and get your personalized ROI.
@@ -341,21 +366,22 @@ export default function Home() {
             </div>
 
             {/* dashboard images - Responsive layout */}
-            <div className="relative mt-12 sm:mt-24 lg:mt-32">
-              <Image
-                src={second_dash}
-                alt="main dashboard"
-                width={1000}
-                height={750}
-                className="rounded-t-xl sm:rounded-t-2xl mx-auto w-full max-w-[300px] xs:max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] xl:max-w-[900px]"
-              />
-              <div className="hidden sm:block absolute top-4 sm:top-8 lg:top-16 -left-2 sm:-left-4 lg:-left-6">
+            <div className="relative mt-12 sm:mt-24 lg:mt-32 w-full flex justify-center items-center">
+              <div className="w-fit h-fit relative">
+                <Image
+                  src={second_dash}
+                  alt="main dashboard"
+                  width={1000}
+                  height={750}
+                  className="rounded-t-xl sm:rounded-t-2xl mx-auto w-full max-w-[300px] xs:max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] xl:max-w-[900px]"
+                />
+
                 <Image
                   src={s_small_dash}
                   alt="small dashboard"
                   width={200}
                   height={150}
-                  className="rounded-xl w-[100px] sm:w-[150px] lg:w-[200px] xl:w-[250px] h-auto"
+                  className="absolute top-[32] left-0 -ml-32  rounded-xl w-[100px] sm:w-[150px] lg:w-[200px] xl:w-[250px] h-auto"
                 />
               </div>
             </div>

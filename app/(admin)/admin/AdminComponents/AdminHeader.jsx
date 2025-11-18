@@ -37,7 +37,7 @@ export default function AdminHeader() {
                   Joseph McFall
                 </span>
                 <span className="block text-body truncate">
-                  name@flowbite.com
+                  demo@payradoo.com
                 </span>
               </div>
               <ul
