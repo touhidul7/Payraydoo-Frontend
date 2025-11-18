@@ -10,7 +10,7 @@ export default function TiltShineCard({
   children,
   className = "",
   width = 800,
-  height = 800,
+  height = "fit-content",
   maxRotate = 12, // degrees
   scale = 1.04,
   transition = 300, // ms
@@ -107,21 +107,20 @@ export default function TiltShineCard({
       }}
     >
       {/* Card surface */}
-      <div className="w-full max-w-[90vw] sm:max-w-[95vw] md:max-w-[800px] lg:max-w-[1000px] mx-auto">
-  <div className="relative w-full h-0 pb-[65%] rounded-xl sm:rounded-2xl overflow-hidden">
-    {/* Content slot */}
-    <div className="absolute inset-0 w-full h-full">
-      <Image
-        src={dashboard}
-        width={1200}
-        height={600}
-        alt="dashboard image"
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
+      <div className="w-full mx-auto">
+        <div className="relative w-full h-0 pb-[65%] rounded-xl sm:rounded-2xl overflow-hidden">
+          {/* Content slot */}
+          <div className="absolute inset-0 w-fit h-fit">
+            <Image
+              src={dashboard}
+              width={1200}
+              height={600}
+              alt="dashboard image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
