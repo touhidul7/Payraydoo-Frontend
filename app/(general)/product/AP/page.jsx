@@ -320,7 +320,7 @@ export default function AP() {
               <div className="w-[50%] flex flex-col md:gap-2 lg:gap-5">
                 <div className="flex flex-col">
                   <Image src={APteams} alt="AP teams image" className="mb-5 md:w-[200px]"/>
-                  <Image src={supportTeam} alt="support team image" className="lg:mt-[-80px] md:mt-[-60px] lg:ml-[130px] md:ml-[80px] md:w-[230px] md:h-[130px]"/>
+                  <Image src={supportTeam} alt="support team image" className="lg:-mt-20 md:mt-[-60px] lg:ml-[130px] md:ml-[80px] md:w-[230px] md:h-[130px]"/>
                 </div>
                 <div>
                   <Image src={globalSupport} alt="global support image" className="md:w-[250px]"/>
