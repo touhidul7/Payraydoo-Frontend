@@ -18,10 +18,10 @@ export default function page() {
         <p>2. Up to 60% discount for beta partners</p>
         <p>3. ROI guarantee within 6 months</p>
       </div>
-      <div className='flex justify-start items-center gap-3 md:gap-5 mt-8 md:mt-12 flex-wrap'>
-        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[100px] md:h-[55px]' />
-        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[100px] md:h-[55px]' />
-        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[100px] md:h-[55px]' />
+      <div className='flex justify-center md:justify-start items-center gap-3 md:gap-5 mt-8 md:mt-12 flex-wrap'>
+        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[90px] md:h-[50px] w-[80px] h-[30px]' />
+        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[90px] md:h-[50px] w-[80px] h-[30px]' />
+        <Image src={Airtel} alt='brand logo' width={80} height={44} className='md:w-[90px] md:h-[50px] w-[80px] h-[30px]' />
       </div>
     </div>
     {/* contact form */}

@@ -714,3 +714,14 @@ background: linear-gradient(134deg, rgba(144, 74, 255, 1) 0%, rgba(109, 224, 255
   cursor: pointer;
   animation: border 4s linear infinite;
 }
+
+.ap-product-card-bg{
+  background: #3E3E3E;
+background: linear-gradient(90deg,rgb(53, 53, 53) 50%, rgba(93, 64, 88, 1) 100%);
+
+}
+.ap-accuracy-card-bg{
+  background: #3E3E3E;
+background: linear-gradient(260deg,rgb(53, 53, 53) 50%, rgba(93, 64, 88, 1) 100%);
+
+}
