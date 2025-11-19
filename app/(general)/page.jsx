@@ -6,7 +6,6 @@ import Counter from "../Components/Counter";
 import TiltShineCard from "../Components/TiltShineCard";
 import small_logo from "../../public/logo/small_logo.png";
 import TabSection from "../Components/TabSection";
-import InvoiceFeaturesLeft from "../Components/InvoiceFeaturesLeft";
 import dashboard2 from "../../public/images/dasboard-img.png";
 import microsoft from "../../public/logo/microsoft.png";
 import oracle from "../../public/logo/Oracle_NetSuite_2021.png";
@@ -24,7 +23,6 @@ import revolut from "../../public/logo/Revolut.png";
 import TestimonialSlider from "../Components/TestimonialSlider";
 import second_dash from "../../public/images/4.png";
 import s_small_dash from "../../public/images/3.png";
-import CardAnimationSection from "../Components/CardAnimationSection";
 import AnimatedSection from "../Components/AnimatedSection";
 import TagibleResultCard from "../Components/TagibleResultCard";
 
@@ -282,35 +280,35 @@ export default function Home() {
                   alt="microsoft logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={oracle}
                   alt="oracle logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={sap}
                   alt="sap logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={workday}
                   alt="workday logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={sage}
                   alt="sage logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto col-span-2 sm:col-span-1"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto col-span-2 sm:col-span-1"
                 />
               </div>
             </div>
@@ -329,56 +327,56 @@ export default function Home() {
                   alt="jp morgan logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={barclays}
                   alt="barclays logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={banco}
                   alt="banco logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={hsbc}
                   alt="hsbc logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={llyods}
                   alt="lloyds logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={plaid}
                   alt="plaid logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={new_wise}
                   alt="wise logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
                 <Image
                   src={revolut}
                   alt="revolut logo"
                   width={120}
                   height={60}
-                  className="mx-auto w-full max-w-[80px] xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                  className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
                 />
               </div>
             </div>

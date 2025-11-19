@@ -77,7 +77,7 @@ export default function CardStackBuilder() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gradient-to-b "
+      className="relative bg-linear-to-b "
       style={{
         height: 'fit-content'
       }}
