@@ -405,7 +405,7 @@ export default function Home() {
             </div>
 
             {/* dashboard images - Responsive layout */}
-            <div className="relative mt-12 sm:mt-24 lg:mt-32 w-full flex justify-center items-center">
+            <div className="relative mt-12 sm:mt-24 lg:mt-32 lg:w-full w-[90%] m-auto flex justify-center items-center">
               <div className="w-fit h-fit relative">
                 <Image
                   src={second_dash}
@@ -420,7 +420,7 @@ export default function Home() {
                   alt="small dashboard"
                   width={200}
                   height={150}
-                  className="absolute top-[32] left-0 -ml-32  rounded-xl w-[100px] sm:w-[150px] lg:w-[200px] xl:w-[250px] h-auto"
+                  className="absolute top-[32] left-0 lg:-ml-32 -ml-6  rounded-xl w-[100px] sm:w-[150px] lg:w-[200px] xl:w-[250px] h-auto"
                 />
               </div>
             </div>

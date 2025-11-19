@@ -144,29 +144,29 @@ export default function TestimonialSlider() {
         }
       `}</style>
 
-      <div className="max-w-7xl w-full mx-auto bg-gray-100  rounded-2xl">
+      <div className="max-w-7xl w-full mx-auto  p-5 lg:pb-0  rounded-2xl">
         <div className="mb-12">
-          <h2 className="text-transparent gradient-text text-5xl font-semibold mb-5">
+          <h2 className="text-transparent gradient-text lg:text-5xl text-lg font-semibold my-5">
             Client Testimonials
           </h2>
           <div className="flex items-center justify-between">
-            <h1 className="text-5xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-gray-900">
               What Our Customers Say !
             </h1>
             <div className="flex gap-3">
               <button
                 onClick={prevSlide}
-                className="nav-button w-12 h-12 rounded-full bg-gradient-to-br from-blue-300 to-blue-300 flex items-center justify-center hover:shadow-lg"
+                className="nav-button lg:w-12 w-8 lg:h-12 h-8 rounded-full bg-linear-to-br from-blue-300 to-blue-300 flex items-center justify-center hover:shadow-lg cursor-pointer"
                 aria-label="Previous testimonial"
               >
-                <ArrowLeft className="w-6 h-6 text-white" />
+                <ArrowLeft className="lg:w-6 w-4 h-4 lg:h-6 text-white" />
               </button>
               <button
                 onClick={nextSlide}
-                className="nav-button w-12 h-12 rounded-full bg-gradient-to-br from-blue-300 to-blue-300 flex items-center justify-center hover:shadow-lg"
+                className="nav-button lg:w-12 w-8 lg:h-12 h-8 rounded-full bg-linear-to-br from-blue-300 to-blue-300 flex items-center justify-center hover:shadow-lg cursor-pointer"
                 aria-label="Next testimonial"
               >
-                <ArrowRight className="w-6 h-6 text-white" />
+                <ArrowRight className="lg:w-6 w-4 h-4 lg:h-6 text-white" />
               </button>
             </div>
           </div>
@@ -181,16 +181,16 @@ export default function TestimonialSlider() {
                 idx === 1 && direction === 'prev' ? 'slide-in-left' : ''
               }`}
             >
-              <div className="h-4 rounded-t-lg w-full mb-8 bg-gradient-to-r from-purple-500 to-purple-600"></div>
+              <div className="h-4 rounded-t-lg w-full mb-8 bg-linear-to-r from-purple-500 to-purple-600"></div>
               
-              <div className='p-8'>
-                   <p className="text-gray-700 text-2xl leading-relaxed mb-16 ">
+              <div className='lg:p-8 p-4'>
+                   <p className="text-gray-700 lg:text-2xl text-xl leading-relaxed mb-16 ">
                 {testimonial.text}
               </p>
 
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-gray-900 font-bold text-md font-semibold">
+                  <p className="text-gray-900  text-md font-semibold">
                     {testimonial.author}
                   </p>
                   <p className="text-gray-500 text-md font-semibold">
@@ -198,7 +198,7 @@ export default function TestimonialSlider() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <div className="inline-block mb-3 px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg">
+                  <div className="inline-block mb-3 px-4 py-2 bg-linear-to-r from-purple-50 to-purple-100 rounded-lg">
                    <Image 
                       src={testimonial.logoUrl} 
                       width={100}
@@ -225,7 +225,7 @@ export default function TestimonialSlider() {
               }}
               className={`h-2 rounded-full transition-all duration-300 ${
                 currentIndex === idx
-                  ? 'w-8 bg-gradient-to-r from-purple-500 to-purple-600'
+                  ? 'w-8 bg-linear-to-r from-purple-500 to-purple-600'
                   : 'w-2 bg-purple-200'
               }`}
               aria-label={`Go to testimonial ${idx + 1}`}
