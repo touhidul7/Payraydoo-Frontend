@@ -4,7 +4,7 @@ export default function InvoiceFeaturesLeft() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
-  const features = [
+  const payableFeatures = [
     {
       title: "Capture invoices instantly",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop",

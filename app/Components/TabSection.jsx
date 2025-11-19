@@ -1,38 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function InvoiceFeatures() {
+export default function TabSection({data, dirrection="row"}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
-  const features = [
-    {
-      title: "Auto-send invoices",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=800&fit=crop",
-      color: "from-purple-500 to-purple-700"
-    },
-    {
-      title: "Smart payment reminders",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=800&fit=crop",
-      color: "from-blue-500 to-blue-700"
-    },
-    {
-      title: "Instant payment matching",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop",
-      color: "from-indigo-500 to-indigo-700"
-    },
-    {
-      title: "Real-time customer status",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop",
-      color: "from-violet-500 to-violet-700"
-    }
-  ];
+
 
   const handleScroll = (e) => {
     const container = e.target;
     const scrollPercentage = container.scrollTop / (container.scrollHeight - container.clientHeight);
     const newIndex = Math.min(
-      Math.floor(scrollPercentage * features.length),
-      features.length - 1
+      Math.floor(scrollPercentage * data.length),
+      data.length - 1
     );
     setActiveIndex(newIndex);
   };
@@ -41,7 +20,7 @@ export default function InvoiceFeatures() {
     setActiveIndex(index);
     if (scrollContainerRef.current) {
       const scrollHeight = scrollContainerRef.current.scrollHeight - scrollContainerRef.current.clientHeight;
-      const targetScroll = (scrollHeight / (features.length - 1)) * index;
+      const targetScroll = (scrollHeight / (data.length - 1)) * index;
       scrollContainerRef.current.scrollTo({
         top: targetScroll,
         behavior: 'smooth'
@@ -50,16 +29,16 @@ export default function InvoiceFeatures() {
   };
 
   return (
-    <div className="container font-mont mt-20">
+    <div className=" font-mont lg:mt-20 mt-6">
       
-      <div className="content-wrapper">
-        <div className="image-box">
+      <div className={`flex lg:flex-${dirrection} flex-col items-center lg:gap-16 gap-6 w-full mb-8`}>
+        <div className="image-box h-[510px] lg:w-1/2 w-full">
           <div 
             className="scroll-container" 
             ref={scrollContainerRef}
             onScroll={handleScroll}
           >
-            {features.map((feature, index) => (
+            {data.map((feature, index) => (
               <div key={index} className="scroll-section">
                 <img 
                   src={feature.image} 
@@ -75,15 +54,15 @@ export default function InvoiceFeatures() {
           </div>
         </div>
         
-        <div className="features-list">
-          {features.map((feature, index) => (
+        <div className="features-list w-full lg:w-1/2">
+          {data.map((feature, index) => (
             <div 
               key={index}
-              className="feature-item"
+              className="feature-item lg:py-7 py-2"
               onClick={() => handleFeatureClick(index)}
             >
-              <div className={`feature-indicator ${activeIndex === index ? 'active' : ''}`}></div>
-              <div className={`feature-text ${activeIndex === index ? 'active' : ''}`}>
+              <div className={`feature-indicator lg:w-[5px] w-[3px] h-[30px] lg:h-[60px] ${activeIndex === index ? 'active' : ''}`}></div>
+              <div className={`feature-text text-[18px] lg:text-[30px] font-medium ${activeIndex === index ? 'active' : ''}`}>
                 {feature.title}
               </div>
             </div>

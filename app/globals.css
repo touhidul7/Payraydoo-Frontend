@@ -53,7 +53,6 @@ body {
 
 .custom-button-dark {
   padding: 12px 50px;
-  max-width: 422px;
   background: linear-gradient(45deg, #af65ff, #af65ff 50%, #af65ff) padding-box,
     conic-gradient(from var(--border-angle),
       #af65ff,
@@ -349,8 +348,8 @@ body {
 }
 
 .image-box {
-  width: 510px;
-  height: 510px;
+  /* width: 510px; */
+  /* height: 510px; */
   border-radius: 32px;
   position: relative;
   overflow: hidden;
@@ -431,7 +430,6 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 28px 0;
   border-bottom: 1px solid #e5e5e5;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -447,8 +445,6 @@ body {
 }
 
 .feature-indicator {
-  width: 5px;
-  height: 60px;
   background: #d1d5db;
 
   flex-shrink: 0;
@@ -464,8 +460,7 @@ body {
 }
 
 .feature-text {
-  font-size: 30px;
-  font-weight: 500;
+
   color: #080808;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -486,9 +481,7 @@ body {
     height: 400px;
   }
 
-  .feature-text {
-    font-size: 36px;
-  }
+
 }
 
 @media (max-width: 968px) {
@@ -509,21 +502,14 @@ body {
     height: 300px;
   }
 
-  .feature-text {
-    font-size: 28px;
-  }
+
 
   .feature-indicator {
     height: 50px;
   }
 
-  .feature-indicator.active {
-    height: 55px;
-  }
 
-  .feature-item {
-    padding: 22px 0;
-  }
+
 }
 
 /* finance stack section */
@@ -747,3 +733,21 @@ body {
   height: 100%;
   overflow: hidden;
 } */
+
+
+
+
+
+
+/* custom css responsive-------------------->> */
+@media(max-width:768px){
+  .custom-button-dark {
+    padding: 10px 30px;
+    font-size: 0.8rem;
+  }
+
+  .custom-button-light {
+    padding: 8px 30px;
+    font-size: 0.8rem;
+  }
+}

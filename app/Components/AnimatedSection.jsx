@@ -82,7 +82,7 @@ export default function CardStackBuilder() {
         height: 'fit-content'
       }}
     >
-      <div className="h-screen flex items-center justify-center">
+      <div className="lg:h-screen h-[80vh] flex items-center justify-center">
         <div className="relative w-full  mx-auto">
           {/* CARD 1 - Will be bottom of stack */}
           <div

@@ -9,17 +9,17 @@ export default function Counter() {
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 bg-linear-to-r from-[#2B1A5A] to-[#412B88] text-white rounded-2xl border px-32   md:p-10 shadow-lg custom-card h-auto font-mont">
+    <div className="w-full mt-10 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 bg-linear-to-r from-[#2B1A5A] to-[#412B88] text-white rounded-2xl border md:px-32 p-6   md:p-10 shadow-lg custom-card h-auto font-mont">
       {stats.map((stat, index) => (
         <div
           key={index}
           className="text-center relative px-6"
         >
-          <h2 className="text-5xl font-bold">
+          <h2 className="md:text-5xl text-xl font-bold">
             <CountUp end={stat.value} duration={2.5} />
             {stat.suffix}
           </h2>
-          <p className="text-2xl mt-2 opacity-80">{stat.label}</p>
+          <p className="md:text-2xl text-lg mt-2 opacity-80">{stat.label}</p>
 
           {/* Divider line between items */}
           {index !== stats.length - 1 && (

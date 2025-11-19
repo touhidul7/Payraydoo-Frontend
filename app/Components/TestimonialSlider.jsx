@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import techcorp from "../../public/logo/techcorp.png"
+import Image from 'next/image';
+import retailco from '../../public/logo/retailco.png';
 const testimonials = [
   {
     id: 1,
@@ -10,7 +11,7 @@ const testimonials = [
     author: "AAA BBB",
     role: "(CFO)",
     company: "TECHCORP",
-    logoUrl: "/public/logo/techcorp.png"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C560BAQEHxJrZ8gZ3MQ/company-logo_200_200/company-logo_200_200/0/1631356930047?e=2147483647&v=beta&t=_QsrOF9PAbXWf0O4hAvqHiaH9YqBBhjXnyzh6xlBdRE"
   },
 
   {
@@ -19,7 +20,7 @@ const testimonials = [
     author: "AAA BBB",
     role: "(AP HEAD)",
     company: "RETAILCO",
-    logoUrl: "/public/logo/retailco.png"
+    logoUrl: "../../public/logo/retailco.png"
   },
   {
     id: 3,
@@ -27,7 +28,7 @@ const testimonials = [
     author: "CCC DDD",
     role: "(VP Finance)",
     company: "FINTECH",
-    logo: "FinTech"
+    logoUrl: "FinTech"
   },
   {
     id: 4,
@@ -35,7 +36,7 @@ const testimonials = [
     author: "EEE FFF",
     role: "(Controller)",
     company: "LOGISTICS",
-    logo: "Logistics"
+    logoUrl: "Logistics"
   },
   {
     id: 5,
@@ -43,7 +44,7 @@ const testimonials = [
     author: "GGG HHH",
     role: "(CFO)",
     company: "HEALTHCARE",
-    logo: "HealthCare"
+    logoUrl: "HealthCare"
   }
 ];
 
@@ -198,8 +199,10 @@ export default function TestimonialSlider() {
                 </div>
                 <div className="text-right">
                   <div className="inline-block mb-3 px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg">
-                   <img 
+                   <Image 
                       src={testimonial.logoUrl} 
+                      width={100}
+                      height={80}
                       alt={`${testimonial.company} logo`}
                       className="h-8 w-auto object-contain"
                     />

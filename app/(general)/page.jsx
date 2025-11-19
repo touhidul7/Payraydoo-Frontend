@@ -5,7 +5,7 @@ import ButtonAnimated from "../Components/ButtonAnimated";
 import Counter from "../Components/Counter";
 import TiltShineCard from "../Components/TiltShineCard";
 import small_logo from "../../public/logo/small_logo.png";
-import InvoiceFeatures from "../Components/InvoiceFeatures";
+import TabSection from "../Components/TabSection";
 import InvoiceFeaturesLeft from "../Components/InvoiceFeaturesLeft";
 import dashboard2 from "../../public/images/dasboard-img.png";
 import microsoft from "../../public/logo/microsoft.png";
@@ -26,8 +26,62 @@ import second_dash from "../../public/images/4.png";
 import s_small_dash from "../../public/images/3.png";
 import CardAnimationSection from "../Components/CardAnimationSection";
 import AnimatedSection from "../Components/AnimatedSection";
+import TagibleResultCard from "../Components/TagibleResultCard";
 
 export default function Home() {
+  const receivableFeatures = [
+    {
+      title: "Auto-send invoices",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=800&fit=crop",
+      color: "from-purple-500 to-purple-700",
+    },
+    {
+      title: "Smart payment reminders",
+      image:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=800&fit=crop",
+      color: "from-blue-500 to-blue-700",
+    },
+    {
+      title: "Instant payment matching",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop",
+      color: "from-indigo-500 to-indigo-700",
+    },
+    {
+      title: "Real-time customer status",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop",
+      color: "from-violet-500 to-violet-700",
+    },
+  ];
+  const payableFeatures = [
+    {
+      title: "Capture invoices instantly",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop",
+      color: "from-purple-500 to-purple-700",
+    },
+    {
+      title: "Validate with precision",
+      image:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop",
+      color: "from-blue-500 to-blue-700",
+    },
+    {
+      title: "Approvals that move fast",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
+      color: "from-indigo-500 to-indigo-700",
+    },
+    {
+      title: "One-click payments",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+      color: "from-violet-500 to-violet-700",
+    },
+  ];
+
   return (
     <div className="p-2 sm:p-4 home-page pt-4 sm:pt-16 pb-6 sm:pb-20 scroll-smooth overflow-x-hidden">
       {/* hero section start */}
@@ -37,10 +91,10 @@ export default function Home() {
           <h2 className="text-2xl xs:text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight px-2">
             Finance That Runs Itself
           </h2>
-          <h2 className="text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold px-2">
+          <h2 className="text-base md:text-2xl lg:text-3xl font-medium md:font-bold px-2">
             Collect Cash | Pay Vendors | Close Faster
           </h2>
-          <p className="text-sm xs:text-base sm:text-xl lg:text-2xl font-medium mt-2 sm:mt-4 px-3 max-w-4xl">
+          <p className="text-[14px] xs:text-base sm:text-xl lg:text-2xl font-medium mt-2 sm:mt-4 px-3 max-w-4xl">
             Payradoo orchestrates AR & AP end to end inside your ERP
           </p>
         </div>
@@ -65,7 +119,7 @@ export default function Home() {
             alt="small dashboard"
             width={280}
             height={280}
-            className="rounded-xl sm:rounded-2xl absolute bottom-0"
+            className="rounded-xl w-20 lg:w-52 h-auto sm:rounded-2xl absolute bottom-0"
             priority
           />
         </div>
@@ -120,7 +174,7 @@ export default function Home() {
             <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
               Receivables on time, every time
             </h2>
-            <InvoiceFeatures />
+            <TabSection dirrection="row" data={receivableFeatures} />
           </div>
 
           <div className="mt-8 sm:mt-16 mb-8 sm:mb-20 px-4 sm:px-6 lg:px-20">
@@ -130,7 +184,8 @@ export default function Home() {
             <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
               Invoices in. Payments out
             </h2>
-            <InvoiceFeaturesLeft />
+            {/* <InvoiceFeaturesLeft /> */}
+            <TabSection dirrection="row-reverse" data={payableFeatures} />
           </div>
 
           {/* finance stack section */}
@@ -161,47 +216,31 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center font-semibold px-3">
-              <div className="cards text-center sm:text-left">
-                <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
-                  Measurable by Design
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg">
-                  Track time, errors and cache impact
-                </p>
-              </div>
-              <div className="cards text-center sm:text-left">
-                <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
-                  Complete control
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg">
-                  You set the rules, we enforce them.
-                </p>
-              </div>
-              <div className="cards text-center sm:text-left">
-                <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
-                  Global-ready
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg">
-                  Multi-entity. Multi currency. Audit proof.
-                </p>
-              </div>
-              <div className="cards text-center sm:text-left">
-                <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
-                  Seamless integrations
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg">
-                  Connect to your ERP in minutes.
-                </p>
-              </div>
-              <div className="cards text-center sm:text-left">
-                <h3 className="text-[#00FFF2] text-lg sm:text-xl lg:text-2xl">
-                  ERP-native
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg">
-                  Works with how you already work.
-                </p>
-              </div>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center font-semibold px-3">
+              <TagibleResultCard
+                title="Measurable by Design"
+                content={"Track time, errors and cache impact"}
+              />
+
+              <TagibleResultCard
+                title="Complete control"
+                content={"You set the rules, we enforce them."}
+              />
+
+              <TagibleResultCard
+                title="Global-ready"
+                content={"Multi-entity. Multi currency. Audit proof."}
+              />
+
+              <TagibleResultCard
+                title=" Seamless integrations"
+                content={" Connect to your ERP in minutes."}
+              />
+
+              <TagibleResultCard
+                title="ERP-native"
+                content={"  Works with how you already work."}
+              />
             </div>
           </div>
           {/* finance stack section end here */}

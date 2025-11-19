@@ -9,7 +9,6 @@ import dashboard from "../../public/images/dashboard-hero.png";
 export default function TiltShineCard({
   children,
   className = "",
-  width = 800,
   height = "fit-content",
   maxRotate = 12, // degrees
   scale = 1.04,
@@ -94,9 +93,8 @@ export default function TiltShineCard({
   return (
     <div
       ref={elRef}
-      className={`relative select-none ${className}`}
+      className={`relative select-none ${className} w-[300px] lg:w-[800px]`}
       style={{
-        width: width + "px",
         height: height + "px",
         transition: `transform ${transition}ms cubic-bezier(.2,.9,.2,1)`,
         transformStyle: "preserve-3d",
