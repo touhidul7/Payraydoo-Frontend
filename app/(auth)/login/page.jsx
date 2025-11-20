@@ -1,6 +1,7 @@
 "use client";
-import logo from "../../../public/logo/logo-open-fileArtboard-5.png";
+import logo from "../../../public/logo/payraydoo-logo.png";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 
@@ -22,14 +23,15 @@ export default function page() {
     document.cookie = "user=true; path=/; max-age=86400";
 
     alert("Sign In Successful!");
+    
     window.location.href = "/admin";
   };
 
   return (
-    <div className=" bg-gray-100 text-gray-900 flex justify-center">
+    <div className=" bg-gray-100 text-gray-900 flex justify-center min-h-screen items-center">
       <div className="max-w-7xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
         <div className=" p-6 sm:p-12">
-          <div className="flex justify-center bg-blue-600">
+          <Link href={"/"} className="flex justify-center">
             <Image
               alt="logo"
               width={128}
@@ -37,10 +39,10 @@ export default function page() {
               src={logo}
               className="w-52 h-fit"
             />
-          </div>
+          </Link>
           <div className="mt-12 flex flex-col items-center">
-            <h1 className="text-2xl xl:text-3xl font-extrabold">Sign In</h1>
-            <form onSubmit={handleSignUp} className="w-full flex-1 mt-8">
+            {/* <h1 className="text-2xl xl:text-3xl font-extrabold">Sign In</h1> */}
+            <form onSubmit={handleSignUp} className="w-full flex-1 mt-4">
               <div className="mx-auto max-w-xs space-y-5">
                 <input
                   type="email"
