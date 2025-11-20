@@ -57,7 +57,7 @@ const StatCard = ({ value, label, suffix = '', prefix = '', delay = 0, size = 'l
   return (
     <div
       ref={cardRef}
-      className={`${cardSize} bg-gradient-to-br from-gray-500 to-purple-400 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl border border-gray-600 transition-transform duration-300 hover:scale-105`}
+      className={`${cardSize} bg-linear-to-br from-gray-500 to-purple-400 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl border border-gray-600 transition-transform duration-300 hover:scale-105`}
     >
       <div className="text-center">
         <div className={`${textSize} font-bold text-white mb-4`}>
