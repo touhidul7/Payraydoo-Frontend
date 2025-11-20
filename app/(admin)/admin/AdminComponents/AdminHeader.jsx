@@ -41,7 +41,7 @@ export default function AdminHeader() {
             <button
               type="button"
               onClick={() => setOpenMenu(!openMenu)}
-              className="flex text-sm bg-neutral-primary border-1 border-gray-200 rounded-full md:me-0 focus:ring-1 focus:ring-gray-300"
+              className="flex text-sm bg-neutral-primary border border-gray-200 rounded-full md:me-0 focus:ring-1 focus:ring-gray-300"
             >
               <Image
                 width={80}
