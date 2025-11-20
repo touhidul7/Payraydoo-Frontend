@@ -172,7 +172,7 @@ export default function Home() {
             <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
               Receivables on time, every time
             </h2>
-            <TabSection dirrection="row" data={receivableFeatures} />
+            <TabSection data={receivableFeatures} />
           </div>
 
           <div className="mt-8 sm:mt-16 mb-8 sm:mb-20 px-4 sm:px-6 lg:px-20">

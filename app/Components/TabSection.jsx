@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function TabSection({ data, dirrection = "row" }) {
+export default function TabSection({ data, dirrection }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
   const mainContainerRef = useRef(null);
@@ -62,7 +62,7 @@ export default function TabSection({ data, dirrection = "row" }) {
       className="font-mont lg:mt-20 mt-6 main-container"
     >
       <div
-        className={`flex lg:flex-${dirrection} flex-col items-center lg:gap-16 gap-6 w-full mb-8`}
+        className={`flex ${dirrection ? "lg:flex-row-reverse" : "lg:flex-row"} flex-col items-center lg:gap-16 gap-6 w-full mb-8`}
       >
         {/* IMAGE SIDE */}
         <div className="image-box h-[510px] lg:w-1/2 w-full">
