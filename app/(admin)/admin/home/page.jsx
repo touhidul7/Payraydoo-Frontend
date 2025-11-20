@@ -26,6 +26,17 @@ export default function Page() {
   const [Testimonials, setTestimonials] = useState([
     { name: "", jobtitle: "", image: null, review: "" },
   ]);
+  const [Workflows, setWorkflows] = useState([{ title: "", shortdes: "" }]);
+  const [Capabilities, setCapabilities] = useState([
+    { title: "", image: null },
+  ]);
+  const [Integrations, setIntegrations] = useState([
+    { title: "", image: null },
+  ]);
+  const [InvoiceImages, setInvoiceImages] = useState({
+    small: null,
+    big: null,
+  });
 
   const [editId, setEditId] = useState(null);
 
@@ -49,6 +60,10 @@ export default function Page() {
         setErpLogos(data.erpLogos);
         setBanks(data.bankMethods);
         setTestimonials(data.testimonials);
+        setWorkflows(data.workflows || [{ title: "", shortdes: "" }]);
+        setCapabilities(data.capabilities || [{ title: "", image: null }]);
+        setIntegrations(data.integrations || [{ title: "", image: null }]);
+        setInvoiceImages({ small: null, big: null }); // cannot pre-fill file inputs
       } catch (err) {
         console.error("Failed to load homepage:", err);
       }
@@ -75,10 +90,9 @@ export default function Page() {
     setter((prev) => [...prev, template]);
   };
 
-const removeItem = (setter, index) => {
-  setter((prevList) => prevList.filter((_, i) => i !== index));
-};
-
+  const removeItem = (setter, index) => {
+    setter((prevList) => prevList.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,6 +105,10 @@ const removeItem = (setter, index) => {
       erpLogos: ErpLogos,
       bankMethods: Banks,
       testimonials: Testimonials,
+      workflows: Workflows,
+      capabilities: Capabilities,
+      integrations: Integrations,
+      invoiceImages: InvoiceImages,
     };
 
     console.log("🔥 FINAL PAYLOAD (READY FOR API)", finalPayload);
@@ -102,6 +120,10 @@ const removeItem = (setter, index) => {
         formData.append("bigImage", form.images.bigImage);
       if (form.images.smallImage)
         formData.append("smallImage", form.images.smallImage);
+      if (InvoiceImages.small)
+        formData.append("invoiceSmallImage", InvoiceImages.small);
+      if (InvoiceImages.big)
+        formData.append("invoiceBigImage", InvoiceImages.big);
 
       if (!editId) {
         await axios.post(`${BASE_URL}/homecontent`, formData, {
@@ -342,6 +364,205 @@ const removeItem = (setter, index) => {
             + Add Feature
           </button>
 
+          <div className="col-span-6 mt-10">
+            <h2 className={fieldTitle}>Workflows</h2>
+          </div>
+
+          {Workflows.map((item, index) => (
+            <div key={index} className="col-span-6 grid grid-cols-6 gap-4">
+              <div className="col-span-3">
+                <Input
+                  label={`Title #${index + 1}`}
+                  value={item.title}
+                  onChange={(e) =>
+                    updateListField(
+                      Workflows,
+                      setWorkflows,
+                      index,
+                      "title",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-3">
+                <TextArea
+                  label="Short Description"
+                  rows="3"
+                  value={item.shortdes}
+                  onChange={(e) =>
+                    updateListField(
+                      Workflows,
+                      setWorkflows,
+                      index,
+                      "shortdes",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-6 flex justify-end">
+                <button
+                  type="button"
+                  className="bg-red-600 text-white px-2 py-1 rounded"
+                  onClick={() => removeItem(setWorkflows, index)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <button
+            type="button"
+            className="col-span-6 bg-gray-700 text-white p-2 rounded"
+            onClick={() => addItem(setWorkflows, { title: "", shortdes: "" })}
+          >
+            + Add Workflow
+          </button>
+
+          <div className="col-span-6 mt-10">
+            <h2 className={fieldTitle}>Capabilities</h2>
+          </div>
+
+          {Capabilities.map((item, index) => (
+            <div key={index} className="col-span-6 grid grid-cols-6 gap-4">
+              <div className="col-span-3">
+                <Input
+                  label={`Title #${index + 1}`}
+                  value={item.title}
+                  onChange={(e) =>
+                    updateListField(
+                      Capabilities,
+                      setCapabilities,
+                      index,
+                      "title",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-2">
+                <ImageInput
+                  label="Image"
+                  value={item.image}
+                  onChange={(file) =>
+                    updateListField(
+                      Capabilities,
+                      setCapabilities,
+                      index,
+                      "image",
+                      file
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-1 flex items-end">
+                <button
+                  type="button"
+                  className="bg-red-600 text-white px-2 py-1 rounded"
+                  onClick={() => removeItem(setCapabilities, index)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <button
+            type="button"
+            className="col-span-6 bg-gray-700 text-white p-2 rounded"
+            onClick={() => addItem(setCapabilities, { title: "", image: null })}
+          >
+            + Add Capability
+          </button>
+
+          <div className="col-span-6 mt-10">
+            <h2 className={fieldTitle}>Integrations</h2>
+          </div>
+
+          {Integrations.map((item, index) => (
+            <div key={index} className="col-span-6 grid grid-cols-6 gap-4">
+              <div className="col-span-3">
+                <Input
+                  label={`Integration Title #${index + 1}`}
+                  value={item.title}
+                  onChange={(e) =>
+                    updateListField(
+                      Integrations,
+                      setIntegrations,
+                      index,
+                      "title",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-2">
+                <ImageInput
+                  label="Image"
+                  value={item.image}
+                  onChange={(file) =>
+                    updateListField(
+                      Integrations,
+                      setIntegrations,
+                      index,
+                      "image",
+                      file
+                    )
+                  }
+                />
+              </div>
+
+              <div className="col-span-1 flex items-end">
+                <button
+                  type="button"
+                  className="bg-red-600 text-white px-2 py-1 rounded"
+                  onClick={() => removeItem(setIntegrations, index)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <button
+            type="button"
+            className="col-span-6 bg-gray-700 text-white p-2 rounded"
+            onClick={() => addItem(setIntegrations, { title: "", image: null })}
+          >
+            + Add Integration
+          </button>
+
+          <div className="col-span-6 mt-10">
+            <h2 className={fieldTitle}>Invoice Images</h2>
+          </div>
+
+          <div className="col-span-3">
+            <ImageInput
+              label="Invoice Small Image"
+              value={InvoiceImages.small}
+              onChange={(file) =>
+                setInvoiceImages((prev) => ({ ...prev, small: file }))
+              }
+            />
+          </div>
+
+          <div className="col-span-3">
+            <ImageInput
+              label="Invoice Big Image"
+              value={InvoiceImages.big}
+              onChange={(file) =>
+                setInvoiceImages((prev) => ({ ...prev, big: file }))
+              }
+            />
+          </div>
+
           {/* … continue similar for WorkflowFeatures, ErpLogos, Banks, Testimonials … */}
 
           {/* Submit */}
@@ -355,6 +576,7 @@ const removeItem = (setter, index) => {
           </div>
         </div>
       </form>
+      
     </div>
   );
 }
