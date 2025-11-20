@@ -40,7 +40,7 @@ export default function Header() {
   
   return (
     <div>
-      <header className="bg-[#363767]">
+      <header className="bg-[#363767] z-999">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
@@ -122,7 +122,7 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="md:hidden z-99">
               <button
                 type="button"
                 className="text-white hover:text-teal-400 focus:outline-none focus:text-teal-400 p-2"
