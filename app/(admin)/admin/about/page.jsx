@@ -52,13 +52,13 @@ export default function AboutPage() {
           image: null,
         });
 
-        setLeadership(data.leadership || [
-          { image: null, name: "", role: "", linkedin: "" },
-        ]);
+        setLeadership(
+          data.leadership || [{ image: null, name: "", role: "", linkedin: "" }]
+        );
 
-        setInvestors(data.investors || [
-          { image: null, name: "", role: "", linkedin: "" },
-        ]);
+        setInvestors(
+          data.investors || [{ image: null, name: "", role: "", linkedin: "" }]
+        );
 
         setStory({
           title: data.story?.title || "",
@@ -68,7 +68,6 @@ export default function AboutPage() {
         setFounder({
           youtube: data.founder?.youtube || "",
         });
-
       } catch (error) {
         console.error("Load failed:", error);
       }
@@ -85,9 +84,7 @@ export default function AboutPage() {
 
   const updateListField = (list, setter, index, field, value) =>
     setter((prev) =>
-      prev.map((item, i) =>
-        i === index ? { ...item, [field]: value } : item
-      )
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item))
     );
 
   // ------------------ SUBMIT ------------------
@@ -153,37 +150,34 @@ export default function AboutPage() {
 
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-6 gap-8">
-
           {/* HERO SECTION */}
           <div className="col-span-6">
             <h2 className={fieldTitle}>Hero Section</h2>
           </div>
 
-          <Input
-            label="Title"
-            value={Hero.title}
-            onChange={(e) =>
-              setHero({ ...Hero, title: e.target.value })
-            }
-            className="col-span-6"
-          />
-
-          <Input
-            label="Stylish Title"
-            value={Hero.stylishTitle}
-            onChange={(e) =>
-              setHero({ ...Hero, stylishTitle: e.target.value })
-            }
-            className="col-span-6"
-          />
-
-          <div className="col-span-6">
-            <ImageInput
-              label="Hero Image"
-              onChange={(file) =>
-                setHero({ ...Hero, image: file })
-              }
+          <div className="col-span-6 flex flex-col gap-8">
+            <Input
+              label="Title"
+              value={Hero.title}
+              onChange={(e) => setHero({ ...Hero, title: e.target.value })}
+              className="col-span-6"
             />
+
+            <Input
+              label="Stylish Title"
+              value={Hero.stylishTitle}
+              onChange={(e) =>
+                setHero({ ...Hero, stylishTitle: e.target.value })
+              }
+              className="col-span-6"
+            />
+
+            <div className="col-span-6">
+              <ImageInput
+                label="Hero Image"
+                onChange={(file) => setHero({ ...Hero, image: file })}
+              />
+            </div>
           </div>
 
           {/* LEADERSHIP TEAM */}
@@ -193,12 +187,17 @@ export default function AboutPage() {
 
           {Leadership.map((item, index) => (
             <div key={index} className="col-span-6 grid grid-cols-6 gap-4">
-
               <div className="col-span-2">
                 <ImageInput
                   label="Image"
                   onChange={(file) =>
-                    updateListField(Leadership, setLeadership, index, "image", file)
+                    updateListField(
+                      Leadership,
+                      setLeadership,
+                      index,
+                      "image",
+                      file
+                    )
                   }
                 />
               </div>
@@ -208,7 +207,13 @@ export default function AboutPage() {
                   label="Name"
                   value={item.name}
                   onChange={(e) =>
-                    updateListField(Leadership, setLeadership, index, "name", e.target.value)
+                    updateListField(
+                      Leadership,
+                      setLeadership,
+                      index,
+                      "name",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -218,7 +223,13 @@ export default function AboutPage() {
                   label="Role"
                   value={item.role}
                   onChange={(e) =>
-                    updateListField(Leadership, setLeadership, index, "role", e.target.value)
+                    updateListField(
+                      Leadership,
+                      setLeadership,
+                      index,
+                      "role",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -228,7 +239,13 @@ export default function AboutPage() {
                   label="LinkedIn URL"
                   value={item.linkedin}
                   onChange={(e) =>
-                    updateListField(Leadership, setLeadership, index, "linkedin", e.target.value)
+                    updateListField(
+                      Leadership,
+                      setLeadership,
+                      index,
+                      "linkedin",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -267,12 +284,17 @@ export default function AboutPage() {
 
           {Investors.map((item, index) => (
             <div key={index} className="col-span-6 grid grid-cols-6 gap-4">
-
               <div className="col-span-2">
                 <ImageInput
                   label="Image"
                   onChange={(file) =>
-                    updateListField(Investors, setInvestors, index, "image", file)
+                    updateListField(
+                      Investors,
+                      setInvestors,
+                      index,
+                      "image",
+                      file
+                    )
                   }
                 />
               </div>
@@ -282,7 +304,13 @@ export default function AboutPage() {
                   label="Name"
                   value={item.name}
                   onChange={(e) =>
-                    updateListField(Investors, setInvestors, index, "name", e.target.value)
+                    updateListField(
+                      Investors,
+                      setInvestors,
+                      index,
+                      "name",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -292,7 +320,13 @@ export default function AboutPage() {
                   label="Role"
                   value={item.role}
                   onChange={(e) =>
-                    updateListField(Investors, setInvestors, index, "role", e.target.value)
+                    updateListField(
+                      Investors,
+                      setInvestors,
+                      index,
+                      "role",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -302,7 +336,13 @@ export default function AboutPage() {
                   label="LinkedIn URL"
                   value={item.linkedin}
                   onChange={(e) =>
-                    updateListField(Investors, setInvestors, index, "linkedin", e.target.value)
+                    updateListField(
+                      Investors,
+                      setInvestors,
+                      index,
+                      "linkedin",
+                      e.target.value
+                    )
                   }
                 />
               </div>
@@ -316,7 +356,6 @@ export default function AboutPage() {
                   Remove
                 </button>
               </div>
-
             </div>
           ))}
 
@@ -344,9 +383,7 @@ export default function AboutPage() {
             <Input
               label="Title"
               value={Story.title}
-              onChange={(e) =>
-                setStory({ ...Story, title: e.target.value })
-              }
+              onChange={(e) => setStory({ ...Story, title: e.target.value })}
             />
           </div>
 
@@ -385,7 +422,6 @@ export default function AboutPage() {
               Save About Page
             </button>
           </div>
-
         </div>
       </form>
     </div>

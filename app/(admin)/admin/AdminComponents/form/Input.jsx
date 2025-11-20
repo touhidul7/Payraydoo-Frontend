@@ -7,7 +7,7 @@ export default function Input({ id, label, onChange, value, placeholder, type="t
       "shadow-sm bg-gray-100 border border-gray-200 text-gray-900 sm:text-sm rounded-lg focus:ring-gray-200 focus:border-gray-200 block w-full p-2.5",
   };
   return (
-    <>
+    <div>
       <label htmlFor={id} className={classList.label}>
         {label}
       </label>
@@ -19,6 +19,6 @@ export default function Input({ id, label, onChange, value, placeholder, type="t
         placeholder={placeholder}
         className={classList.input}
       />
-    </>
+    </div>
   );
 }
