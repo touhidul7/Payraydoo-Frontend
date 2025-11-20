@@ -57,6 +57,8 @@ export default function BlogPage() {
       publishedDate: form.publishedDate,
     };
 
+    console.log("Submitting blog:", payload);
+
     const formData = new FormData();
     formData.append("data", JSON.stringify(payload));
     if (form.image) formData.append("image", form.image);
