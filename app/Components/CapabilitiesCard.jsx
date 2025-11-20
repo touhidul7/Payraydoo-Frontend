@@ -10,14 +10,14 @@ export default function CapabilitiesCard({
 }) {
   return (
     <div className="flex md:flex-row flex-col gap-5 justify-center items-center mt-12 lg:mt-22 p-3">
-      <div className="lg:w-[50%] w-full">
+      <div className="lg:w-[50%] w-[80%] ">
         {!component ? (
           <Image
             src={image}
             alt="workflow image"
             width={400}
             height={250}
-            className="lg:w-[350px] md:w-[320px] h-80"
+            className="lg:w-[350px] md:w-100% h-AUTO"
           />
         ) : (
           component

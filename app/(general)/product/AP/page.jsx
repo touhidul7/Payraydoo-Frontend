@@ -24,8 +24,54 @@ import APteams from "../../../../public/images/ap teams.png";
 import supportTeam from "../../../../public/images/support team.png";
 import globalSupport from "../../../../public/images/global support.png";
 import CapabilitiesCard from "../../../Components/CapabilitiesCard";
+import ProductDetailsCard from "../../../Components/ProductDetailsCard";
 
 export default function AP() {
+   const capabilityCards = [
+    {
+      number: "1",
+      title: "Invoice & Line Item Capture",
+      description:
+        "Reduce manual data entry and human error with AI based OCR and machine learning technology that instantly captures and codes your invoice",
+      image: FstCard,
+    },
+    {
+      number: "2",
+      title: "Automatic Data Validation",
+      description:
+        "Automatically validate invoices against corresponding purchase orders, receipts, and invoice numbers using 2-way and 3-way matching for enhanced accuracy.",
+      image: SndCard,
+    },
+    {
+      number: "3",
+      title: "Streamlined Approvals",
+      description:
+        "Accelerate invoice approvals with streamlined workflows, routing invoices to the right user based on custom built rules - no matter how complex they are",
+      image: TrdCard,
+    },
+    {
+      number: "4",
+      title: "Accrual Automation",
+      description:
+        "Simplify month-end closing for AP Teams by generating accurate accrual entries to save time, reduce manual errors and gain cashflow visibility",
+      image: FthCard,
+    },
+    {
+      number: "5",
+      title: "Manage Multiple Entities",
+      description:
+        "Effortlessly add & manage affiliated entities along with their invoices, and assign granular user roles for enhanced control and visibility",
+      image: FfthCard,
+    },
+    {
+      number: "6",
+      title: "Informed Decision Making",
+      description:
+        "Access real-time reports to identify trends, optimize processes, and make data-driven decisions that improve your financial performance",
+      image: SxthCard,
+    },
+  ];
+
   return (
     <div className="font-mont bg-white">
       {/* hero section */}
@@ -114,176 +160,24 @@ export default function AP() {
         </div>
         {/* details card section */}
         <div className="flex flex-col justify-center items-center gap-10  md:gap-20 pb-20">
-          {/* 1st card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl p-3 md:p-10 flex md:flex-row flex-col md:justify-center items-center md:gap-8 gap-3">
-            <div className=" md:w-[60%] w-full">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">1.</p>
-                <h2 className="text-black md:text-3xl text-xl font-semibold">
-                  Invoice & Line Item Capture
-                </h2>
-              </div>
-              <p className="text-gray-900 text-md md:text-lg mt-5">
-                Reduce manual data entry and human error with AI based OCR and
-                machine learning technology that instantly captures and codes
-                your invoice
-              </p>
-            </div>
-            {/* 2part */}
-            <div className=" md:w-[40%] w-full mx-auto">
-              <div>
-                <Image
-                  src={FstCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-          {/* 2nd card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl md:p-10 p-3 flex md:flex-row flex-col justify-center items-center md:gap-8 gap-3 ">
-            <div className=" md:w-[60%] w-full">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">2</p>
-                <h2 className="text-black md:text-3xl text-xl font-semibold">
-                  Automatic Data Validation
-                </h2>
-              </div>
-              <p className="text-gray-900 md:text-lg text-md mt-5">
-                Automatically validate invoices against corresponding purchase
-                orders, receipts, and invoice numbers using 2-way and 3-way
-                matching for enhanced accuracy.
-              </p>
-            </div>
-            {/* 2part */}
-            <div className=" md:w-[40%] w-full mx-auto">
-              <div>
-                <Image
-                  src={SndCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-          {/* 3rd card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl md:p-10 p-3 flex md:flex-row flex-col justify-center items-center md:gap-8 gap-3 ">
-            <div className=" md:w-[60%] w-full">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">3</p>
-                <h2 className="text-black text-xl md:text-3xl font-semibold">
-                  Streamlined Approvals
-                </h2>
-              </div>
-              <p className="text-gray-900 text-md md:text-lg mt-5">
-                Accelerate invoice approvals with streamlined workflows, routing
-                invoices to the right user based on custom built rules - no
-                matter how complex they are
-              </p>
-            </div>
-            {/* 2part */}
-            <div className=" md:w-[40%] w-full mx-auto">
-              <div>
-                <Image
-                  src={TrdCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-          {/* 4th card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl md:p-10 p-3 flex md:flex-row flex-col justify-center items-center md:gap-8 gap-3 ">
-            <div className=" md:w-[60%] w-full">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">4</p>
-                <h2 className="text-black text-xl md:text-3xl font-semibold">
-                  Accrual Automation
-                </h2>
-              </div>
-              <p className="text-gray-900 text-md md:text-lg mt-5">
-                Simplify month-end closing for AP Teams by generating accurate
-                accrual entries to save time, reduce manual errors and gain
-                cashflow visibility
-              </p>
-            </div>
-            {/* 2part */}
-            <div className=" w-full md:w-[40%] mx-auto">
-              <div>
-                <Image
-                  src={FthCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-          {/* 5th card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl md:p-10 p-3 flex md:flex-row flex-col justify-center items-center md:gap-8 gap-3 ">
-            <div className="w-full md:w-[60%]">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">5</p>
-                <h2 className="text-black text-xl md:text-3xl font-semibold">
-                  Manage Multiple Entities
-                </h2>
-              </div>
-              <p className="text-gray-900 text-md md:text-lg mt-5">
-                Effortlessly add & manage affiliated entities along with their
-                invoices, and assign granular user roles for enhanced control
-                and visibility
-              </p>
-            </div>
-            {/* 2part */}
-            <div className="w-full md:w-[40%] mx-auto">
-              <div>
-                <Image
-                  src={FfthCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-          {/* 6th card */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl md:p-10 p-3 flex md:flex-row flex-col justify-center items-center md:gap-8 gap-3 ">
-            <div className="w-full md:w-[60%]">
-              <div className="flex justify- items-center gap-5">
-                <p className="card-list-button">6</p>
-                <h2 className="text-black text-xl md:text-3xl font-semibold">
-                  Informed Decision Making
-                </h2>
-              </div>
-              <p className="text-gray-900 text-md md:text-lg mt-5">
-                Access real-time reports to identify trends, optimize processes,
-                and make data-driven decisions that improve your financial
-                performance
-              </p>
-            </div>
-            {/* 2part */}
-            <div className="w-full md:w-[40%] mx-auto">
-              <div>
-                <Image
-                  src={SxthCard}
-                  alt="card image"
-                  width={400}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
+          {capabilityCards.map((card)=>(
+            <ProductDetailsCard
+              key={card.number}
+              number={card.number}
+              title={card.title}
+              desription={card.description}
+              image={card.image}
+            />
+          ))}
         </div>
       </div>
+
       <div className="home-page">
         {/* dark info section */}
         <div className="dark-info-section max-w-[98%] mx-auto my-10 rounded-3xl pb-80 lg:pb-96">
           {/* shape and heading */}
           <div className="flex items-center justify-center relative">
-            <div className="flex justify-center items-start absolute left-0 pt-92">
+            <div className="hidden lg:flex justify-center items-start absolute left-0 pt-92">
               <Image
                 src={dShapeLarge}
                 alt="large shape"
@@ -299,18 +193,16 @@ export default function AP() {
                 className="mt-5"
               />
             </div>
-            <div className="lg:text-center md:mr-[130px] lg:pt-12">
-              <h2 className="lg:text-5xl text-2xl md:text-4xl font-semibold text-white lg:px-42">
+            <div className="text-center  pt-12">
+              <h2 className="text-[35px] font-bold lg:text-4xl  lg:font-semibold text-white lg:px-42 ">
                 Our{" "}
-                <span className="gradient-header lg:text-5xl text-2xl md:text-4xl font-semibold text-white lg:px-42">
-                  Product Capabilities
-                </span>
+                <span className="gradient-header">Product Capabilities</span>
               </h2>
             </div>
           </div>
 
           {/* dark card section */}
-          <div className="max-w-6xl mx-auto flex flex-col  justify-center items-center lg:gap-32 py-6 lg:py-20 mt-24">
+          <div className="lg:max-w-6xl max-w-[90%] mx-auto flex flex-col  justify-center items-center lg:gap-32 py-6 lg:py-20 mlg:t-24">
             {/* cards container */}
             {/* card 1 */}
             <CapabilitiesCard
@@ -332,112 +224,80 @@ export default function AP() {
               }
             />
             {/* card 3 */}
-            <div className="flex md:flex-row flex-col justify-center items-center gap-5 p-3">
-              <div className="lg:w-[50%] flex flex-col gap-4 justify-start items-center">
-                <div className="flex  md:flex-row items-end gap-3">
-                  <Image
-                    src={apBottleneck}
-                    alt="ap invoice bottleneck"
-                    className="md:w-[150px] w-[130px] "
-                  />
-                  <Image
-                    src={ocr}
-                    alt="oct card image"
-                    className="md:w-[120px] lg:w-[150px] w-[110px] md:h-[170px]"
-                  />
+            <CapabilitiesCard
+              component={
+                <div className="w-full flex flex-col gap-4 items-center  ">
+                  <div className="flex w-full md:flex-row items-center justify-center gap-3  ">
+                    <Image
+                      src={apBottleneck}
+                      alt="ap invoice bottleneck"
+                      className="md:w-[150px] w-[130px] "
+                    />
+                    <Image
+                      src={ocr}
+                      alt="oct card image"
+                      className="md:w-[120px] lg:w-[150px] w-[110px] md:h-[170px]"
+                    />
+                  </div>
+                  <div className="w-full flex justify-center ">
+                    <Image
+                      src={customChart}
+                      alt="custom chart image"
+                      className="md:w-[300px] md:h-[150px] w-[290px]"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <Image
-                    src={customChart}
-                    alt="custom chart image"
-                    className="md:w-[300px] md:h-[150px] w-[290px]"
-                  />
-                </div>
-              </div>
-              {/* card contents */}
-              <div className="lg:w-[50%] flex flex-col justify-center items-start gap-4">
-                <div className="flex justify-center items-center gap-3">
-                  <button className="dark-card-list-button">3.</button>
-                  <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold">
-                    Complete control. 0 guesswork
-                  </h2>
-                </div>
-                <p>
-                  Gain end-to-end visibility on AP invoice delays with
-                  AI-powered insights and customizable reports. Payraydoo helps
-                  you identify bottlenecks, accelerate approvals, and make
-                  smarter decisions— faster.
-                </p>
-              </div>
-            </div>
+              }
+              number={"3"}
+              title={"Complete control. 0 guesswork"}
+              description={
+                "Gain end-to-end visibility on AP invoice delays with AI-powered insights and customizable reports. Payraydoo helps you identify bottlenecks, accelerate approvals, and make smarter decisions— faster."
+              }
+            />
             {/* card 4 */}
-            <div className="flex md:flex-row flex-col justify-center items-center p-3">
-              <div className="w-[50%]">
-                <Image
-                  src={ERPIntegration}
-                  alt="ERP integration image"
-                  className="md:w-[320px] md:h-[200px]"
-                />
-              </div>
-              {/* card contents */}
-              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
-                <div className="flex justify-center items-center gap-3">
-                  <button className="dark-card-list-button">4.</button>
-                  <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold">
-                    Fits into your ERP universe
-                  </h2>
-                </div>
-                <p>
-                  Whether it’s SAP, Oracle, Sage, or others—Payraydoo integrates
-                  effortlessly with your existing ERP systems. No disruptions.
-                  Just smoother workflows, unified data, and faster processing
-                  from day one.
-                </p>
-              </div>
-            </div>
+            <CapabilitiesCard
+              image={ERPIntegration}
+              number={"4"}
+              title={"Fits into your ERP universe"}
+              description={
+                "Whether it’s SAP, Oracle, Sage, or others—Payraydoo integrates effortlessly with your existing ERP systems. No disruptions. Just smoother workflows, unified data, and faster processing from day one."
+              }
+            />
             {/* card 5 */}
-            <div className="flex md:flex-row flex-col justify-center items-center p-3">
-              <div className="w-[50%] flex flex-col md:gap-2 lg:gap-5">
-                <div className="flex flex-col">
-                  <Image
-                    src={APteams}
-                    alt="AP teams image"
-                    className="mb-5 md:w-[200px]"
-                  />
-                  <Image
-                    src={supportTeam}
-                    alt="support team image"
-                    className="lg:-mt-20 md:mt-[-60px] lg:ml-[130px] md:ml-20 md:w-[230px] md:h-[130px]"
-                  />
+            <CapabilitiesCard
+              component={
+                <div className="w-full flex flex-col gap-4 items-center  ">
+                  <div className="flex flex-col">
+                    <Image
+                      src={APteams}
+                      alt="AP teams image"
+                      className="mb-5 md:w-[200px]"
+                    />
+                    <Image
+                      src={supportTeam}
+                      alt="support team image"
+                      className="lg:-mt-20 md:mt-[-60px] lg:ml-[130px] md:ml-20 md:w-[230px] md:h-[130px]"
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      src={globalSupport}
+                      alt="global support image"
+                      className="md:w-[250px]"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <Image
-                    src={globalSupport}
-                    alt="global support image"
-                    className="md:w-[250px]"
-                  />
-                </div>
-              </div>
-              {/* card contents */}
-              <div className="w-[60%] flex flex-col justify-center items-start gap-4">
-                <div className="flex justify-center items-center gap-3">
-                  <button className="dark-card-list-button">5.</button>
-                  <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold">
-                    Built for global teams. Backed by real support.
-                  </h2>
-                </div>
-                <p>
-                  From UK to USA to India, Payraydoo supports diverse invoice
-                  formats across borders. And behind the tech? A dedicated
-                  support team that truly understands AP challenges—ready to
-                  help, every step of the way.
-                </p>
-              </div>
-            </div>
+              }
+              number={"5"}
+              title={"Built for global teams. Backed by real support."}
+              description={
+                "From UK to USA to India, Payraydoo supports diverse invoice formats across borders. And behind the tech? A dedicated support team that truly understands AP challenges—ready to help, every step of the way."
+              }
+            />
           </div>
         </div>
 
-        <div className="Ap-footer lg:w-7xl  mx-auto rounded-3xl lg:mt-[-430px] md:mt-[-200px] ">
+        <div className="Ap-footer lg:w-7xl  mx-auto rounded-3xl lg:mt-[-430px] md:mt-[-200px] lg:block hidden">
           {/* headings */}
           <div className="text-center text-white px-2 flex flex-col justify-center items-center pt-12 md:mb-22">
             <h2 className="text-4xl font-semibold mb-2">
