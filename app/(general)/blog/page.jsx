@@ -9,7 +9,7 @@ export default function page() {
     <div className="home-page w-full p-4 sm:p-6 lg:p-8">
       {/* hero section */}
       <div className="p-2 sm:p-4 pt-8 sm:pt-12 lg:pt-16 pb-10 sm:pb-16 lg:pb-20 w-full flex flex-col justify-center items-center overflow-hidden">
-        <BlogHeroSlider />
+        <BlogHeroSlider data={blogs} />
       </div>
       {/* blog section */}
       <div className="bg-white px-4 sm:px-8 lg:px-14 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20 rounded-xl sm:rounded-2xl w-full flex-col justify-center items-center">

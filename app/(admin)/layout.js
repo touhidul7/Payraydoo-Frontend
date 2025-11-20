@@ -26,6 +26,8 @@ export default function AdminLayout({ children }) {
         <AdminDataProvider>
           {children}
         </AdminDataProvider>
+
+
       </body>
     </html>
   );

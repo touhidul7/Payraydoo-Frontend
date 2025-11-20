@@ -6,15 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import {
-  GridIcon,
-  CalenderIcon,
-  UserCircleIcon,
-  ListIcon,
-  TableIcon,
-  PieChartIcon,
-  BoxCubeIcon,
   ChevronDownIcon,
-  HorizontaLDots,
 } from "../../../Icons/index";
 
 import { useAdminData } from "../adminContext/AdminContext";
@@ -82,7 +74,7 @@ const NavItems = [
 // ];
 
 const AdminSidebar = () => {
-  const { isExpanded, isMobileOpen, isHovered, setIsHovered, handleLogout } =
+  const { isExpanded, isMobileOpen, isHovered, setIsHovered } =
     useAdminData();
   const pathname = usePathname();
 
@@ -180,12 +172,12 @@ const AdminSidebar = () => {
           )}
         </li>
       ))}
-      <li>
+      {/* <li>
         <button onClick={handleLogout} className={`menu-item `}>
           <LogOut />
           Logout
         </button>
-      </li>
+      </li> */}
     </ul>
   );
 
@@ -218,18 +210,8 @@ const AdminSidebar = () => {
       onMouseEnter={() => !isExpanded && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* <div className="py-8 flex justify-center">
-        <Link href="/">
-          <Image
-            src="/images/logo/logo-icon.svg"
-            width={32}
-            height={32}
-            alt="Logo"
-          />
-        </Link>
-      </div> */}
 
-      <nav className="mb-6">
+      <nav className="my-6">
         {/* <h2 className="mb-4 text-xs text-gray-400 uppercase">
           {isExpanded || isHovered || isMobileOpen ? (
             "Menu"
@@ -239,17 +221,6 @@ const AdminSidebar = () => {
         </h2> */}
         {RenderMenu(NavItems, "main")}
       </nav>
-
-      {/* <nav>
-        <h2 className="mb-4 text-xs text-gray-400 uppercase">
-          {isExpanded || isHovered || isMobileOpen ? (
-            "Others"
-          ) : (
-            <Image src={HorizontaLDots} alt="..." width={20} height={20} />
-          )}
-        </h2>
-        {RenderMenu(OtherNavItems, "others")}
-      </nav> */}
     </aside>
   );
 };
