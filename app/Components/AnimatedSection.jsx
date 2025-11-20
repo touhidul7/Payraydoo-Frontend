@@ -1,94 +1,23 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { motion } from "framer-motion";
 import small_logo from "../../public/logo/small_logo.png";
 import setting from "../../public/images/noun-erp-7857504.png";
+import Motion from "./Motion";
+import ButtonAnimated from "./ButtonAnimated";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function CardStackBuilder() {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current;
-
-    // Start: all cards way below and invisible
-    gsap.set(cards, {
-      y: 400,
-      opacity: 0,
-      rotation: 5,
-      scale: 0.9,
-    });
-
-    // Proper stacking order (last card in DOM = top of stack)
-    cards.forEach((card, i) => {
-      gsap.set(card, {
-        zIndex: i + 1, // card[0] = bottom, card[2] = top
-      });
-    });
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=300%", // 100% per card → perfect timing
-          scrub: 1,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
-        },
-      });
-
-      // Each card flies in and stacks with beautiful easing
-      cards.forEach((card, i) => {
-        tl.to(
-          card,
-          {
-            y: -120 * i, // stack upward with spacing
-            opacity: 1,
-            rotation: 0,
-            scale: 1,
-            duration: 1,
-            ease: "power3.out",
-          },
-          i * 0.8 // stagger: card 0 → 0s, card 1 → 0.8s, card 2 → 1.6s
-        );
-      });
-
-      // Optional: Add subtle floating animation after stack is built
-      tl.to(cards, {
-        y: "+=2",
-        duration: 0,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: 1,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
-      ref={sectionRef}
-      className="relative bg-linear-to-b "
-      style={{
-        height: 'fit-content'
-      }}
+      // ref={sectionRef}
+      className=" bg-linear-to-b mt-60 md:mt-44  AnimatedSection-containter"
     >
-      <div className="lg:h-screen h-[80vh] flex items-center justify-center">
-        <div className="relative w-full  mx-auto">
-          {/* CARD 1 - Will be bottom of stack */}
-          <div
-            ref={(el) => (cardsRef.current[0] = el)}
-            className="absolute inset-x-8 md:inset-x-16 top-1/2 -translate-y-1/2"
-          >
+      <div className="lg:h-screen h-[80vh] flex items-center justify-center mb-64 md:mb-0">
+        <div className="flex flex-col gap-20 md:gap-32 w-full  mx-auto">
+          <Motion opacity={1}>
             <div className="first-card w-full bg-white py-16 px-8 clip-card rounded-xl custom-white-card relative">
               <div className="z-10">
                 <div className="border-animation absolute -top-6 sm:-top-12 left-[50%] p-2 sm:p-3 z-10 transform -translate-x-1/2">
@@ -106,13 +35,11 @@ export default function CardStackBuilder() {
                 of money in and out
               </h2>
             </div>
-          </div>
+          </Motion>
+          {/* CARD 1 - Will be bottom of stack */}
 
           {/* CARD 2 - Middle */}
-          <div
-            ref={(el) => (cardsRef.current[1] = el)}
-            className="absolute inset-x-8 md:inset-x-16 top-1/2 -translate-y-1/2"
-          >
+          <Motion>
             <div className="second-card w-full py-16 px-8 mx-auto custom-white-card font-mont rounded-xl bg-white">
               <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-8 text-center">
                 <div className="w-full lg:w-auto">
@@ -156,13 +83,10 @@ export default function CardStackBuilder() {
                 </div>
               </div>
             </div>
-          </div>
+          </Motion>
 
           {/* CARD 3 - Top of final stack */}
-          <div
-            ref={(el) => (cardsRef.current[2] = el)}
-            className="absolute inset-x-8 md:inset-x-16 top-1/2 -translate-y-1/2"
-          >
+          <Motion>
             {/* Third Card with gradient */}
             <div className="third-card w-full py-16 px-8 flex flex-col items-center custom-gradient-card rounded-xl">
               <Image
@@ -176,8 +100,11 @@ export default function CardStackBuilder() {
                 Your ERP/ Accounting Software
               </h2>
             </div>
-          </div>
+          </Motion>
         </div>
+      </div>
+      <div className="text-center mt-8 sm:mt-52">
+        <ButtonAnimated content={"Connect Your Finance Stack"} />
       </div>
     </section>
   );

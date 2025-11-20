@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import logoimg from "../../public/logo/logo-open-fileArtboard-5.png";
+import Link from "next/link";
 
 export default function Header() {
   const pathname = usePathname();
@@ -44,7 +45,7 @@ export default function Header() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <div className="flex-1 md:flex md:items-center md:gap-12">
+            <Link href={"/"} className="flex-1 md:flex md:items-center md:gap-12">
               <Image 
                 src={logoimg} 
                 alt="Company Logo" 
@@ -53,7 +54,7 @@ export default function Header() {
                 className="w-40 md:w-64 lg:w-80"
                 priority
               />
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:gap-12 font-mont font-semibold">
@@ -90,7 +91,7 @@ export default function Header() {
                               onMouseLeave={() => setIsProductMenuOpen(false)}
                             >
                               {menu.submenus.map((submenu, subIndex) => (
-                                <a
+                                <Link
                                   key={subIndex}
                                   href={submenu.link}
                                   className={`block px-4 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 ${
@@ -98,13 +99,13 @@ export default function Header() {
                                   }`}
                                 >
                                   {submenu.title}
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
                         </div>
                       ) : (
-                        <a
+                        <Link
                           className={`${
                             pathname === menu.link
                               ? "text-teal-400"
@@ -113,7 +114,7 @@ export default function Header() {
                           href={menu.link}
                         >
                           {menu.title}
-                        </a>
+                        </Link>
                       )}
                     </li>
                   ))}
@@ -174,7 +175,7 @@ export default function Header() {
                         {isMobileProductOpen && (
                           <div className="ml-4 mt-2 space-y-2">
                             {menu.submenus.map((submenu, subIndex) => (
-                              <a
+                              <Link
                                 key={subIndex}
                                 href={submenu.link}
                                 className={`block py-2 px-4 rounded-lg transition-colors duration-200 ${
@@ -188,13 +189,13 @@ export default function Header() {
                                 }}
                               >
                                 {submenu.title}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <a
+                      <Link
                         className={`block py-3 px-4 rounded-lg transition-colors duration-200 ${
                           pathname === menu.link
                             ? "text-teal-400 bg-gray-800"
@@ -204,7 +205,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {menu.title}
-                      </a>
+                      </Link>
                     )}
                   </li>
                 ))}

@@ -752,3 +752,40 @@ body {
     font-size: 0.8rem;
   }
 }
+
+
+.tabsection-wrapper {
+  position: relative;
+}
+.tabsection-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+.scroll-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-section {
+  height: 510px; /* matches your image height */
+}
+
+.image-bg {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.feature-item .active {
+  color: black !important;
+}
+
+
+
+
+.AnimatedSection-containter{
+  background-image: url(../public/images/animation-bg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -172,7 +172,10 @@ export default function Home() {
             <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
               Receivables on time, every time
             </h2>
-            <TabSection data={receivableFeatures} />
+            {/* <TabSection data={receivableFeatures} /> */}
+            <div className="tabsection-wrapper">
+              <TabSection data={receivableFeatures} />
+            </div>
           </div>
 
           <div className="mt-8 sm:mt-16 mb-8 sm:mb-20 px-4 sm:px-6 lg:px-20">
@@ -184,6 +187,7 @@ export default function Home() {
             </h2>
             {/* <InvoiceFeaturesLeft /> */}
             <TabSection dirrection="row-reverse" data={payableFeatures} />
+            <div className="tabsection-wrapper"></div>
           </div>
 
           {/* finance stack section */}
@@ -201,9 +205,7 @@ export default function Home() {
             <AnimatedSection />
             {/* Animated card section end here-------------------------------------- */}
 
-            <div className="text-center mt-8 sm:mt-16">
-              <ButtonAnimated content={"Connect Your Finance Stack"} />
-            </div>
+           
 
             <div className="text-center mt-8 sm:mt-16 px-2">
               <h2 className="text-white text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold">

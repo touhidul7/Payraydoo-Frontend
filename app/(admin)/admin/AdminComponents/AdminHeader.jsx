@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "../../../../public/logo/payraydoo-logo.png";
 import Image from "next/image";
 import { useAdminData } from "../adminContext/AdminContext";
+import Link from "next/link";
 
 export default function AdminHeader() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -30,9 +31,9 @@ export default function AdminHeader() {
         <div className="px-10 flex flex-wrap items-center justify-between mx-auto p-4">
           
           {/* LOGO */}
-          <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <Image width={500} height={200} className="h-7 w-auto" src={logo} alt="Payradoo" />
-          </a>
+          </Link>
 
           {/* RIGHT SIDE */}
           <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse" ref={menuRef}>

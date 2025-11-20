@@ -10,7 +10,7 @@ import {
 } from "../../../Icons/index";
 
 import { useAdminData } from "../adminContext/AdminContext";
-import { BookImage, House, LayoutDashboard, LogOut, PhoneCall, ShoppingCart, UsersRound } from "lucide-react";
+import { BookImage, House, LayoutDashboard, LogOut, PhoneCall, ShoppingCart, UsersRound, UserStar } from "lucide-react";
 
 const iconSize = 20;
 
@@ -37,6 +37,11 @@ const NavItems = [
     icon: <BookImage size={iconSize}/>,
     name: "Blog",
     path: "/admin/blog",
+  },
+  {
+    icon: <UserStar size={iconSize}/>,
+    name: "Reviews",
+    path: "/admin/testimonial",
   },
   {
     icon: <UsersRound size={iconSize}/>,
