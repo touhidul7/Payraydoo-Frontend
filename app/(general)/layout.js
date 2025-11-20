@@ -22,11 +22,12 @@ export default function PublicLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1263.0" data-gr-ext-installed=""
       >
-        <AppDataProvider>
-          {children}
-        </AppDataProvider>
-      </body>
-    </html>
+      <AppDataProvider>
+        {children}
+      </AppDataProvider>
+    </body>
+    </html >
   );
 }

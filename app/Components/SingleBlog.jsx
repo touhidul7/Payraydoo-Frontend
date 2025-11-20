@@ -1,0 +1,130 @@
+"use client";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import bloggs from "../../public/data/blogs.json";
+import Image from "next/image";
+import BlogCard from "./BlogCard";
+
+export default function SingleBlog({ slug, id }) {
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const foundBlog = bloggs.find(
+      (b) => b.slug === slug && b.id.toString() === id
+    );
+    setBlog(foundBlog);
+    setLoading(false);
+  }, [slug, id]);
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (!blog) {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            Blog Not Found
+          </h1>
+          <button
+            onClick={() => router.push("/blog")}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition duration-300"
+          >
+            Back to Blogs
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* -------------------------------------------------------------- */}
+      <div className=" rounded-xl lg:max-w-[90%] max-w-full mx-auto p-2 lg:p-8 space-y-8">
+        {/* Blog content will here---------- */}
+        <article className="bg-white px-4 sm:px-8 lg:px-14 pt-4 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20 rounded-xl sm:rounded-2xl w-full flex-col justify-center items-center">
+          {/* Featured Image */}
+          <div className="relative h-96 w-full">
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              fill
+              className="object-cover rounded-lg"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+          </div>
+
+          {/* Blog Content */}
+          <div className="p-4 md:p-12">
+            {/* Title */}
+            <h1 className="text-xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {blog.title}
+            </h1>
+
+            {/* Meta Information */}
+            <div className="flex items-center gap-4 mb-8 text-gray-600">
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <span>{blog.publishedDate}</span>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="prose prose-lg max-w-none">
+              <p className="text-xl text-gray-700 leading-relaxed mb-8 text-justify">
+                {blog.content}
+              </p>
+            </div>
+
+          </div>
+        </article>
+        {/* blog section */}
+        <div className="bg-white px-4 sm:px-8 lg:px-14 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20 rounded-xl sm:rounded-2xl w-full flex-col justify-center items-center">
+          {/* blog section heading */}
+          <div>
+            <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl mb-8 sm:mb-10 lg:mb-14 animo-gradient-header font-bold px-2">
+              Our Latest Blogs
+            </h2>
+          </div>
+          {/* blogs box */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-x-5 lg:gap-y-10 justify-items-center items-center justify-center px-2 sm:px-6 lg:px-14">
+            {bloggs
+              .filter((b) => b.id !== blog.id)
+              .slice(0, 4)
+              .map((blog, index) => (
+                <BlogCard key={index} data={blog} />
+              ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
