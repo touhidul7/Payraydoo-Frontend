@@ -39,11 +39,6 @@ const NavItems = [
     path: "/admin/blog",
   },
   {
-    icon: <UserStar size={iconSize}/>,
-    name: "Reviews",
-    path: "/admin/testimonial",
-  },
-  {
     icon: <UsersRound size={iconSize}/>,
     name: "About Us",
     path: "/admin/about",

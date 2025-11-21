@@ -22,13 +22,14 @@ export default function AdminLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1264.0" data-gr-ext-installed=""
       >
-        <AdminDataProvider>
-          {children}
-        </AdminDataProvider>
+      <AdminDataProvider>
+        {children}
+      </AdminDataProvider>
 
 
-      </body>
-    </html>
+    </body>
+    </html >
   );
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function CompactContactForm() {
+export default function CompactContactForm({apiKey}) {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
