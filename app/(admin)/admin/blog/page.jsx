@@ -560,7 +560,7 @@ export default function BlogManager() {
                 </tr>
               </thead>
               <tbody>
-                {blogs.map((blog) => (
+                {blogs?.map((blog) => (
                   <tr key={blog.id || blog._id} className="border-b hover:bg-gray-50 transition-colors">
                     <td className="p-4 border-r">
                       {blog.image ? (
@@ -575,8 +575,8 @@ export default function BlogManager() {
                         </div>
                       )}
                     </td>
-                    <td className="p-4 border-r font-medium text-gray-900">{blog.title}</td>
-                    <td className="p-4 border-r text-gray-600">{blog.slug}</td>
+                    <td className="p-4 border-r font-medium text-gray-900">{blog?.title}</td>
+                    <td className="p-4 border-r text-gray-600">{blog?.slug}</td>
                     <td className="p-4 border-r text-gray-600">
                       {formatDateForInput(blog.published_date || blog.publishedDate) || 'No date'}
                     </td>
@@ -590,7 +590,7 @@ export default function BlogManager() {
                         </button>
                         <button
                           className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition-colors text-sm font-medium"
-                          onClick={() => deleteBlog(blog.id || blog._id)}
+                          onClick={() => deleteBlog(blog?.id || blog?._id)}
                         >
                           Delete
                         </button>

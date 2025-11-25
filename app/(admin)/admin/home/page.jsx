@@ -1229,7 +1229,7 @@ export default function HomePageManager() {
               </button>
             </FieldSection>
 
-            {/* CAPABILITIES SECTION */}
+            {/* CAPABILITIES SECTION INTEGRATIONS SECTION 
             <FieldSection title="Capabilities">
               <FieldTitle>System Capabilities</FieldTitle>
               <div className="space-y-6">
@@ -1313,7 +1313,7 @@ export default function HomePageManager() {
               </button>
             </FieldSection>
 
-            {/* INTEGRATIONS SECTION */}
+            
             <FieldSection title="Integrations">
               <FieldTitle>System Integrations</FieldTitle>
               <div className="space-y-6">
@@ -1395,7 +1395,7 @@ export default function HomePageManager() {
                 </svg>
                 <span>Add Integration</span>
               </button>
-            </FieldSection>
+            </FieldSection>*/}
 
             {/* INVOICE IMAGES SECTION */}
             <FieldSection title="Invoice Images">

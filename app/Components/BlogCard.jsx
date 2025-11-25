@@ -1,16 +1,31 @@
 import React from "react";
 import Image from "next/image";
 const BlogCard = ({ data }) => {
+  const FILE_URL = process.env.NEXT_PUBLIC_FILE_URL;
   const navigate = () => {
-    const slug = data.title.replace(/\s+/g, "-"); // convert spaces → hyphens
-    window.location.href = `/blog/${data.slug}/${data.id}`;
+    window.location.href = `/blog/${data?.slug}/${data?.id}`;
+  };
+  // ------------------ FORMAT DATE FOR INPUT ---------------------
+  const formatDateForInput = (dateString) => {
+    if (!dateString) return "";
+
+    // If it's already in YYYY-MM-DD format, return as is
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+      return dateString;
+    }
+
+    // If it's a full ISO string or other date format
+    const date = new Date(dateString);
+    if (isNaN(date?.getTime())) return "";
+
+    return date?.toISOString().split("T")[0]; // Get YYYY-MM-DD part
   };
 
   return (
     <div className="w-full bg-white rounded-xl shadow-md overflow-hidden animo-border group font-mont">
       {/* Image */}
       <Image
-        src={data?.image}
+        src={`${FILE_URL}/${data?.image}`}
         width={300}
         height={300}
         alt="Finance workflow"
@@ -33,6 +48,7 @@ const BlogCard = ({ data }) => {
           <span className="text-gray-500 text-[10px] font-bold">
             Published <br />
             {data?.publishedDate}
+            {formatDateForInput(data?.published_date) || ''}
           </span>
         </div>
       </div>

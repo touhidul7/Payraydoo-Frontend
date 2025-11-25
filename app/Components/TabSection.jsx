@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function TabSection({ data, dirrection }) {
@@ -9,6 +10,7 @@ export default function TabSection({ data, dirrection }) {
   const scrollContainerRef = useRef(null);
   const mainContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const FILE_URL = process.env.NEXT_PUBLIC_FILE_URL;
 
   // ⛔ STOP page scroll while inside this section
   useEffect(() => {
@@ -17,13 +19,13 @@ export default function TabSection({ data, dirrection }) {
    ScrollTrigger.create({
   trigger: section,
   start: "top top",
-  end: () => `+=${window.innerHeight * (data.length - 1)}`,
+  end: () => `+=${window.innerHeight * (data?.length - 1)}`,
   pin: true,
   pinSpacing: true,
   scrub: 1,
 
   onUpdate: (self) => {
-    const progress = self.progress * (data.length - 1);
+    const progress = self.progress * (data?.length - 1);
     const index = Math.round(progress);
     setActiveIndex(index);
 
@@ -31,7 +33,7 @@ export default function TabSection({ data, dirrection }) {
     if (container) {
       const maxScroll =
         container.scrollHeight - container.clientHeight;
-      const target = (maxScroll / (data.length - 1)) * index;
+      const target = (maxScroll / (data?.length - 1)) * index;
 
       container.scrollTo({
         top: target,
@@ -63,11 +65,13 @@ export default function TabSection({ data, dirrection }) {
               className="scroll-container"
               ref={scrollContainerRef}
             >
-              {data.map((feature, index) => (
+              {data?.map((feature, index) => (
                 <div key={index} className="scroll-section">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
+                  <Image
+                  width={100}
+                  height={100}
+                    src={`${FILE_URL}/${feature?.image}`}
+                    alt={feature?.title}
                     className="image-bg"
                   />
                   <div className="gradient-overlay" />
@@ -78,7 +82,7 @@ export default function TabSection({ data, dirrection }) {
 
           {/* TEXT TITLES */}
           <div className="features-list w-full lg:w-1/2">
-            {data.map((feature, index) => (
+            {data?.map((feature, index) => (
               <div
                 key={index}
                 className="feature-item lg:py-7 py-2"
@@ -93,7 +97,7 @@ export default function TabSection({ data, dirrection }) {
                     activeIndex === index ? "active" : ""
                   }`}
                 >
-                  {feature.title}
+                  {feature?.title}
                 </div>
               </div>
             ))}

@@ -132,12 +132,12 @@ export default function AboutPageManager() {
 
   // Validation
   const validateForm = () => {
-    if (!hero.title.trim()) {
+    if (!hero.title?.trim()) {
       setError("Hero title is required");
       return false;
     }
 
-    if (!hero.stylishTitle.trim()) {
+    if (!hero.stylishTitle?.trim()) {
       setError("Hero stylish title is required");
       return false;
     }
@@ -163,25 +163,25 @@ const handleSubmit = async (e) => {
     // -------------------------
     // BASIC FIELDS - Send as individual fields, not JSON
     // -------------------------
-    formData.append("hero[title]", hero.title.trim());
-    formData.append("hero[stylishTitle]", hero.stylishTitle.trim());
+    formData.append("hero[title]", hero.title?.trim());
+    formData.append("hero[stylishTitle]", hero.stylishTitle?.trim());
 
-    formData.append("story[title]", story.title.trim());
-    formData.append("story[description]", story.description.trim());
+    formData.append("story[title]", story.title?.trim());
+    formData.append("story[description]", story.description?.trim());
 
-    formData.append("founder[youtube]", founder.youtube.trim());
+    formData.append("founder[youtube]", founder.youtube?.trim());
 
     // -------------------------
     // LEADERSHIP - Send as array fields
     // -------------------------
     const filteredLeadership = leadership.filter(item => 
-      item.name.trim() !== "" || item.role.trim() !== "" || item.linkedin.trim() !== "" || item.image
+      item.name?.trim() !== "" || item.role?.trim() !== "" || item.linkedin?.trim() !== "" || item.image
     );
     
     filteredLeadership.forEach((item, i) => {
-      formData.append(`leadership[${i}][name]`, item.name.trim());
-      formData.append(`leadership[${i}][role]`, item.role.trim());
-      formData.append(`leadership[${i}][linkedin]`, item.linkedin.trim());
+      formData.append(`leadership[${i}][name]`, item.name?.trim());
+      formData.append(`leadership[${i}][role]`, item.role?.trim());
+      formData.append(`leadership[${i}][linkedin]`, item.linkedin?.trim());
       
       // ONLY append new images
       if (item.image && typeof item.image !== "string") {
@@ -193,13 +193,13 @@ const handleSubmit = async (e) => {
     // INVESTORS - Send as array fields
     // -------------------------
     const filteredInvestors = investors.filter(item => 
-      item.name.trim() !== "" || item.role.trim() !== "" || item.linkedin.trim() !== "" || item.image
+      item.name?.trim() !== "" || item.role?.trim() !== "" || item.linkedin?.trim() !== "" || item.image
     );
     
     filteredInvestors.forEach((item, i) => {
-      formData.append(`investors[${i}][name]`, item.name.trim());
-      formData.append(`investors[${i}][role]`, item.role.trim());
-      formData.append(`investors[${i}][linkedin]`, item.linkedin.trim());
+      formData.append(`investors[${i}][name]`, item.name?.trim());
+      formData.append(`investors[${i}][role]`, item.role?.trim());
+      formData.append(`investors[${i}][linkedin]`, item.linkedin?.trim());
       
       // ONLY append new images
       if (item.image && typeof item.image !== "string") {

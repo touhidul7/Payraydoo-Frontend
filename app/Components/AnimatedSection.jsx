@@ -104,7 +104,7 @@ export default function CardStackBuilder() {
         </div>
       </div>
       <div className="text-center mt-8 sm:mt-52">
-        <ButtonAnimated content={"Connect Your Finance Stack"} />
+        <ButtonAnimated href={"/contact"} content={"Connect Your Finance Stack"} />
       </div>
     </section>
   );

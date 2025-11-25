@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
-export default function CompactContactForm({apiKey}) {
+export default function CompactContactForm({ apiKey }) {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -10,25 +11,62 @@ export default function CompactContactForm({apiKey}) {
     hearAbout: "",
   });
 
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: apiKey, // USE API KEY PASSED FROM PROPS
+          ...formData,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus({ type: "success", message: "Thank you! Your message has been sent successfully." });
+
+        // Reset form
+        setFormData({
+          email: "",
+          name: "",
+          companySize: "",
+          hearAbout: "",
+        });
+      } else {
+        setStatus({ type: "error", message: result.message || "Something went wrong." });
+      }
+    } catch (error) {
+      console.error("Web3Forms error:", error);
+      setStatus({ type: "error", message: "Failed to send message. Try again later." });
+    }
+
+    setLoading(false);
   };
 
   return (
     <div className="max-w-2xl w-full mx-auto p-3 font-mont flex flex-col items-center">
       <div className="bg-black rounded-xl shadow-md p-12">
-        
-        
         <form onSubmit={handleSubmit} className="space-y-5">
+
           <div>
             <input
               type="email"
@@ -36,7 +74,7 @@ export default function CompactContactForm({apiKey}) {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-[#1e1e1e] "
+              className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-[#1e1e1e]"
               placeholder="Enter your work email *"
             />
           </div>
@@ -54,14 +92,12 @@ export default function CompactContactForm({apiKey}) {
           </div>
 
           <div>
-            
             <select
               name="companySize"
+              required
               value={formData.companySize}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-[#1e1e1e] "
-             
+              className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-[#1e1e1e]"
             >
               <option value="">What is your company size?</option>
               <option value="1-10">1-10 employees</option>
@@ -74,7 +110,6 @@ export default function CompactContactForm({apiKey}) {
           </div>
 
           <div>
-           
             <select
               name="hearAbout"
               value={formData.hearAbout}
@@ -91,22 +126,36 @@ export default function CompactContactForm({apiKey}) {
             </select>
           </div>
 
-          <div className=" pt-2">
+          {/* DISCLAIMER */}
+          <div className="pt-2">
             <p className="text-xs text-white font-medium">
               By submitting, you agree to our{" "}
-              <a href="/privacy" className="text-blue-600 hover:underline font-medium">
+              <Link href="/blog/privacy-policy" className="text-blue-600 hover:underline font-medium">
                 privacy policy
-              </a>
-              . Docket uses the information you submit to contact you. You may unsubscribe from these communications at any time.
+              </Link>
+              . You may unsubscribe from these communications at any time.
             </p>
           </div>
 
+          {/* SUBMIT BUTTON */}
           <button
             type="submit"
-            className="w-full  py-4 px-6 rounded-lg font-bold text-md md:text-lg contact-button   duration-200 mt-4"
+            disabled={loading}
+            className="w-full py-4 px-6 rounded-lg font-bold text-md md:text-lg contact-button mt-4"
           >
-            Get a Demo For Free
+            {loading ? "Sending..." : "Get a Demo For Free"}
           </button>
+
+          {/* STATUS MESSAGE */}
+          {status.message && (
+            <p
+              className={`mt-2 text-sm ${
+                status.type === "success" ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {status.message}
+            </p>
+          )}
         </form>
       </div>
     </div>

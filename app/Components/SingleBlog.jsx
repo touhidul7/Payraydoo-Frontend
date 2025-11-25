@@ -4,19 +4,92 @@ import { useRouter } from "next/navigation";
 import bloggs from "../../public/data/blogs.json";
 import Image from "next/image";
 import BlogCard from "./BlogCard";
+import axios from "axios";
 
 export default function SingleBlog({ slug, id }) {
   const [blog, setBlog] = useState(null);
+  const [allBlog, setAllBlog]=useState(null)
   const [loading, setLoading] = useState(true);
+  const [loadingBlog, setLoadingBlog]=useState(true);
   const router = useRouter();
 
+  const [error, setError] = useState("");
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const FILE_URL = process.env.NEXT_PUBLIC_FILE_URL;
+
   useEffect(() => {
-    const foundBlog = bloggs.find(
-      (b) => b.slug === slug && b.id.toString() === id
-    );
-    setBlog(foundBlog);
-    setLoading(false);
-  }, [slug, id]);
+    loadContactData();
+    loadBlogData();
+  }, []);
+
+  const loadBlogData = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      // console.log("Loading data from:", `${BASE_URL}/api/about`);
+
+      const res = await axios.get(`${BASE_URL}/api/blog/${id}`);
+
+      // console.log("Response data:", res.data.data);
+
+      setBlog(res.data.data);
+    } catch (error) {
+      console.error("Load failed:", error);
+      console.error("Error response:", error.response);
+
+      if (error.response?.status === 404) {
+        setBlog(null);
+        setError("No contact page found - create a new one");
+      } else if (error.response?.status === 500) {
+        setError(
+          "Server error: " +
+            (error.response.data?.message || "Internal server error")
+        );
+      } else if (error.request) {
+        setError("Network error: Could not reach the server");
+      } else {
+        setError("Failed to load: " + error.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+    const loadContactData = async () => {
+    try {
+      setLoadingBlog(true);
+      setError("");
+      // console.log("Loading data from:", `${BASE_URL}/api/about`);
+
+      const res = await axios.get(`${BASE_URL}/api/blogs`);
+
+      // console.log("Response data:", res.data);
+
+      setAllBlog(res.data);
+    } catch (error) {
+      console.error("Load failed:", error);
+      console.error("Error response:", error.response);
+
+      if (error.response?.status === 404) {
+        setAllBlog(null);
+        setError("No contact page found - create a new one");
+      } else if (error.response?.status === 500) {
+        setError(
+          "Server error: " +
+            (error.response.data?.message || "Internal server error")
+        );
+      } else if (error.request) {
+        setError("Network error: Could not reach the server");
+      } else {
+        setError("Failed to load: " + error.message);
+      }
+    } finally {
+      setLoadingBlog(false);
+    }
+  };
+
+
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("en-US", {
@@ -61,7 +134,7 @@ export default function SingleBlog({ slug, id }) {
           {/* Featured Image */}
           <div className="relative h-96 w-full">
             <Image
-              src={blog.image}
+              src={`${FILE_URL}/${blog.image}`}
               alt={blog.title}
               fill
               className="object-cover rounded-lg"
@@ -93,7 +166,7 @@ export default function SingleBlog({ slug, id }) {
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <span>{blog.publishedDate}</span>
+                <span>{formatDate(blog.published_date)}</span>
               </div>
             </div>
 
@@ -116,8 +189,7 @@ export default function SingleBlog({ slug, id }) {
           </div>
           {/* blogs box */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-x-5 lg:gap-y-10 justify-items-center items-center justify-center px-2 sm:px-6 lg:px-14">
-            {bloggs
-              .filter((b) => b.id !== blog.id)
+            {allBlog?.filter((b) => b.id !== blog.id)
               .slice(0, 4)
               .map((blog, index) => (
                 <BlogCard key={index} data={blog} />

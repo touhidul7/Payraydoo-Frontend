@@ -4,6 +4,8 @@ import ButtonAnimated from '../Components/ButtonAnimated';
 import Image from 'next/image';
 
 function BlogHeroSlider({data}) {
+    const FILE_URL = process.env.NEXT_PUBLIC_FILE_URL;
+  // console.log(data)
   const SliderData = [
     {
       id: 1,
@@ -68,7 +70,7 @@ function BlogHeroSlider({data}) {
   className="flex transition-transform duration-700 ease-in-out w-full"
   style={{ transform: `translateX(-${current * 100}%)` }}
 >
-  {data.map((slide, index) => (
+  {data?.map((slide, index) => (
     <div
       key={slide.id}
       className="flex flex-col lg:flex-row items-center justify-center lg:space-x-16 space-y-8 lg:space-y-0 mx-auto w-full shrink-0 px-4 lg:px-0"
@@ -79,7 +81,7 @@ function BlogHeroSlider({data}) {
           className="rounded-3xl w-full lg:w-[600px] h-auto lg:h-[440px] aspect-video object-cover"
           width={600}
           height={500}
-          src={slide.image}
+          src={`${FILE_URL}/${slide.image}`}
           alt={`slide-${index}`}
         />
       </div>
@@ -91,8 +93,8 @@ function BlogHeroSlider({data}) {
         </h3>
         <p className="text-white text-base sm:text-lg md:text-lg lg:text-xl font-medium mb-4 lg:mb-6">
           {expanded
-            ? slide.shortDes
-            : `${slide.shortDes.substring(0, 53)} ... `}
+            ? slide.short_description
+            : `${slide.short_description.substring(0, 53)} ... `}
           {!expanded && (
             <button
               onClick={handleHeroText}

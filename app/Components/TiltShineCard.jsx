@@ -13,6 +13,7 @@ export default function TiltShineCard({
   maxRotate = 12, // degrees
   scale = 1.04,
   transition = 300, // ms
+  image
 }) {
   const elRef = useRef(null);
   const rafRef = useRef(null);
@@ -110,7 +111,7 @@ export default function TiltShineCard({
           {/* Content slot */}
           <div className="absolute inset-0 w-fit h-fit">
             <Image
-              src={dashboard}
+              src={image}
               width={1200}
               height={600}
               alt="dashboard image"
