@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Payradoo - Admin",
+  title: "Payraydoo - Admin",
   description: "Customize your Dream",
 };
 export default function AdminLayout({ children }) {

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-    title: "Payradoo App",
+    title: "Payraydoo App",
     description: "",
 };
 
