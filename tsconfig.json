@@ -23,20 +23,23 @@
       }
     ]
   },
-"include": [
-  "next-env.d.ts",
-  ".next\\dev/types/**/*.ts",
-  ".next\\dev/types/**/*.ts",
-  "**/*.mts",
-  "**/*.ts",
-  "**/*.tsx",
-  "app/Components/form/input/FileInput.jsx",
-  "app/Components/form/input/InputField.jsx",
-  "app/Components/form/input/Radio.jsx",
-  "app/Components/form/input/RadioSm.js",
-  "app/Components/form/input/TextArea.jsx",
-  "app/Components/form/input/Checkbox.jsx"
-, "app/Components/form/Label.jsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next\\dev/types/**/*.ts",
+    ".next\\dev/types/**/*.ts",
+    "**/*.mts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/Components/form/input/FileInput.jsx",
+    "app/Components/form/input/InputField.jsx",
+    "app/Components/form/input/Radio.jsx",
+    "app/Components/form/input/RadioSm.js",
+    "app/Components/form/input/TextArea.jsx",
+    "app/Components/form/input/Checkbox.jsx",
+    "app/Components/form/Label.jsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
