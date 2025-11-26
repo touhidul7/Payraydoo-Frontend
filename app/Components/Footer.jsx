@@ -2,7 +2,7 @@ import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import axios from "axios";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 export default function Footer() {
   const [showScroll, setShowScroll] = React.useState(false);
 
@@ -123,9 +123,20 @@ export default function Footer() {
         {/* Newsletter Section */}
         <div className="px-4 md:py-18 py-12 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              JOIN OUR SECURE PAYMENT NETWORK
-            </h2>
+            <motion.div
+              className="w-full"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+                JOIN OUR SECURE PAYMENT NETWORK
+              </h2>
+            </motion.div>
             <p className="text-white/90 text-sm sm:text-base mb-8">
               Stay up-to-date with new features, security updates, merchant
               offers, and exclusive promotions.
@@ -167,7 +178,10 @@ export default function Footer() {
                 SIGN ME UP!
               </button>
             </form>
-          <div id="newsletter-status" className="text-white mt-4 text-sm"></div>
+            <div
+              id="newsletter-status"
+              className="text-white mt-4 text-sm"
+            ></div>
           </div>
         </div>
 
@@ -242,14 +256,19 @@ export default function Footer() {
 
             {/* Secondary Links */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-gray-400 text-xs sm:text-sm mb-6">
-              <Link href="/product/AP" className="hover:text-white transition-colors">
+              <Link
+                href="/product/AP"
+                className="hover:text-white transition-colors"
+              >
                 PRODUCT AP
               </Link>
               <span className="text-gray-600">|</span>
-              <Link href="/product/AR" className="hover:text-white transition-colors">
+              <Link
+                href="/product/AR"
+                className="hover:text-white transition-colors"
+              >
                 PRODUCT AR
               </Link>
-              
             </div>
           </div>
         </div>

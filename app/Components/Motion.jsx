@@ -17,7 +17,22 @@ export default function Motion({ children, opacity = 0 }) {
   );
 }
 
-
+export function Motion1(){
+  return (
+    <motion.div
+      className="w-full"
+      initial={{ y: 50, scale: 0.7, opacity: 0 }}
+      whileInView={{ y: 0, scale: 1, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+      viewport={{ once: false }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 
 

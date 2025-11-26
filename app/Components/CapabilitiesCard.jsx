@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-
+import { motion } from "framer-motion";
 export default function CapabilitiesCard({
   image,
   title,
@@ -9,7 +9,16 @@ export default function CapabilitiesCard({
   component = false,
 }) {
   return (
-    <div className="flex md:flex-row flex-col gap-5 justify-center items-center mt-12 lg:mt-22 p-3">
+    <motion.div
+      className="flex md:flex-row flex-col gap-5 justify-center items-center mt-12 lg:mt-22 p-3"
+      initial={{ y: 100, scale: 1, opacity: 0 }}
+      whileInView={{ y: 0, scale: 1, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+      viewport={{ once: false }}
+    >
       <div className="lg:w-[50%] w-[80%] ">
         {!component ? (
           <Image
@@ -33,6 +42,6 @@ export default function CapabilitiesCard({
         </div>
         <p>{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

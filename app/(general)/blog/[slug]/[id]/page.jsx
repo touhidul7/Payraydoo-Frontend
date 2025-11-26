@@ -1,5 +1,6 @@
 import SingleBlog from "../../../../Components/SingleBlog";
 
+
 export default async function Page({ params }) {
     const { slug, id } = await params;
 

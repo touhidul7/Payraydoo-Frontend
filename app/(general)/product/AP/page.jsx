@@ -4,32 +4,15 @@ import shapeSmall from "../../../../public/logo/Shape 1.png";
 import logo from "../../../../public/logo/logo-open-fileArtboard-5.png";
 import shapeLarge from "../../../../public/logo/Shape 2.png";
 import leftShape from "../../../../public/logo/Shape 3.png";
-import firstStats from "../../../../public/logo/stats 1.png";
-import bigDash from "../../../../public/images/4.png";
-import smallDash from "../../../../public/images/3.png";
-import FstCard from "../../../../public/images/card 1.png";
-import SndCard from "../../../../public/images/card 2.png";
-import TrdCard from "../../../../public/images/card 3.png";
-import FthCard from "../../../../public/images/card 4.png";
-import FfthCard from "../../../../public/images/card 5.png";
-import SxthCard from "../../../../public/images/card 6.png";
 import dShapeLarge from "../../../../public/images/Shape 21.png";
 import dShapSmall from "../../../../public/images/Shape 22.png";
-import StatsCounter from "../../../Components/StatsCounter";
-import Workflow from "../../../../public/images/workflow.png";
-import ocr from "../../../../public/images/ocr.png";
-import apBottleneck from "../../../../public/images/ap bottleneck.png";
-import customChart from "../../../../public/images/custom chart.png";
-import ERPIntegration from "../../../../public/images/erp intre.png";
-import APteams from "../../../../public/images/ap teams.png";
-import supportTeam from "../../../../public/images/support team.png";
-import globalSupport from "../../../../public/images/global support.png";
 import CapabilitiesCard from "../../../Components/CapabilitiesCard";
 import ProductDetailsCard from "../../../Components/ProductDetailsCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../../../Components/Loader";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function AP() {
   const [loading, setLoading] = useState(false);
@@ -75,8 +58,6 @@ export default function AP() {
     }
   };
 
-
-
   return (
     <>
       {loading ? (
@@ -105,10 +86,23 @@ export default function AP() {
             </div>
             {/* hero text */}
             <div className=" flex flex-col justify-center items-center gap-10 md:pb-32 ">
-              <h2 className="md:text-center text-start text-4xl md:text-5xl lg:text-6xl font-semibold text-white md:leading-16 lg:leading-18 px-6 lg:px-42">
-                {data?.hero?.title}
-              </h2>
-              <Link href="/contact" className="custom-button-light">Get In Touch</Link>
+              <motion.div
+                className="w-full"
+                initial={{ y: 50, scale: 1, opacity: 0 }}
+                whileInView={{ y: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <h2 className="md:text-center text-start text-4xl md:text-5xl lg:text-6xl font-semibold text-white md:leading-16 lg:leading-18 px-6 lg:px-42">
+                  {data?.hero?.title}
+                </h2>
+              </motion.div>
+              <Link href="/contact" className="custom-button-light">
+                Get In Touch
+              </Link>
             </div>
             {/* stats section */}
             <div className="flex justify-center items-center relative">
@@ -123,7 +117,16 @@ export default function AP() {
               </div>
               {/* stats & dashboard images */}
               <div className=" justify-center  md:flex lg:flex">
-                <div className="mr-[-150px] mt-[-50px] z-10">
+                <motion.div
+                  className="mr-[-150px] mt-[-50px] z-10"
+                  initial={{ x: 50, scale: 1, opacity: 0 }}
+                  whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: false }}
+                >
                   <Image
                     className="lg:block hidden"
                     src={`${FILE_URL}/${data?.hero?.smallImage}`}
@@ -131,7 +134,7 @@ export default function AP() {
                     width={400}
                     height={200}
                   />
-                </div>
+                </motion.div>
                 <div className="rounded-2xl">
                   <Image
                     className="w-[90%] mx-auto lg:w-full rounded-t-lg"
@@ -158,10 +161,21 @@ export default function AP() {
           <div className="max-w-[98%] mx-auto my-5 bg-[#f7f9fc] rounded-3xl p-5 md:py-22">
             {/* heading section */}
             <div className="flex flex-col justify-center items-center gap-6 px-2 md-px-8 lg:px-10 py-5 md:py-14">
-              <h2 className="text-center text-2xl md:text-4xl lg:text-5xl text-gray-600 font-semibold">
-                Why automate your{" "}
-                <span className="gradient-text">AP invoice</span> processing?
-              </h2>
+              <motion.div
+                className="mr-[-150px] mt-[-50px] z-10"
+                initial={{ x: 50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <h2 className="text-center text-2xl md:text-4xl lg:text-5xl text-gray-600 font-semibold">
+                  Why automate your{" "}
+                  <span className="gradient-text">AP invoice</span> processing?
+                </h2>
+              </motion.div>
               <h3 className="md:text-2xl text-lg text-gray-600 font-normal px-3 lg:px-62 text-center">
                 {data?.ap_section?.description}
               </h3>
@@ -171,7 +185,7 @@ export default function AP() {
               {data?.invoice_processes?.map((card, i) => (
                 <ProductDetailsCard
                   key={i}
-                  number={i+1}
+                  number={i + 1}
                   title={card.title}
                   desription={card.description}
                   image={`${FILE_URL}/${card.image}`}
@@ -215,17 +229,15 @@ export default function AP() {
               <div className="lg:max-w-6xl max-w-[90%] mx-auto flex flex-col  justify-center items-center lg:gap-32 py-6 lg:py-20 mlg:t-24">
                 {/* cards container */}
                 {/* card 1 */}
-                {data?.capabilities?.map((item, i)=>(
+                {data?.capabilities?.map((item, i) => (
                   <CapabilitiesCard
-                  key={i}
-                  image={`${FILE_URL}/${item.image}`}
-                  number={i+1}
-                  title={item?.title}
-                  description={item?.description}
-                />
+                    key={i}
+                    image={`${FILE_URL}/${item.image}`}
+                    number={i + 1}
+                    title={item?.title}
+                    description={item?.description}
+                  />
                 ))}
-
-
 
                 {/* 
                 
@@ -318,17 +330,7 @@ export default function AP() {
                   }
                 />
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
                 
                 */}
               </div>
@@ -341,9 +343,11 @@ export default function AP() {
                   {data?.invoice_section?.title}
                 </h2>
                 <h3 className="text-lg font-normal">
-                 {data?.invoice_section?.description}
+                  {data?.invoice_section?.description}
                 </h3>
-                <Link href={"/product/AR"} className="ap-button-dark mt-8">Find Out How</Link>
+                <Link href={"/product/AR"} className="ap-button-dark mt-8">
+                  Find Out How
+                </Link>
               </div>
               <div>
                 <div className="flex flex-col gap-12 md:-mb-66 lg:-mb-80 md:ml-16 lg:ml-20">

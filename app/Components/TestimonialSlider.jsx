@@ -1,8 +1,9 @@
-'use client';
+"use client";
+import { motion } from "framer-motion";
 
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function TestimonialSlider({ data }) {
   const FILE_URL = process.env.NEXT_PUBLIC_FILE_URL;
@@ -17,7 +18,9 @@ export default function TestimonialSlider({ data }) {
 
   // PREV SLIDE
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials?.length) % testimonials?.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials?.length) % testimonials?.length
+    );
   };
 
   // GOTO SLIDE
@@ -48,16 +51,34 @@ export default function TestimonialSlider({ data }) {
     <div className="w-full min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4">
       <style jsx>{`
         @keyframes slideInFromRight {
-          from { opacity: 0; transform: translateX(100%); }
-          to { opacity: 1; transform: translateX(0); }
+          from {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
         @keyframes slideInFromLeft {
-          from { opacity: 0; transform: translateX(-100%); }
-          to { opacity: 1; transform: translateX(0); }
+          from {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
-        .animate-slide-in-right { animation: slideInFromRight 0.6s ease-out forwards; }
-        .animate-slide-in-left { animation: slideInFromLeft 0.6s ease-out forwards; }
-        .testimonial-card { transition: all 0.3s ease; }
+        .animate-slide-in-right {
+          animation: slideInFromRight 0.6s ease-out forwards;
+        }
+        .animate-slide-in-left {
+          animation: slideInFromLeft 0.6s ease-out forwards;
+        }
+        .testimonial-card {
+          transition: all 0.3s ease;
+        }
         .testimonial-card:hover {
           transform: translateY(-8px);
           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -73,12 +94,22 @@ export default function TestimonialSlider({ data }) {
       `}</style>
 
       <div className="max-w-7xl w-full mx-auto">
-
         {/* Header */}
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600 text-xl md:text-5xl font-bold mb-4">
-            Client Testimonials
-          </h2>
+          <motion.div
+            className="w-full"
+            initial={{ x: 50, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <h2 className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600 text-xl md:text-5xl font-bold mb-4">
+              Client Testimonials
+            </h2>
+          </motion.div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -87,10 +118,16 @@ export default function TestimonialSlider({ data }) {
 
             {/* Buttons */}
             <div className="flex gap-3">
-              <button onClick={prevSlide} className="nav-button w-12 h-12 rounded-full flex items-center justify-center">
+              <button
+                onClick={prevSlide}
+                className="nav-button w-12 h-12 rounded-full flex items-center justify-center"
+              >
                 <ArrowLeft className="w-6 h-6 text-white" />
               </button>
-              <button onClick={nextSlide} className="nav-button w-12 h-12 rounded-full flex items-center justify-center">
+              <button
+                onClick={nextSlide}
+                className="nav-button w-12 h-12 rounded-full flex items-center justify-center"
+              >
                 <ArrowRight className="w-6 h-6 text-white" />
               </button>
             </div>
@@ -100,10 +137,8 @@ export default function TestimonialSlider({ data }) {
         {/* Slider Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {visibleTestimonials?.map((testimonial, idx) => {
-
-            const animationClass = idx === 0
-              ? 'animate-slide-in-left'
-              : 'animate-slide-in-right';
+            const animationClass =
+              idx === 0 ? "animate-slide-in-left" : "animate-slide-in-right";
 
             // Extract image path
             const imagePath = testimonial?.image || testimonial?.existingImage;
@@ -123,8 +158,12 @@ export default function TestimonialSlider({ data }) {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xl font-bold text-gray-900">{testimonial?.name}</p>
-                      <p className="text-gray-500 font-medium">{testimonial?.jobtitle}</p>
+                      <p className="text-xl font-bold text-gray-900">
+                        {testimonial?.name}
+                      </p>
+                      <p className="text-gray-500 font-medium">
+                        {testimonial?.jobtitle}
+                      </p>
                     </div>
 
                     {finalImageUrl && (
@@ -153,8 +192,8 @@ export default function TestimonialSlider({ data }) {
               onClick={() => goToSlide(idx)}
               className={`transition-all duration-300 h-3 rounded-full ${
                 idx === currentIndex
-                  ? 'w-12 bg-linear-to-r from-purple-500 to-blue-600'
-                  : 'w-3 bg-gray-300'
+                  ? "w-12 bg-linear-to-r from-purple-500 to-blue-600"
+                  : "w-3 bg-gray-300"
               }`}
             />
           ))}

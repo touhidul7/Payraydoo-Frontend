@@ -3,13 +3,7 @@ import Image from "next/image";
 import shapeSmall from "../../../../public/logo/Shape 3.png";
 import shapeLarge from "../../../../public/logo/Shape 2.png";
 import leftShape from "../../../../public/logo/Shape 3.png";
-import firstStats from "../../../../public/logo/stats 1.png";
-import bigDash from "../../../../public/images/4.png";
-import smallDash from "../../../../public/images/3.png";
-import mobileFront from "../../../../public/images/ar mobile front.png";
-import laptopImage from "../../../../public/images/LaptopImage.png";
-import HappyWoman from "../../../../public/images/happy-woman-with-card.png";
-
+import { motion } from "framer-motion";
 import logo from "../../../../public/logo/logo-open-fileArtboard-5.png";
 import { ChartColumnBig, HardDriveDownload, Settings } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -83,10 +77,23 @@ export default function AR() {
         </div>
         {/* hero text */}
         <div className=" flex flex-col justify-center items-center gap-10 md:pb-32 ">
-          <h2 className="md:text-center text-start text-4xl md:text-5xl lg:text-6xl font-semibold text-white md:leading-16 lg:leading-18 px-6 lg:px-42">
-            {data?.hero?.title}
-          </h2>
-          <Link href={"/contact"} className="custom-button-light">Get In Touch</Link>
+          <motion.div
+            className="w-full"
+            initial={{ y: 50, scale: 1, opacity: 0 }}
+            whileInView={{ y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <h2 className="md:text-center text-start text-4xl md:text-5xl lg:text-6xl font-semibold text-white md:leading-16 lg:leading-18 px-6 lg:px-42">
+              {data?.hero?.title}
+            </h2>
+          </motion.div>
+          <Link href={"/contact"} className="custom-button-light">
+            Get In Touch
+          </Link>
         </div>
         {/* stats section */}
         <div className="flex justify-center items-center relative">
@@ -102,13 +109,24 @@ export default function AR() {
           {/* stats & dashboard images */}
           <div className=" justify-center  md:flex lg:flex">
             <div className="mr-[-150px] mt-[-50px] z-10">
-              <Image
-                className="lg:block hidden"
-                src={`${FILE_URL}/${data?.hero?.image1}`}
-                alt="stats image"
-                width={400}
-                height={200}
-              />
+              <motion.div
+                className="flex md:flex-row flex-col gap-5 justify-center items-center mt-12 lg:mt-22 p-3"
+                initial={{ x: 100, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <Image
+                  className="lg:block hidden"
+                  src={`${FILE_URL}/${data?.hero?.image1}`}
+                  alt="stats image"
+                  width={400}
+                  height={200}
+                />
+              </motion.div>
             </div>
             <div className="rounded-2xl">
               <Image
@@ -135,17 +153,37 @@ export default function AR() {
       <div className="max-w-[98%] mx-auto my-5 bg-[#f7f9fc] rounded-3xl py-22">
         {/* heading section */}
         <div className="flex flex-col justify-center items-center gap-6 px-10 py-14">
-          <h2 className="text-center lg:text-5x text-3xl text-gray-600 font-semibold lg:px-32">
-            <span className="gradient-header">Accounts Receivable</span>{" "}
-            Automation SaaS Product Features Content
-          </h2>
+          <motion.div
+            className="w-full"
+            initial={{ x: 50, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <h2 className="text-center lg:text-5x text-3xl text-gray-600 font-semibold lg:px-32">
+              <span className="gradient-header">Accounts Receivable</span>{" "}
+              Automation SaaS Product Features Content
+            </h2>
+          </motion.div>
         </div>
 
         {/* features section */}
         <div className="feature-parent w-[90%] mx-auto mb-16 ">
           <div className="flex flex-col lg:grid grid-cols-3 grid-rows-5 gap-5">
             {/* grid 1 */}
-            <div className="row-span-2 col-start-1 row-start-2 bg-white rounded-3xl text-black p-7 py-12">
+            <motion.div
+              className="row-span-2 col-start-1 row-start-2 bg-white rounded-3xl text-black p-7 py-12"
+              initial={{ x: -50, scale: 1, opacity: 0 }}
+              whileInView={{ x: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
               <div className="flex flex-col gap-3">
                 <button className="card-list-button">1.</button>
                 <h2 className="text-2xl font-semibold mt-12">
@@ -153,10 +191,18 @@ export default function AR() {
                 </h2>
                 <p className="text-sm">{data?.feature1?.description}</p>
               </div>
-            </div>
+            </motion.div>
             {/* grid 2 */}
-
-            <div className="row-span-2 col-start-1 row-start-4 bg-white rounded-3xl text-black p-8 py-12">
+            <motion.div
+              className="row-span-2 col-start-1 row-start-4 bg-white rounded-3xl text-black p-8 py-12"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
               <div className="flex flex-col gap-5">
                 <button className="card-list-button">3.</button>
                 <h2 className="text-2xl font-semibold mt-12">
@@ -164,7 +210,7 @@ export default function AR() {
                 </h2>
                 <p className="text-sm">{data?.other_features[0].description}</p>
               </div>
-            </div>
+            </motion.div>
             {/* grid 3 */}
             <div className="w-auto row-span-3 col-start-2 row-start-1 bg-[#a64dff] rounded-3xl text-black flex justify-center items-end ">
               <Image
@@ -186,7 +232,16 @@ export default function AR() {
               </div>
             </div>
             {/* grid 5 */}
-            <div className="row-span-2 col-start-3 row-start-2 bg-white rounded-3xl text-black p-8 py-12">
+            <motion.div
+              className="row-span-2 col-start-3 row-start-2 bg-white rounded-3xl text-black p-8 py-12"
+              initial={{ x: 50, scale: 1, opacity: 0 }}
+              whileInView={{ x: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
               <div className="flex flex-col gap-3">
                 <button className="card-list-button">2.</button>
                 <h2 className="text-2xl font-semibold mt-12">
@@ -194,9 +249,18 @@ export default function AR() {
                 </h2>
                 <p className="text-sm">{data?.feature2?.description}</p>
               </div>
-            </div>
+            </motion.div>
             {/* grid 6 */}
-            <div className="row-span-2 row-start-4 bg-white rounded-3xl text-black p-8 py-12">
+            <motion.div
+              className="row-span-2 row-start-4 bg-white rounded-3xl text-black p-8 py-12"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
               <div className="flex flex-col gap-3">
                 <button className="card-list-button">5.</button>
                 <h2 className="text-2xl font-semibold mt-12">
@@ -204,40 +268,78 @@ export default function AR() {
                 </h2>
                 <p className="text-sm">{data?.other_features[2].description}</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* dark section */}
         <div className="dark-info-section lg:p-12 p-6 rounded-3xl mb-16 mt-32 lg:py-32 py-16 ">
           <div>
-            <h2 className="text-4xl font-semibold lg:px-72 text-center mt-12">
-              <span className="gradient-header">Accounts Receivable</span>{" "}
-              Automation SaaS Product Features Content
-            </h2>
+            <motion.div
+              className="w-full"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <h2 className="text-4xl font-semibold lg:px-72 text-center mt-12">
+                <span className="gradient-header">Accounts Receivable</span>{" "}
+                Automation SaaS Product Features Content
+              </h2>
+            </motion.div>
           </div>
 
           <div className="p-3 flex flex-col md:flex-row gap-12 justify-center lg:mt-16 mt-8 relative">
             {/* first column */}
             <div className="lg:w-[25%] pt-20">
-              <div className="flex flex-col gap-3 items-start p-8">
+              <motion.div
+                className="flex flex-col gap-3 items-start p-8"
+                initial={{ x: -50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">
                   {data?.dark_section?.f1?.title}
                 </h2>
                 <p className="text-sm">{data?.dark_section?.f1?.description}</p>
-              </div>
-              <div className="flex flex-col gap-3 items-start p-8">
+              </motion.div>
+              <motion.div
+                className="flex flex-col gap-3 items-start p-8"
+                initial={{ x: -50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">
                   {data?.dark_section?.f2?.title}
                 </h2>
                 <p className="text-sm">{data?.dark_section?.f2?.description}</p>
-              </div>
-              <div className="flex flex-col gap-3 items-start p-8">
+              </motion.div>
+              <motion.div
+                className="flex flex-col gap-3 items-start p-8"
+                initial={{ x: -50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">
                   {data?.dark_section?.f3?.title}
                 </h2>
                 <p className="text-sm">{data?.dark_section?.f3?.description}</p>
-              </div>
+              </motion.div>
             </div>
 
             {/* second column */}
@@ -260,18 +362,36 @@ export default function AR() {
 
             {/* third column */}
             <div className="lg:w-[25%]">
-              <div className="flex flex-col gap-3 items-start p-8">
+              <motion.div
+                className="flex flex-col gap-3 items-start p-8"
+                initial={{ x: 50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">
                   {data?.dark_section?.f4?.title}
                 </h2>
                 <p className="text-sm">{data?.dark_section?.f4?.description}</p>
-              </div>
-              <div className="flex flex-col gap-3 items-start p-8">
+              </motion.div>
+              <motion.div
+                className="flex flex-col gap-3 items-start p-8"
+                initial={{ x: 50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
                 <h2 className="text-xl font-semibold text-[#0ae2f7]">
                   {data?.dark_section?.f5?.title}
                 </h2>
                 <p className="text-sm">{data?.dark_section?.f5?.description}</p>
-              </div>
+              </motion.div>
               <div className="lg:flex hidden items-center gap-1 absolute bottom-8 right-0">
                 <Image
                   src={shapeSmall}
@@ -285,7 +405,13 @@ export default function AR() {
         </div>
         {/* laptop image */}
         <div className="lg:mt-[-380px] mt-[-150px] flex justify-center">
-           <Image src={`${FILE_URL}/${data?.dark_section?.positionImage}`} width={1000} height={1000} className="w-auto" alt="Laptop Image" />
+          <Image
+            src={`${FILE_URL}/${data?.dark_section?.positionImage}`}
+            width={1000}
+            height={1000}
+            className="w-auto"
+            alt="Laptop Image"
+          />
         </div>
       </div>
       {/* how payraydoo works section */}
@@ -296,22 +422,57 @@ export default function AR() {
             <h4 className="gradient-text text-2xl font-semibold mb-8">
               How Payraydoo Works
             </h4>
-            <h2 className="text-black text-2xl lg:text-6xl font-semibold ">
-              {data?.how_it_works?.title}
-            </h2>
+            <motion.div
+              className="w-full"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <h2 className="text-black text-2xl lg:text-6xl font-semibold ">
+                {data?.how_it_works?.title}
+              </h2>
+            </motion.div>
             <p className="text-black text-lg pr-32">
               {data?.how_it_works?.description}
             </p>
           </div>
-          <div className="lg:w-[40%] w-[60%]">
-            <Image src={`${FILE_URL}/${data?.how_it_works?.image}`} width={500} height={500} className="w-auto" alt="HappyWoman" />
-          </div>
+          <motion.div
+            className="lg:w-[40%] w-[60%]"
+            initial={{ x: 50, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <Image
+              src={`${FILE_URL}/${data?.how_it_works?.image}`}
+              width={500}
+              height={500}
+              className="w-auto"
+              alt="HappyWoman"
+            />
+          </motion.div>
         </div>
 
         <div className="flex flex-col justify-start items-start gap-6 lg:w-full w-[90%] mx-auto">
           <h2 className="text-black text-lg font-medium">Core Capabilities:</h2>
           <div className="flex flex-col lg:flex-row gap-2 w-full text-black justify-center items-center">
-            <div className=" pr-2 ">
+            <motion.div
+              className=" pr-2 "
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
               <div className="flex items-center gap-3">
                 <HardDriveDownload className="text-amber-600 w-6 h-6" />
                 <h3 className="text-purple-500 text-lg font-medium">
@@ -321,35 +482,52 @@ export default function AR() {
               <p className="text-sm mt-4">
                 {data?.capabilities?.c1?.description}
               </p>
-            </div>
+            </motion.div>
+
             <div className=" hidden lg:block h-24 sm:h-16 ar-custom-bar bg-white w-0.5 m-12"></div>
-            <div className=" ">
-              <div className=" pr-2 ">
-                <div className="flex items-center gap-3">
-                  <Settings className="text-gray-600 w-6 h-6" />
-                  <h3 className="text-purple-500 text-lg font-medium">
-                    {data?.capabilities?.c2?.title}
-                  </h3>
-                </div>
-                <p className="text-sm mt-4">
-                  {data?.capabilities?.c2?.description}
-                </p>
+
+            <motion.div
+              className=" pr-2 "
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <div className="flex items-center gap-3">
+                <Settings className="text-gray-600 w-6 h-6" />
+                <h3 className="text-purple-500 text-lg font-medium">
+                  {data?.capabilities?.c2?.title}
+                </h3>
               </div>
-            </div>
+              <p className="text-sm mt-4">
+                {data?.capabilities?.c2?.description}
+              </p>
+            </motion.div>
+
             <div className="hidden lg:block h-16 sm:h-16 ar-custom-bar bg-white w-0.5 m-12"></div>
-            <div className=" ">
-              <div className=" w-full ">
-                <div className="flex items-center gap-3">
-                  <ChartColumnBig className="text-amber-600 w-6 h-6" />
-                  <h3 className="text-purple-500 text-lg font-medium">
-                    {data?.capabilities?.c3?.title}
-                  </h3>
-                </div>
-                <p className="text-sm mt-4">
-                  {data?.capabilities?.c3?.description}
-                </p>
+            <motion.div
+              className="w-full"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 1.2,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <div className="flex items-center gap-3">
+                <ChartColumnBig className="text-amber-600 w-6 h-6" />
+                <h3 className="text-purple-500 text-lg font-medium">
+                  {data?.capabilities?.c3?.title}
+                </h3>
               </div>
-            </div>
+              <p className="text-sm mt-4">
+                {data?.capabilities?.c3?.description}
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -358,13 +536,37 @@ export default function AR() {
       <div className="Ap-footer lg:w-7xl  mx-auto rounded-3xl  lg:block hidden">
         {/* headings */}
         <div className="text-center text-white px-2 flex flex-col justify-center items-center pt-12 md:mb-22">
-          <h2 className="text-4xl font-semibold mb-2">
-            {data?.invoice_section?.title}
-          </h2>
+          <motion.div
+            className="w-full"
+            initial={{ x: 50, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <h2 className="text-4xl font-semibold mb-2">
+              {data?.invoice_section?.title}
+            </h2>
+          </motion.div>
           <h3 className="text-lg font-normal">
-           {data?.invoice_section?.subtitle}
+            {data?.invoice_section?.subtitle}
           </h3>
-          <Link href={"/contact"} className="ap-button-dark mt-8">Find Out How</Link>
+          <motion.div
+            className=" mt-8"
+            initial={{ y: 50, scale: 1, opacity: 0 }}
+            whileInView={{ y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
+            <Link href={"/contact"} className="ap-button-dark">
+              Find Out How
+            </Link>
+          </motion.div>
         </div>
         <div>
           <div className="flex flex-col gap-12 md:-mb-66 lg:-mb-80 md:ml-16 lg:ml-20">

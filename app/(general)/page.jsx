@@ -12,6 +12,7 @@ import TagibleResultCard from "../Components/TagibleResultCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -57,60 +58,6 @@ export default function Home() {
     }
   };
 
-  
-  const receivableFeatures = [
-    {
-      title: "Auto-send invoices",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=800&fit=crop",
-      color: "from-purple-500 to-purple-700",
-    },
-    {
-      title: "Smart payment reminders",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=800&fit=crop",
-      color: "from-blue-500 to-blue-700",
-    },
-    {
-      title: "Instant payment matching",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop",
-      color: "from-indigo-500 to-indigo-700",
-    },
-    {
-      title: "Real-time customer status",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop",
-      color: "from-violet-500 to-violet-700",
-    },
-  ];
-  const payableFeatures = [
-    {
-      title: "Capture invoices instantly",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop",
-      color: "from-purple-500 to-purple-700",
-    },
-    {
-      title: "Validate with precision",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop",
-      color: "from-blue-500 to-blue-700",
-    },
-    {
-      title: "Approvals that move fast",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
-      color: "from-indigo-500 to-indigo-700",
-    },
-    {
-      title: "One-click payments",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
-      color: "from-violet-500 to-violet-700",
-    },
-  ];
-
   return (
     <>
       {loading ? (
@@ -121,9 +68,20 @@ export default function Home() {
           <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-4 sm:gap-8 py-4 sm:py-10 px-3 sm:px-4 font-mont">
             {/* heading and slogan section */}
             <div className="flex flex-col justify-center items-center gap-2 sm:gap-3 text-center">
-              <h2 className="text-2xl xs:text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight px-2">
-                {data?.hero?.title}
-              </h2>
+              <motion.div
+                className="w-full"
+                initial={{ x: 50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <h2 className="text-2xl xs:text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight px-2">
+                  {data?.hero?.title}
+                </h2>
+              </motion.div>
               <h2 className="text-base md:text-2xl lg:text-3xl font-medium md:font-bold px-2">
                 {data?.hero?.subtitle}
               </h2>
@@ -135,11 +93,24 @@ export default function Home() {
 
             {/* action button */}
             <div className="mt-2 sm:mt-4">
-              <ButtonAnimated href={"/contact"} content="Get Your Savings Report" />
+              <ButtonAnimated
+                href={"/contact"}
+                content="Get Your Savings Report"
+              />
             </div>
             {/* action button end */}
-
-            <Counter data={data?.counter} />
+            <motion.div
+              className="w-full"
+              initial={{ y: 50, scale: 1, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false }}
+            >
+              <Counter data={data?.counter} />
+            </motion.div>
           </div>
 
           {/* dashboard image start */}
@@ -167,22 +138,44 @@ export default function Home() {
 
             {/* Logo */}
             <div className="relative">
-              <div className="border-animation absolute -top-10 sm:-top-20 left-0 right-0 mx-auto p-2 sm:p-4">
-                <Image
-                  src={small_logo}
-                  alt="small logo"
-                  width={50}
-                  height={50}
-                  className="w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 lg:w-[75px] lg:h-[75px]"
-                />
-              </div>
+              <motion.div
+                className="w-full"
+                initial={{ x: 50, scale: 1, opacity: 0 }}
+                whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <div className="border-animation absolute -top-10 sm:-top-20 left-0 right-0 mx-auto p-2 sm:p-4">
+                  <Image
+                    src={small_logo}
+                    alt="small logo"
+                    width={50}
+                    height={50}
+                    className="w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 lg:w-[75px] lg:h-[75px]"
+                  />
+                </div>
+              </motion.div>
             </div>
 
             {/* UPPER CONTENT */}
             <div className="mx-auto max-w-7xl mt-8 sm:mt-14 p-4 sm:p-6 lg:p-14 font-mont text-center">
-              <h2 className="gradient-header font-semibold text-xl sm:text-3xl lg:text-5xl py-2 sm:py-3 px-2">
-                {data?.features_main?.title}
-              </h2>
+              <motion.div
+                className="w-full"
+                initial={{ y: 50, scale: 1, opacity: 0 }}
+                whileInView={{ y: 0, scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: false }}
+              >
+                <h2 className="gradient-header font-semibold text-xl sm:text-3xl lg:text-5xl py-2 sm:py-3 px-2">
+                  {data?.features_main?.title}
+                </h2>
+              </motion.div>
               <p className="text-black text-base sm:text-xl lg:text-2xl font-medium mt-2 sm:mt-5">
                 {data?.features_main?.subtitle}
               </p>
@@ -190,7 +183,21 @@ export default function Home() {
                 {data?.features_main?.shortdescription}
               </p>
               <div className="mt-4 sm:mt-8 lg:mt-10">
-                <ButtonAnimated href={"/product/AP/"} content="See how much you'll save" />
+                <motion.div
+                  className="w-full"
+                  initial={{ y: 50, scale: 1, opacity: 0 }}
+                  whileInView={{ y: 0, scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: false }}
+                >
+                  <ButtonAnimated
+                    href={"/product/AP/"}
+                    content="See how much you'll save"
+                  />
+                </motion.div>
               </div>
             </div>
             {/* UPPER CONTENT END  */}
@@ -199,12 +206,23 @@ export default function Home() {
             <div className="bg-gray-50 rounded-2xl sm:rounded-3xl max-w-full font-mont relative">
               {/* INVOICE FEATURES */}
               <div className="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-20">
-                <h2 className="gradient-text font-semibold text-xl sm:text-3xl lg:text-5xl">
-                  Accounts Receivable
-                </h2>
-                <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
-                  Receivables on time, every time
-                </h2>
+                <motion.div
+                  className="w-full"
+                  initial={{ x: 50, scale: 1, opacity: 0 }}
+                  whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: false }}
+                >
+                  <h2 className="gradient-text font-semibold text-xl sm:text-3xl lg:text-5xl">
+                    Accounts Receivable
+                  </h2>
+                  <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
+                    Receivables on time, every time
+                  </h2>
+                </motion.div>
                 {/* <TabSection data={receivableFeatures} /> */}
                 <div className="tabsection-wrapper">
                   <TabSection data={data?.accounts_receivable} />
@@ -212,12 +230,23 @@ export default function Home() {
               </div>
 
               <div className="mt-8 sm:mt-16 mb-8 sm:mb-20 px-4 sm:px-6 lg:px-20">
-                <h2 className="gradient-text font-semibold text-xl sm:text-3xl lg:text-5xl py-2">
-                  Accounts Payable
-                </h2>
-                <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
-                  Invoices in. Payments out
-                </h2>
+                <motion.div
+                  className="w-full"
+                  initial={{ x: 50, scale: 1, opacity: 0 }}
+                  whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: false }}
+                >
+                  <h2 className="gradient-text font-semibold text-xl sm:text-3xl lg:text-5xl py-2">
+                    Accounts Payable
+                  </h2>
+                  <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl mt-2 sm:mt-4 font-medium">
+                    Invoices in. Payments out
+                  </h2>
+                </motion.div>
                 {/* <InvoiceFeaturesLeft /> */}
                 <TabSection
                   dirrection="row-reverse"
@@ -242,9 +271,20 @@ export default function Home() {
                 {/* Animated card section end here-------------------------------------- */}
 
                 <div className="text-center mt-8 sm:mt-16 px-2">
-                  <h2 className="text-white text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold">
-                    Smarter workflows.
-                  </h2>
+                  <motion.div
+                    className="w-full"
+                    initial={{ x: 50, scale: 1, opacity: 0 }}
+                    whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    <h2 className="text-white text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold">
+                      Smarter workflows.
+                    </h2>
+                  </motion.div>
                   <h2 className="finance text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold mt-2 sm:mt-4 py-1 sm:py-2">
                     Tangible results.
                   </h2>
@@ -276,9 +316,20 @@ export default function Home() {
               {/* Payraydoo promise start here */}
               <section>
                 <div className="text-center mt-8 sm:mt-16 px-4">
-                  <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold">
-                    The Payraydoo Promise:
-                  </h2>
+                  <motion.div
+                    className="w-full"
+                    initial={{ x: 100, scale: 1, opacity: 0 }}
+                    whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    <h2 className="text-black text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold">
+                      The Payraydoo Promise:
+                    </h2>
+                  </motion.div>
                   <h2 className="finance text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-center font-semibold mt-2 sm:mt-4 text-shadow-lg py-1 sm:py-2">
                     Capabilities & integrations
                   </h2>
@@ -294,19 +345,30 @@ export default function Home() {
 
                 {/* company logo */}
                 <div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
-                    {data &&
-                      data?.erp_logos?.map((item, i) => (
-                        <Image
-                        key={i}
-                          src={`${FILE_URL}/${item?.image}`}
-                          alt="microsoft logo"
-                          width={120}
-                          height={60}
-                          className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
-                        />
-                      ))}
-                  </div>
+                  <motion.div
+                    className="w-full"
+                    initial={{ y: 50, scale: 1, opacity: 0 }}
+                    whileInView={{ y: 0, scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
+                      {data &&
+                        data?.erp_logos?.map((item, i) => (
+                          <Image
+                            key={i}
+                            src={`${FILE_URL}/${item?.image}`}
+                            alt="microsoft logo"
+                            width={120}
+                            height={60}
+                            className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                          />
+                        ))}
+                    </div>
+                  </motion.div>
                 </div>
 
                 <div className="text-center mt-8 mb-8 sm:mb-16">
@@ -317,40 +379,70 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
-                    {data &&
-                      data?.bank_methods?.map((item, i) => (
-                        <Image
-                        key={i}
-                          src={`${FILE_URL}/${item?.image}`}
-                          alt="jp morgan logo"
-                          width={120}
-                          height={60}
-                          className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
-                        />
-                      ))}
-                  </div>
+                  <motion.div
+                    className="w-full"
+                    initial={{ y: 50, scale: 1, opacity: 0 }}
+                    whileInView={{ y: 0, scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-16 mb-8 sm:mb-16 max-w-6xl mx-auto items-center justify-center px-3">
+                      {data &&
+                        data?.bank_methods?.map((item, i) => (
+                          <Image
+                            key={i}
+                            src={`${FILE_URL}/${item?.image}`}
+                            alt="jp morgan logo"
+                            width={120}
+                            height={60}
+                            className="mx-auto w-full max-w-20 xs:max-w-[90px] sm:max-w-[100px] lg:max-w-[120px] h-auto"
+                          />
+                        ))}
+                    </div>
+                  </motion.div>
                 </div>
 
-                <div className="text-center mt-8 mb-8 sm:mb-16">
-                  <ButtonAnimated href={"/product/AR"} content="Explore more integrations" />
+                <div className="text-center mt-8 mb-8 ">
+                  <ButtonAnimated
+                    href={"/product/AR"}
+                    content="Explore more integrations"
+                  />
                 </div>
 
                 <div className="px-3 sm:px-4 lg:px-6 mb-16 sm:mb-32 bg-white">
-                  <TestimonialSlider data={data?.testimonials}/>
+                  <TestimonialSlider data={data?.testimonials} />
                 </div>
               </section>
 
               <div className="finance-stack-body rounded-xl pt-8 sm:pt-16 px-4 sm:px-6 lg:px-12 mx-auto max-w-[95%] sm:max-w-[98%] font-mont">
                 <div className="flex flex-col justify-center items-center gap-3 sm:gap-6 px-3">
                   <h2 className="text-center text-xl sm:text-3xl lg:text-5xl font-semibold px-0 sm:px-6 lg:px-40 xl:px-60">
-                    Ready to save thousands on{" "}
+                    <motion.div
+                      className="w-full"
+                      initial={{ x: 50, scale: 1, opacity: 0 }}
+                      whileInView={{ x: 0, scale: 1, opacity: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: "easeOut",
+                      }}
+                      viewport={{ once: false }}
+                    >
+                      Ready to save thousands on{" "}
+                    </motion.div>
                     <span className="gradient-text">invoice processing?</span>
                   </h2>
                   <p className="text-center text-sm sm:text-lg lg:text-xl font-medium">
                     Run a quick analysis and get your personalized ROI.
                   </p>
-                  <ButtonAnimated href={"/contact"} content="Get your Savings Report" />
+                  
+                  <ButtonAnimated
+                    href={"/contact"}
+                    content="Get your Savings Report"
+                  />
+                  
                 </div>
 
                 {/* dashboard images - Responsive layout */}
