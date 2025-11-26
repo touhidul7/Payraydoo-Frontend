@@ -255,7 +255,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="bg-linear-to-r from-purple-600 via-purple-500 to-blue-400 px-4 py-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-white font-semibold text-xs sm:text-sm mb-1">
               SECURE PAYMENTS | TRUSTED GLOBALLY | PROCESSING WORLDWIDE

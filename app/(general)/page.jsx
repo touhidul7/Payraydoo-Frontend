@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             {/* action button end */}
 
-            <Counter />
+            <Counter data={data?.counter} />
           </div>
 
           {/* dashboard image start */}

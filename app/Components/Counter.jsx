@@ -1,20 +1,17 @@
 "use client";
 import CountUp from "react-countup";
 
-export default function Counter() {
+export default function Counter({ data }) {
   const stats = [
-    { value: 95, suffix: "%", label: "Fewer Errors" },
-    { value: 11, suffix: "X", label: "Faster Cycle Times" },
-    { value: 60, suffix: "%", label: "Lower Cost" },
+    { value: data?.errors, suffix: "%", label: "Fewer Errors" },
+    { value: data?.cycles, suffix: "X", label: "Faster Cycle Times" },
+    { value: data?.cost, suffix: "%", label: "Lower Cost" },
   ];
 
   return (
     <div className="w-full mt-10 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 bg-linear-to-r from-[#2B1A5A] to-[#412B88] text-white rounded-2xl border md:px-32 p-6   md:p-10 shadow-lg custom-card h-auto font-mont">
       {stats.map((stat, index) => (
-        <div
-          key={index}
-          className="text-center relative px-6"
-        >
+        <div key={index} className="text-center relative px-6">
           <h2 className="md:text-5xl text-xl font-bold">
             <CountUp end={stat.value} duration={2.5} />
             {stat.suffix}
